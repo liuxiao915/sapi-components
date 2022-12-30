@@ -3,13 +3,9 @@
 </template>
 
 <script>
-import SapiSwiper from './components/sapi-swiper.vue'
 
 export default {
-  name: 'App',
-  components: {
-    SapiSwiper
-  }
+  name: 'App'
 }
 </script>
 

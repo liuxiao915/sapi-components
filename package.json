@@ -1,11 +1,14 @@
 {
   "name": "sapi-components",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "lib/sapi-components.umd.min",
+  "style": "lib/sapi-components.css",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name sapi-components --dest lib components/index.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",

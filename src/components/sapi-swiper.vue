@@ -27,6 +27,7 @@
 
 <script>
 export default {
+  name: 'SapiSwiper',
   data() {
     return {
       imgData: [
