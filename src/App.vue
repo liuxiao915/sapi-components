@@ -1,9 +1,9 @@
 <template>
   <sapi-swiper />
+  <sapi-tree />
 </template>
 
 <script>
-
 export default {
   name: 'App'
 }

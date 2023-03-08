@@ -1,25 +1,23 @@
 <template>
-  <div id="app">
-    <div class="SwiperBox" @mouseenter="MouseFun('移入')" @mouseleave="MouseFun('移出')">
-      <!-- 图片 -->
-      <div class="imgBox" :style="{ left: `-${leftVal}px`, transition: `${ition}s` }">
-        <div v-for="(item, index) in imgList" :key="index">
-          <img :src="items.imgUrl" alt="" v-for="(items, indexs) in item" :key="indexs">
-        </div>
-        <!-- 复制第一张放到最后,以实现无缝无线循环滚动效果 -->
-        <div>
-          <img :src="items.imgUrl" alt="" v-for="(items, indexs) in imgList[0]" :key="indexs">
-        </div>
+  <div class="SwiperBox" @mouseenter="MouseFun('移入')" @mouseleave="MouseFun('移出')">
+    <!-- 图片 -->
+    <div class="imgBox" :style="{ left: `-${leftVal}px`, transition: `${ition}s` }">
+      <div v-for="(item, index) in imgList" :key="index">
+        <img :src="items.imgUrl" alt="" v-for="(items, indexs) in item" :key="indexs">
       </div>
-      <!-- 左箭头按钮 -->
-      <div class="leftBtn" @click="throttle(PrevFun)">&larr;</div>
-      <!-- 右箭头按钮 -->
-      <div class="rightBtn" @click="throttle(NextFun)">&rarr;</div>
-      <!-- 下方指示点容器 -->
-      <div class="instBox">
-        <div @click="instFun(index)" v-for="(item, index) in imgList.length" :key="index"
-          :class="['inst', index == imgShow ? 'instActv' : '']">
-        </div>
+      <!-- 复制第一张放到最后,以实现无缝无线循环滚动效果 -->
+      <div>
+        <img :src="items.imgUrl" alt="" v-for="(items, indexs) in imgList[0]" :key="indexs">
+      </div>
+    </div>
+    <!-- 左箭头按钮 -->
+    <div class="leftBtn" @click="throttle(PrevFun)">&larr;</div>
+    <!-- 右箭头按钮 -->
+    <div class="rightBtn" @click="throttle(NextFun)">&rarr;</div>
+    <!-- 下方指示点容器 -->
+    <div class="instBox">
+      <div @click="instFun(index)" v-for="(item, index) in imgList.length" :key="index"
+        :class="['inst', index == imgShow ? 'instActv' : '']">
       </div>
     </div>
   </div>
