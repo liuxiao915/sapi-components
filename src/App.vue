@@ -1,6 +1,7 @@
 <template>
-  <sapi-swiper />
-  <sapi-tree />
+  <!-- <sapi-swiper />
+  <sapi-tree /> -->
+  <router-view></router-view>
 </template>
 
 <script>
@@ -9,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
