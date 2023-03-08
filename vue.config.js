@@ -18,7 +18,7 @@ module.exports = defineConfig({
   devServer: {
     port: 8080,
     open: true,
-    host: 'localhost',
+    host: "localhost",
     historyApiFallback: true, //webpack5.0 开启热更新
   },
   chainWebpack: (config) => {
