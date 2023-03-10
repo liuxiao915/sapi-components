@@ -4,4 +4,4 @@ import App from './App.vue'
 import router from './router'
 import components from "@/components/index";
 const app = createApp(App)
-app.use(router).use(components).mount('#app')
+app.use(components).use(router).mount('#app')

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'sapiTree11',
+  name: 'myTree',
   props: {
     data: {
       type: Array,

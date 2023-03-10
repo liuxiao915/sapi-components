@@ -23,7 +23,6 @@ export default {
             }
         },
         activedId: { type: [String, Number, Boolean], default: null }, //初始化选中节点
-
         indent: { type: [String, Number], default: 16 }, //缩进距离
         defaultExpandAll: { type: Boolean, default: false }, //是否展开所有的子节点
         // 设置展开所有子节点时，只展开children.length > 0 的节点

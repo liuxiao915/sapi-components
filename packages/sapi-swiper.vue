@@ -127,7 +127,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 /* 图片容器样式 */
 .SwiperBox {
   position: relative;
@@ -218,13 +218,5 @@ export default {
 .instActv {
   border: 1px solid #ff0000;
   background: #ff0000;
-}
-
-#app {
-  width: 100%;
-  padding: 120px;
-  display: flex;
-  justify-content: center;
-  padding: 80px 0px;
 }
 </style>

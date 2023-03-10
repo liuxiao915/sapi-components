@@ -1,18 +1,20 @@
 <template>
-  <div class="tree-demo">
-    <div class="fullline">
-      <div class="fullline"> 复杂的树型 </div>
-      <!--:expanded - add - child = "expandedAddChild"-->
-      <sapi-tree :data="list" @expanded-click="expandedClick" :expandOnClickNode="true" :indent="20" :selectAfter="getSelectNode" :lazyLoad="expandedAddChild" :render-content="renderContent" :props="defaultProps" :actived-id="treeId" @on-click="handlerClick">
-      </sapi-tree>
-    </div>
+    <div class="tree-demo">
+        <div class="fullline">
+            <div class="fullline"> 复杂的树型 </div>
+            <!--:expanded - add - child = "expandedAddChild"-->
+            <sapi-tree :data="list" @expanded-click="expandedClick" :expandOnClickNode="true" :indent="20"
+                :selectAfter="getSelectNode" :lazyLoad="expandedAddChild" :render-content="renderContent"
+                :props="defaultProps" :actived-id="treeId" @on-click="handlerClick">
+            </sapi-tree>
+        </div>
 
-    <div class="fullline">
-      <div class="fullline">普遍的树型</div>
-      <sapi-tree :uniqueOpened="true" :data="datas" :props="menuProps" :node-id="menuId" @node-click="menuClick">
-      </sapi-tree>
+        <div class="fullline">
+            <div class="fullline">普遍的树型</div>
+            <sapi-tree :uniqueOpened="true" :data="datas" :props="menuProps" :node-id="menuId" @node-click="menuClick">
+            </sapi-tree>
+        </div>
     </div>
-  </div>
 </template>  
 
 <script>
@@ -79,21 +81,57 @@ export default {
             console.log(item);
         },
         getData() {
-            var url = "/api/plat/structures/brief";
-            if (this.treeId) {
-                url = "/api/plat/structures/{struId}/parentAndSiblings";
-            }
-
-            this.$get(
-                url,
+            // children: "Children",
+            // label: "StruName", //树显示，绑定的字段
+            // value: "StruId", //初始化时，value绑定的字段
+            // hasChild: "HasChild" //后台按需加载关键字段
+            this.list = [
                 {
-                    withDept: true,
-                    struId: this.treeId
+                    "id": "1",
+                    "label": "一级目录1",
+                    "value": "0",
                 },
-                function(res) {
-                    this.list = res;
+                {
+                    "id": "2",
+                    "label": "二级目录1",
+                    "value": "1"
+                },
+                {
+                    "id": "3",
+                    "label": "二级目录2",
+                    "value": "1"
+                },
+                {
+                    "id": "4",
+                    "label": "三级目录1",
+                    "value": "2"
+                },
+                {
+                    "id": "5",
+                    "label": "三级目录2",
+                    "value": "2"
+                },
+                {
+                    "id": "6",
+                    "label": "一级目录2",
+                    "value": "0"
+                },
+                {
+                    "id": "7",
+                    "label": "三极目录3",
+                    "value": "3"
+                },
+                {
+                    "id": "8",
+                    "label": "四级目录1",
+                    "value": "7"
+                },
+                {
+                    "id": "9",
+                    "label": "五级目录1",
+                    "value": "8"
                 }
-            );
+            ];
         },
         //从后台获取数据追加到到节点子类下
         expandedAddChild(item, callback) {
@@ -103,34 +141,28 @@ export default {
                     withDept: true,
                     parentStruId: item.StruId
                 },
-                function(res) {
+                function (res) {
                     callback(res);
                 }
             );
         }
     },
-    created() {},
     mounted() {
         this.getData();
         var _this = this;
 
-        _this.datas = this.$root.$refs.header.menuList;
+        // _this.datas = this.$root.$refs.header.menuList;
 
-        this.$root.$refs.header.$watch("menuList", function(val) {
-            _this.datas = val;
-        });
-    },
-    watch: {
-        list(val) {
-            console.log(val);
-        }
+        // this.$root.$refs.header.$watch("menuList", function (val) {
+        //     _this.datas = val;
+        // });
     }
 };
 </script>
 	  
 <style>
 .tree-demo {
-    width: 90%;
+    width: 200px;
     max-height: 500px;
     overflow: auto;
 }

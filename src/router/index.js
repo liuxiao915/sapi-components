@@ -2,10 +2,18 @@ import { createRouter,createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/index',
+    path: '/',
     name: 'index',
-    component: resolve => require(['@/views/index'], resolve)
-  }
+    // component: resolve => require(['@/views/index'], resolve),
+    component: () => import('@/views/index'),
+		children: [
+			{
+				path: '/icon',
+				name: 'icon',
+				component: () => import(/* webpackChunkName: "icon" */'@/views/icon.vue')
+			}
+		]
+  },
 ]
 
 // 导航守卫

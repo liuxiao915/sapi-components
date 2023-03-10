@@ -47,6 +47,18 @@ module.exports = defineConfig({
           resources: (() => './src/assets/styles/STATIC_URL_LOCAL.less')()
         })
         .end()
+      config.module
+        .rule('md')
+        .test(/\.md/)
+        .use('vue-loader')
+        .loader('vue-loader')
+        .end()
+        .use('vue-markdown-loader')
+        .loader('vue-markdown-loader/lib/markdown-compiler')
+        .options({
+          raw: true
+        })
+        .end()
     })
     config.optimization
       .minimizer('terser')
