@@ -1,0 +1,74 @@
+{
+  "map3d": {
+    "scene": {
+      "center": {
+        "x": 114.17,
+        "y": 22.65,
+        "z": 140000,
+        "pitch": -90,
+        "roll": 0
+      },
+      "contextOptions": {
+        "infoBox": false,
+        "webgl": {
+          "preserveDrawingBuffer": true
+        }
+      },
+      "scene3DOnly": false,
+      "shadows": false,
+      "removeDblClick": true,
+      "sceneMode": 3,
+      "showSun": true,
+      "showMoon": false,
+      "showSkyBox": false,
+      "showSkyAtmosphere": true,
+      "fog": true,
+      "fxaa": true,
+      "globe": {
+        "depthTestAgainstTerrain": false,
+        "baseColor": "#2B323E",
+        "showGroundAtmosphere": true,
+        "enableLighting": false
+      },
+      "cameraController": {
+        "zoomFactor": 3.0,
+        "minimumZoomDistance": 50,
+        "maximumZoomDistance": 500000,
+        "enableRotate": true,
+        "enableTranslate": true,
+        "enableTilt": true,
+        "enableZoom": true,
+        "enableCollisionDetection": true,
+        "minimumCollisionTerrainHeight": 15000
+      }
+    },
+    "control": {
+      "homeButton": false,
+      "baseLayerPicker": false,
+      "sceneModePicker": false,
+      "vrButton": false,
+      "fullscreenButton": false,
+      "navigationHelpButton": false,
+      "animation": false,
+      "timeline": false,
+      "infoBox": false,
+      "geocoder": false,
+      "geocoderConfig": {
+        "key": [
+          "ae29a37307840c7ae4a785ac905927e0"
+        ]
+      },
+      "selectionIndicator": false,
+      "defaultContextMenu": false,
+      "mouseDownView": false,
+      "contextmenu":{
+        "preventDefault":false,
+        "hasDefault": false
+      }
+    },
+    "terrain": {
+      "url": "//data.mars3d.cn/terrain",
+      "show": false
+    }
+  }
+}

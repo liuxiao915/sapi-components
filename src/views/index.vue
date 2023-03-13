@@ -3,6 +3,7 @@
     <header>
       <slot name="header">组件库</slot>
     </header>
+    <sapiMars3d />
     <section class="left-menu">
       <div v-for="(item, index) in state.menuData" :key="index" @click="selectTabs(item, index)">{{ item.label }}</div>
     </section>
