@@ -1,25 +1,10 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import Dom from "@/views/index.vue";
 export default {
-  name: 'App',
-  components: {
-    Dom
-  },
-  methods: {
-    handleClickA(){
-      console.log('handleClickA')
-      this.$router.push({path: '/aPage'})
-    },
-    handleClickB(){
-      this.$router.push({path: '/bPage'})
-    }
-  }
+  name: 'App'
 }
 </script>
 
@@ -29,5 +14,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  height: 100%;
 }
 </style>

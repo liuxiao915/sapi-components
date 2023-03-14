@@ -10,7 +10,17 @@ const routes = [
 			{
 				path: '/icon',
 				name: 'icon',
-				component: () => import(/* webpackChunkName: "icon" */'@/views/icon.vue')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-icon/usage/index.vue')
+			},
+			{
+				path: '/tree',
+				name: 'tree',
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/tree.vue')
+			},
+			{
+				path: '/mars3d',
+				name: 'mars3d',
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/mars3d.vue')
 			}
 		]
   },

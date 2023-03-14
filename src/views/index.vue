@@ -1,17 +1,9 @@
 <template>
-  <div class="layout">
-    <header>
-      <slot name="header">组件库</slot>
-    </header>
-    <sapiMars3d />
-    <section class="left-menu">
-      <div v-for="(item, index) in state.menuData" :key="index" @click="selectTabs(item, index)">{{ item.label }}</div>
-    </section>
-  </div>
-  <!-- <sapiIcon /> -->
-    <router-view>
-      <!-- <component :is="activeTab"></component> -->
-    </router-view>
+  <sapi-layout :data="state.menuData" @selectTabs="selectTabs">
+    <template #right>
+      <router-view></router-view>
+    </template>
+  </sapi-layout>
 </template>
 <script>
 // import sapiIcon from '@/examples/sapi-icon/usage/index.vue'
@@ -38,10 +30,13 @@ export default {
     const activeTab = ref('')
     const state = reactive({
       menuData: [
-        {path: '/icon', label: 'icon 图标'}
+        {path: '/icon', name: 'icon', label: 'icon 图标'},
+        {path: '/tree', name: 'tree', label: '树形'},
+        {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
       ]
     })
     const selectTabs = (item, index) => {
+      // activeTab.value = item.name
       router.push({
         path: item.path,
         query: {}

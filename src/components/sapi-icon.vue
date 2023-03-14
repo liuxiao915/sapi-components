@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'SvgIcon',
+  name: 'sapiIcon',
   props: {
     iconClass: {
       type: String,
