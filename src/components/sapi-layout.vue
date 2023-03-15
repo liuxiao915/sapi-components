@@ -39,15 +39,15 @@ export default {
     height: 50px;
     font-size: 20px;
     line-height: 50px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #d0d7de;
   }
   main {
     display: flex;
   }
   .left {
     width: 200px;
-    height: 100%;
-    border-right: 1px solid #000;
+    padding: 12px;
+    border-right: 1px solid #d0d7de;
     overflow-y: auto;
     .menu-item {
       cursor: pointer;
@@ -55,6 +55,8 @@ export default {
   }
   .right {
     flex: 1;
+    padding: 12px;
+    overflow-y: auto;
   }
 }
 </style>
