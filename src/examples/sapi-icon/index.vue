@@ -10,14 +10,12 @@
         </div>
     </div>
   </div>
-  <div v-if="key === 'api'">
-    <md class="markdown-body" />
-  </div>
+  <md class="markdown-body" />
 </template>
 
 <script>
 import {defineComponent, ref, watch} from 'vue'
-import md from '../ioc-icon.md'
+import md from './ioc-icon.md'
 // import props from '@/examples/common/props'
 // import IocDivider from "@/components/divider";
 import Clipboard from "clipboard";
@@ -38,7 +36,7 @@ export default defineComponent({
     const iocIconList = ref([])
     const showCode = ref(-1)
     const getNameList = ()=>{
-      const moduleList = require.context('../../../assets/icons/', false, /\.svg$/)
+      const moduleList = require.context('../../assets/icons/', false, /\.svg$/)
       const requireAll = requireContext => requireContext.keys().map(requireContext)
       let iconList = requireAll(moduleList)
       const iconNameList = iconList.map(module => {

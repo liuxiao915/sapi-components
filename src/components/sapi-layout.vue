@@ -3,12 +3,14 @@
     <header>
       <slot name="header">组件库</slot>
     </header>
-    <section class="left">
-      <div class="menu-item" v-for="(item, index) in data" :key="index" @click="selectTabs(item, index)">{{ item.label }}</div>
-    </section>
-    <section class="right">
-      <slot name="right"></slot>
-    </section>
+    <main>
+      <section class="left">
+        <div class="menu-item" v-for="(item, index) in data" :key="index" @click="selectTabs(item, index)">{{ item.label }}</div>
+      </section>
+      <section class="right">
+        <slot name="right"></slot>
+      </section>
+    </main>
   </div>
 </template>
 <script>
@@ -39,15 +41,20 @@ export default {
     line-height: 50px;
     border-bottom: 1px solid #000;
   }
+  main {
+    display: flex;
+  }
   .left {
     width: 200px;
     height: 100%;
     border-right: 1px solid #000;
     overflow-y: auto;
-    display: inline-block;
     .menu-item {
       cursor: pointer;
     }
+  }
+  .right {
+    flex: 1;
   }
 }
 </style>

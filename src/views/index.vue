@@ -1,6 +1,13 @@
 <template>
-  <sapi-layout :data="state.menuData" @selectTabs="selectTabs">
+  <sapi-layout :data="state.menuData" @selectTabs="selectMenu">
     <template #right>
+      <div class="com-headder">
+        <div class="doc-tabs">
+          <div class="tabs-item" @click="changeTab('demo')">实例</div>
+          <div class="tabs-item" @click="changeTab('api')">API</div>
+          <div class="tabs-item" @click="changeTab('design')">指南</div>
+        </div>
+      </div>
       <router-view></router-view>
     </template>
   </sapi-layout>
@@ -27,25 +34,33 @@ export default {
   // },
   setup() {
     const router = useRouter()
+    const activeMenu = ref('')
     const activeTab = ref('')
     const state = reactive({
       menuData: [
+        {path: '/a', name: 'Avue', label: 'aaaa'},
+        {path: '/b', name: 'b', label: 'bbbb'},
         {path: '/icon', name: 'icon', label: 'icon 图标'},
         {path: '/tree', name: 'tree', label: '树形'},
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
       ]
     })
-    const selectTabs = (item, index) => {
-      // activeTab.value = item.name
+    const selectMenu = (item, index) => {
+      activeMenu.value = item.name
       router.push({
         path: item.path,
         query: {}
       })
     }
+    const changeTab = (key) => {
+      activeTab.value = key
+    }
     return {
       state,
+      activeMenu,
       activeTab,
-      selectTabs
+      changeTab,
+      selectMenu
     }
   }
 }
