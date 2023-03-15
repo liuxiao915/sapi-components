@@ -1,12 +1,12 @@
 <template>
   <div style="display: flex;flex-wrap: wrap">
     <div v-for="(item,index) in iconNameList" :key="index" class="icons-view__wrapper" @mouseleave="focusOut" @mouseover="focus(index)">
-        <!-- <ioc-icon :name="item" style="fill: blue"></ioc-icon> -->
+        <sapi-icon :name="item" style="fill: blue"></sapi-icon>
         <p v-if="showCode !== index" style="margin-top: 12px">{{item}}</p>
         <div v-if="showCode === index" style="margin-top: 12px">
-          <!-- <ioc-icon :data-clipboard-text="item" class="file-copy"  name="file-copy" @click="copyCode('.file-copy')"/> -->
+          <sapi-icon :data-clipboard-text="item" class="file-copy"  name="file-copy" @click="copyCode('.file-copy')"/>
           <!-- <ioc-divider layout="vertical" /> -->
-          <!-- <ioc-icon :data-clipboard-text="iocIconList[index]" class="file-icon" name="file-icon" @click="copyCode('.file-icon')"/> -->
+          <sapi-icon :data-clipboard-text="iocIconList[index]" class="file-icon" name="file-icon" @click="copyCode('.file-icon')"/>
         </div>
     </div>
   </div>
