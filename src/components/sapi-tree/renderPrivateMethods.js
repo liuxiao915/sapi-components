@@ -199,8 +199,8 @@ renderModel.getTreeNode = function(target, className, reg) {
 		// isTreeNodeLabel = true;
 	}
 
-	// reg = reg || (new RegExp("(\\b)+" + className + "(?!(-|\w+))"));
-	reg = reg || (new RegExp("(\\b)+" + className));
+	reg = reg || (new RegExp("(\\b)+" + className + "(?!(-|\w+))"));
+	// reg = reg || (new RegExp("(\\b)+" + className));
 
 	if(target.className.search(reg) > -1) {
 		return target;

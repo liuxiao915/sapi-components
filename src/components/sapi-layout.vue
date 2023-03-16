@@ -49,13 +49,13 @@ export default {
   main {
     display: flex;
     padding-top: 50px;
+    height: calc(100% - 50px);
   }
   .left {
     width: 200px;
     padding: 12px;
     border-right: 1px solid #d0d7de;
     overflow-y: auto;
-    height: 100%;
     .menu-item {
       cursor: pointer;
     }

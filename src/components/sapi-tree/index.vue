@@ -30,7 +30,9 @@ export default {
             type: Boolean, 
             default: false
         },
-        renderContent: Function, //渲染函数  这里有两种返回方式，第一种就是直接返回html字符串，另外一种是返回一个对象，比如{html:'<div></div>',vm:this}  这里vm需要返回的原因是：renderContent距离sapi-tree太远，难以定位，（假如renderContent定义跟sapi-tree引入不在同一个组件，必须使用该方式）
+        //渲染函数  这里有两种返回方式，第一种就是直接返回html字符串，另外一种是返回一个对象，比如{html:'<div></div>',vm:this}  
+        // 这里vm需要返回的原因是：renderContent距离sapi-tree太远，难以定位，（假如renderContent定义跟sapi-tree引入不在同一个组件，必须使用该方式）
+        renderContent: Function, 
         lazyLoad: Function, //按需加载调用此函数
         showTip: { type: Boolean, default: false }, // 鼠标经过时是否显示提示文字（为原生的提示）
         selectAfter: Function, //初始化选中之后的回调函数
@@ -60,8 +62,7 @@ export default {
     methods: {
         handlerClick(item, target) {
             //不使用emit的原因：这里需要返回值，如果使用emit的话，就返回不了值
-            //this.$emit("on-click", data);
-            console.log('this', this)
+            this.$emit("on-click", item);
             var func = this.$attrs["on-click"];
             if (typeof func === "function") {
                 return func.call(this.$parent, item, target);
@@ -72,15 +73,14 @@ export default {
         },
         addChild(item, callback) {
             if (typeof this.lazyLoad === "function") {
-                let _this = this;
-                this.lazyLoad(item, function(res) {
+                this.lazyLoad(item, (res) => {
                     if (!res) {
                         return;
                     }
-                    item[_this.props.children] = res;
+                    item[this.props.children] = res;
                     callback();
-                    _this.isAddChild = true;
-                    _this.$nextTick(function() {
+                    this.isAddChild = true;
+                    this.$nextTick(() => {
                         this.isAddChild = false;
                     });
                 });

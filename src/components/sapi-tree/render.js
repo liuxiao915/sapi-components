@@ -57,7 +57,6 @@ export default {
 						this.$_renderContentVm = res.vm;
 					}
 				}
-
 				var stitle = "";
 				if(!hasRender && showTip === true) {
 					stitle = labelText;
