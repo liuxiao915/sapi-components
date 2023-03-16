@@ -8,16 +8,6 @@ const routes = [
     component: () => import('@/views/index'),
 		children: [
 			{
-				path: '/a',
-				name: 'a',
-				component: () => import(/* webpackChunkName: "icon" */'@/views/a.vue')
-			},
-			{
-				path: '/b',
-				name: 'b',
-				component: () => import(/* webpackChunkName: "icon" */'@/views/b.vue')
-			},
-			{
 				path: '/icon',
 				name: 'icon',
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-icon/index.vue')

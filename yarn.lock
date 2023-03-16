@@ -7563,6 +7563,13 @@ qs@6.11.0:
   dependencies:
     side-channel "^1.0.4"
 
+qs@^6.11.1:
+  version "6.11.1"
+  resolved "http://10.206.64.198:4873/qs/-/qs-6.11.1.tgz#6c29dff97f0c0060765911ba65cbc9764186109f"
+  integrity sha512-0wsrzgTz/kAVIeuxSjnpGC56rzYtr6JT/2BwEvMaPhFIoYa1aGO8LbzuU1R0uUYQkLpWBTOj0l/CLAJB64J6nQ==
+  dependencies:
+    side-channel "^1.0.4"
+
 query-string@^4.3.2:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
@@ -8984,6 +8991,11 @@ watchpack@^2.4.0:
   dependencies:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
+
+watermark-dom@^2.3.0:
+  version "2.3.0"
+  resolved "http://10.206.64.198:4873/watermark-dom/-/watermark-dom-2.3.0.tgz#9b79c0f0f5bc6fe150524c9f996ab1eb0ff5137f"
+  integrity sha512-2++fJESs8ULlrOPHEJGi72UxcDmVTsJDZ3kMa5umU6IWc78A4g1kOAqh1k6FEQhrq9QpkV7wzuoUeMhvFlWGWg==
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"

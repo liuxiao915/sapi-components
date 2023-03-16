@@ -40,15 +40,22 @@ export default {
     font-size: 20px;
     line-height: 50px;
     border-bottom: 1px solid #d0d7de;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: #ffffff;
+    padding: 0 12px;
   }
   main {
     display: flex;
+    padding-top: 50px;
   }
   .left {
     width: 200px;
     padding: 12px;
     border-right: 1px solid #d0d7de;
     overflow-y: auto;
+    height: 100%;
     .menu-item {
       cursor: pointer;
     }

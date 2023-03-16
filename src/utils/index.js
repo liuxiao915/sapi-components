@@ -73,11 +73,12 @@ let getAppStoreKey = function (key) {
 
 const utils = {
     /**
-     * 获取应用本地存储的key的后缀
-     * @method getAppStoreKey
-     * @return {string}
+     * 显示错误消息，方便开发人员查找错误消息
+     * @method warn
+     * @param msg {string} 错误信息
+     * @param otherArgs {array} 调用方法参数
      */
-    appStoreKeySuffix,
+        warn: warn,
     /**
      * 返回判定基本数据类型的函数
      * @method isType
@@ -1065,13 +1066,6 @@ const utils = {
             return `${orgiUrl}${url.indexOf('?') > -1 ? '&' : '?'}_=${utils.guid(8)}`
         }
     },
-    /**
-     * 显示错误消息，方便开发人员查找错误消息
-     * @method warn
-     * @param msg {string} 错误信息
-     * @param otherArgs {array} 调用方法参数
-     */
-    warn: warn,
     /**
      * 字符串转换时间
      * @method parseDate

@@ -34,9 +34,11 @@
     "mars3d": "^3.4.26",
     "mars3d-heatmap": "^3.4.26",
     "mars3d-tdt": "^3.4.26",
+    "qs": "^6.11.1",
     "sass-resources-loader": "^2.2.5",
     "svg-sprite-loader": "^6.0.11",
-    "vue-markdown-loader": "^2.5.0"
+    "vue-markdown-loader": "^2.5.0",
+    "watermark-dom": "^2.3.0"
   },
   "eslintConfig": {
     "root": true,

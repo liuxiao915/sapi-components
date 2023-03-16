@@ -1,4 +1,4 @@
-import utils from '@/static/js/utils.js'
+import utils from '@/utils/index.js'
 import watermarkDom from 'watermark-dom'
 
 const watermark = {
@@ -66,7 +66,7 @@ const watermark = {
     }
 }
 // 解析内容
-function decodeContent (template) {
+export const decodeContent = (template) => {
     let content = ''
     if (template && typeof template === 'string') {
         let basicInfo = utils.clientStorage.get('basicInfo')
@@ -96,7 +96,7 @@ function decodeContent (template) {
     return content
 }
 
-function loadWatermark () {
+export const loadWatermark = () => {
     // 启用水印
     if (Vue.$appConfig && Vue.$appConfig.watermark && Vue.$appConfig.watermark.isUse) {
         return {
@@ -113,9 +113,4 @@ function loadWatermark () {
         }
     }
     return {}
-}
-
-export {
-    loadWatermark,
-    watermark
 }

@@ -1,19 +1,18 @@
 <template>
   <sapi-layout :data="state.menuData" @selectTabs="selectMenu">
     <template #right>
-      <div class="com-headder">
-        <div class="doc-tabs">
-          <div class="tabs-item" @click="changeTab('demo')">实例</div>
-          <div class="tabs-item" @click="changeTab('api')">API</div>
-          <div class="tabs-item" @click="changeTab('design')">指南</div>
-        </div>
+      <div class="sapi-tabs">
+        <div :class="['sapi-tabs-item', activeTab === index ? 'active' : '']" v-for="(item, index) in state.tabsData" :key="index" @click="changeTab(item)">{{ item.label }}</div>
       </div>
-      <router-view></router-view>
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </template>
   </sapi-layout>
 </template>
 <script>
-// import sapiIcon from '@/examples/sapi-icon/usage/index.vue'
 import { useRouter } from 'vue-router'
 import { ref, reactive } from 'vue'
 // const context = require.context('../examples/', true, /\/index.vue$/)
@@ -29,20 +28,20 @@ export default {
       default: () => []
     }
   },
-  // components: {
-  //   sapiIcon
-  // },
   setup() {
     const router = useRouter()
     const activeMenu = ref('')
-    const activeTab = ref('')
+    const activeTab = ref(0)
     const state = reactive({
       menuData: [
-        {path: '/a', name: 'Avue', label: 'aaaa'},
-        {path: '/b', name: 'b', label: 'bbbb'},
         {path: '/icon', name: 'icon', label: 'icon 图标'},
         {path: '/tree', name: 'tree', label: '树形'},
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
+      ],
+      tabsData: [
+        {label: '实例', value: 0},
+        {label: 'API', value: 1},
+        {label: '指南', value: 2},
       ]
     })
     const selectMenu = (item, index) => {
@@ -52,8 +51,8 @@ export default {
         query: {}
       })
     }
-    const changeTab = (key) => {
-      activeTab.value = key
+    const changeTab = (item) => {
+      activeTab.value = item.value
     }
     return {
       state,
@@ -66,10 +65,22 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-header {
+.sapi-tabs {
+  display: flex;
   height: 50px;
-  font-size: 20px;
-  line-height: 50px;
-  border-bottom: 1px solid #000;
+  margin-bottom: 12px;
+  .sapi-tabs-item {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #327ab4;
+    border-radius: 5px;
+    margin-right: 10px;
+    &.active {
+      color: #3636dd;
+    }
+  }
 }
 </style>
