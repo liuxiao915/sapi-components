@@ -12,7 +12,7 @@ export default {
   name: 'sapiMars3d',
   setup() {
     onMounted(() => {
-      const map = new mars3d.Map("mars3dContainer", {
+      const option = {
         scene: {
           center: { lat: 30.054604, lng: 108.885436, alt: 17036414, heading: 0, pitch: -90 },
           showSun: true,
@@ -55,8 +55,24 @@ export default {
             show: true
           }
         ]
-      })
+      }
+      // const map = new mars3d.Map("mars3dContainer", option)
+      initMap()
     })
+
+
+    const initMap = () => {
+      mars3d.Util.fetchJson({ url: "config/mars3d-config.json" }).then(function (json) {
+        console.log("读取 config.json 配置文件完成", json) // 打印测试信息
+        // 创建三维地球场景
+        const mapOptions = json.map3d
+        let map = new mars3d.Map("mars3dContainer", mapOptions)
+        // 打印测试信息
+        console.log("mars3d的Map主对象构造完成", map)
+        console.log("其中Cesium原生的Cesium.Viewer为", map.viewer)
+      })
+    }
+    
     return {}
   }
 }
