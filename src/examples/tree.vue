@@ -92,7 +92,6 @@ export default {
                 nodeKey: "MenuId"
             },
             datas: [],
-            url: "/api/plat/structures/brief",
             params: {
                 withDept: true,
                 nodeIdKey: "parentStruId"
