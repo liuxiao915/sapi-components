@@ -2,7 +2,7 @@
     <div class="chart-content-box"></div>
 </template>
 <script>
-import echarts from 'echarts'
+import * as echarts from 'echarts'
 import ResizeObserver from 'resize-observer-polyfill'
 import merge from 'lodash.merge'
 
