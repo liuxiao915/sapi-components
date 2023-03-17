@@ -1,0 +1,202 @@
+/* 参照element-ui添加全局基础变量 add by zhangmq 2019-03-29
+----------------------------- */
+@--all-transition: all .3s cubic-bezier(.645,.045,.355,1) ;
+@--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) ;
+@--fade-linear-transition: opacity 200ms linear ;
+@--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) ;
+@--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) ;
+@--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) ;
+
+/* Color
+-------------------------- */
+/// color|1|BrandColor|0
+// @--color-primary: #458aff ;
+@--color-primary: #ED6F22;
+@--color-primary-rgb: 237,111,34;
+/// color|1|BackgroundColor|4
+@--color-white: #FFFFFF ;
+/// color|1|BackgroundColor|4
+@--color-black: #000000 ;
+@--color-primary-light-1: mix(@--color-white, @--color-primary, 10%) ; /* 53a8ff */
+@--color-primary-light-2: mix(@--color-white, @--color-primary, 20%) ; /* 66b1ff */
+@--color-primary-light-3: mix(@--color-white, @--color-primary, 30%) ; /* 79bbff */
+@--color-primary-light-4: mix(@--color-white, @--color-primary, 40%) ; /* 8cc5ff */
+@--color-primary-light-5: mix(@--color-white, @--color-primary, 50%) ; /* a0cfff */
+@--color-primary-light-6: mix(@--color-white, @--color-primary, 60%) ; /* b3d8ff */
+@--color-primary-light-7: mix(@--color-white, @--color-primary, 70%) ; /* c6e2ff */
+@--color-primary-light-8: mix(@--color-white, @--color-primary, 80%) ; /* d9ecff */
+@--color-primary-light-9: mix(@--color-white, @--color-primary, 90%) ; /* ecf5ff */
+/// color|1|SecondaryColor|1
+@--color-success: #46c620 ;
+/// color|1|SecondaryColor|1
+@--color-warning: #ff8330 ;
+/// color|1|SecondaryColor|1
+@--color-danger: #ff5651 ;
+/// color|1|SecondaryColor|1
+@--color-info: #3acaf0 ;
+
+@--color-success-light: mix(@--color-white, @--color-success, 80%) ;
+@--color-warning-light: mix(@--color-white, @--color-warning, 80%) ;
+@--color-danger-light: mix(@--color-white, @--color-danger, 80%) ;
+@--color-info-light: mix(@--color-white, @--color-info, 80%) ;
+
+@--color-success-lighter: mix(@--color-white, @--color-success, 90%) ;
+@--color-warning-lighter: mix(@--color-white, @--color-warning, 90%) ;
+@--color-danger-lighter: mix(@--color-white, @--color-danger, 90%) ;
+@--color-info-lighter: mix(@--color-white, @--color-info, 90%) ;
+/// color|1|FontColor|2
+@--color-text-primary: #303133 ;
+/// color|1|FontColor|2
+@--color-text-regular: #303133 ;
+/// color|1|FontColor|2
+@--color-text-secondary: #909399 ;
+/// color|1|FontColor|2
+@--color-text-placeholder: #C0C4CC ;
+/// color|1|BorderColor|3
+@--border-color-base: #DCDFE6 ;
+/// color|1|BorderColor|3
+@--border-color-light: #E4E7ED ;
+/// color|1|BorderColor|3
+@--border-color-lighter: #EBEEF5 ;
+/// color|1|BorderColor|3
+@--border-color-extra-light: #F2F6FC ;
+
+// Background
+/// color|1|BackgroundColor|4
+@--background-color-base: #f5f7fa ;
+@--body-background-color: #eef0f4;
+@--background-color-apcity: rgba(0, 0, 0, 0.1);
+@--readonly-background-color: rgba(239, 242, 247, 0.5);
+
+/* Link
+-------------------------- */
+@--link-color: @--color-primary-light-2 ;
+@--link-hover-color: @--color-primary ;
+
+/* Border
+-------------------------- */
+@--border-width-base: 1px ;
+@--border-style-base: solid ;
+@--border-color-hover: @--color-text-placeholder ;
+@--border-base: @--border-width-base @--border-style-base @--border-color-base ;
+/// borderRadius|1|Radius|0
+@--border-radius-base: 4px ;
+/// borderRadius|1|Radius|0
+@--border-radius-small: 2px ;
+/// borderRadius|1|Radius|0
+@--border-radius-circle: 100% ;
+
+// Box-shadow
+/// boxShadow|1|Shadow|1
+@--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) ;
+// boxShadow|1|Shadow|1
+@--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) ;
+/// boxShadow|1|Shadow|1
+@--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) ;
+
+/* Fill
+-------------------------- */
+@--fill-base: @--color-white ;
+
+/* Typography
+-------------------------- */
+@--font-family-base: "微软雅黑", "Microsoft YaHei", "宋体", 'Song', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+// @--font-path: '~element-ui/lib/theme-chalk/fonts' ;
+/// fontSize|1|FontSize|0
+@--font-size-extra-large: 24px ;
+/// fontSize|1|FontSize|0
+@--font-size-large: 20px ;
+/// fontSize|1|FontSize|0
+@--font-size-medium: 16px ;
+/// fontSize|1|FontSize|0
+@--font-size-base: 14px ;
+/// fontSize|1|FontSize|0
+@--font-size-small: 13px ;
+/// fontSize|1|FontSize|0
+@--font-size-extra-small: 12px ;
+/// fontWeight|1|FontWeight|1
+@--font-weight-primary: 500 ;
+/// fontWeight|1|FontWeight|1
+@--font-weight-secondary: 100 ;
+/// fontLineHeight|1|LineHeight|2
+@--font-line-height-primary: 24px ;
+/// fontLineHeight|1|LineHeight|2
+@--font-line-height-secondary: 16px ;
+@--font-color-disabled-base: #bbb ;
+/* Size
+-------------------------- */
+@--size-base: 14px ;
+
+/* z-index
+-------------------------- */
+@--index-normal: 1 ;
+@--index-top: 1000 ;
+@--index-popper: 2000 ;
+
+/* Disable base
+-------------------------- */
+@--disabled-fill-base: @--background-color-base ;
+@--disabled-color-base: @--color-text-placeholder ;
+@--disabled-border-base: @--border-color-light ;
+
+// 输入框的默认高度
+@--input-height: 32px;
+// 输入框在表格内的高度
+@--sapi-form-table-input-height: @--input-height - 2px;
+@--list-body-padding: 30px;
+@--list-body-min-width: auto;
+@--list-body-max-width: auto;
+@--list-body-width: auto;
+@--panel-body-width: 1000px;
+// 主题路径
+@--theme-path: '/themes/default';
+
+#main-box-shadow() {
+    box-shadow: 0px 0px 6px #ccc;
+}
+
+#arrow-fn() {
+    .up-arrow,
+    .down-arrow {
+        position: absolute;
+        z-index: 1;
+        left: 23px;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 8px;
+        border-color: transparent;
+        border-style: solid;
+        &:after {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            margin-left: -8px;
+            content: " ";
+            border: 8px;
+            border-color: transparent;
+            border-style: solid;
+        }
+    }
+    .up-arrow {
+        top: -8px;
+        border-top-width: 0;
+        border-bottom-color: rgba(225, 225, 225, 0.7);
+        &:after {
+            top: 1px;
+            border-bottom-color: #fff;
+            border-top-width: 0;
+        }
+    }
+    .down-arrow {
+        bottom: -8px;
+        border-bottom-width: 0;
+        border-top-color: rgba(225, 225, 225, 0.7);
+        &:after {
+            bottom: 1px;
+            border-top-color: #fff;
+            border-bottom-width: 0;
+        }
+    }
+}
