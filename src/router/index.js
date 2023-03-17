@@ -21,7 +21,12 @@ const routes = [
 				path: '/mars3d',
 				name: 'mars3d',
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/mars3d.vue')
-			}
+			},
+			{
+				path: '/echarts',
+				name: 'echarts',
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/echarts.vue')
+			},
 		]
   },
 ]

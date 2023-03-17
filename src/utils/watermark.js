@@ -69,7 +69,7 @@ const watermark = {
 export const decodeContent = (template) => {
     let content = ''
     if (template && typeof template === 'string') {
-        let basicInfo = utils.clientStorage.get('basicInfo')
+        let basicInfo = utils.localStorage.get('basicInfo')
         if (basicInfo) {
             basicInfo = JSON.parse(basicInfo)
         }

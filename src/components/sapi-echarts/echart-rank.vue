@@ -1,5 +1,5 @@
 <template>
-    <div class="online-chart-rank">
+    <!-- <div class="online-chart-rank">
         <simpleBar v-if="data.length" class="online-chart-rank-scrollbar">
             <ul class="online-chart-rank-content">
                 <li v-for="(item, idx) in data" :key="idx">
@@ -11,15 +11,14 @@
                 </li>
             </ul>
         </simpleBar>
-    </div>
+    </div> -->
 </template>
 
 <script>
-import SimpleBar from 'simplebar-vue'
 
 export default {
+    name: 'echart-rank',
     components: {
-        SimpleBar
     },
     props: {
         data: {

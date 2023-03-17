@@ -5,9 +5,14 @@
  */
 import axios from 'axios'
 import qs from 'qs'
-import config from '../config.js'
-import { mock, warn } from './env.js'
+// import config from '../config.js'
 
+var warn = function () {}
+if (process.env.NODE_ENV !== 'production' || process.env.BUILD_MOCK === 'true') {
+    warn = function (msg, otherArgs) {
+        !utils.isUndefined(console) && console.error(msg, otherArgs)
+    }
+}
 const Type = {}
 // 默认工作日
 const workDays = [1, 2, 3, 4, 5]
@@ -26,33 +31,10 @@ var appDir = ''
 if (process.env.NODE_ENV === 'production') {
     appDir = process.env.APP_DIR ? '/' + process.env.APP_DIR : ''
 }
-// 获取app存储的key的后缀
-let appStoreKeySuffix = function () {
-    // add by zhangmq 2020-10-19 添加cookie的key的后缀
-    let isConst = config.cookieKeyType === 'const'
-    let suffix
-    if (isConst) {
-        suffix = config.cookieKeySuffix || ''
-    } else {
-        // 应用的端口号
-        suffix = window.location.port
-    }
-
-    if (suffix) {
-        appStoreKeySuffix = function () {
-            return `_${suffix}`
-        }
-    } else {
-        appStoreKeySuffix = function () {
-            return ''
-        }
-    }
-    return appStoreKeySuffix()
-}
 // 获取app存储的key
 let getAppStoreKey = function (key) {
     // 应用的端口号
-    const suffix = appStoreKeySuffix()
+    const suffix = null
     if (suffix) {
         getAppStoreKey = function (key) {
             if (typeof key !== 'string') {
@@ -1459,9 +1441,9 @@ const utils = {
         var defaultOpts = {
             method: 'get',
             url: '',
-            baseURL: config.baseUrl,
+            baseURL: '',
             withCredentials: false,
-            timeout: config.timeout || 20000,
+            timeout: 20000,
             headers: { 'content-type': 'application/json' },
             data: {},
             params: {},
@@ -1522,7 +1504,7 @@ const utils = {
                                 delete options['host']
                             }
                             break
-                        case 'timeout': defaultOpts['timeout'] = options[propMap[prop]] || config.timeout || 20000; break;
+                        case 'timeout': defaultOpts['timeout'] = options[propMap[prop]] || 20000; break;
                         default:
                             defaultOpts[prop] = options[propMap[prop]]
                     }
@@ -1536,9 +1518,6 @@ const utils = {
                 options.beforeSend.call(context, options)
             }
             mapDefaultOpts()
-
-            // mock处理
-            mock(defaultOpts, options)
 
             // 处理表单数据，data为js对象则stringify处理
             if (defaultOpts['headers']['content-type'] === 'application/x-www-form-urlencoded' &&
@@ -1888,43 +1867,6 @@ const utils = {
         }
         return false
     },
-    parseAppUrl (url) {
-        // appCode参数已被在线表单占用
-        let appCode = utils.getQueryString('toAppCode', url)
-        // 不是同应用
-        if (appCode && config.client !== appCode) {
-            appCode = '/' + appCode
-        }
-
-        appCode = appCode || appDir
-        let siteUrl = ''
-        if (config.flowUrl && appCode === 'flow') {
-            siteUrl = /\/$/.test(config.flowUrl || '') ? config.flowUrl : config.flowUrl + '/'
-        }
-
-        return (utils.isSiteUrl(url) ? siteUrl : appCode) + (/\?_=/.test(url) ? url : utils.addRandomQuery(url))
-    },
-    /**
-     * 站点内页面跳转、支持虚拟内跳转，所有跳转内部跳转统一用这个方法，为了支持虚拟目录部署（站点二级目录）
-     * @param {string} url 跳转地址，仍然是以‘/'开头的地址
-     */
-    innerRedirect (url) {
-        window.location.href = utils.parseAppUrl(url)
-    },
-    /**
-     * 站点内跳转地址，不留历史记录
-     * @param {string} url 当前替换地址
-     */
-    innerReplace (url) {
-        window.location.replace(utils.parseAppUrl(url))
-    },
-    /**
-     * 弹出运用内页面，支持虚拟目录
-     * @param {string} url 打开页面url
-     */
-    innerOpen (url) {
-        window.open(utils.parseAppUrl(url))
-    },
     /**
      * {string} 获取虚拟目录名称
      */
@@ -1932,6 +1874,5 @@ const utils = {
         return process.env.APP_DIR || ''
     }
 }
-utils.clientStorage = config.useMultipleBrowserTab ? utils.localStorage : utils.sessionStorage
 
 export default utils

@@ -37,6 +37,7 @@ export default {
         {path: '/icon', name: 'icon', label: 'icon 图标'},
         {path: '/tree', name: 'tree', label: '树形'},
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
+        {path: '/echarts', name: 'echarts', label: 'echarts图表'},
       ],
       tabsData: [
         {label: '实例', value: 0},
