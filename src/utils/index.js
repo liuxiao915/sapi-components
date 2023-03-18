@@ -26,11 +26,6 @@ function isType (type) {
     return Type[type]
 }
 
-var appDir = ''
-// 打包
-if (process.env.NODE_ENV === 'production') {
-    appDir = process.env.APP_DIR ? '/' + process.env.APP_DIR : ''
-}
 // 获取app存储的key
 let getAppStoreKey = function (key) {
     // 应用的端口号
@@ -53,7 +48,7 @@ let getAppStoreKey = function (key) {
     return getAppStoreKey(key)
 }
 
-const utils = {
+export const utils = {
     /**
      * 显示错误消息，方便开发人员查找错误消息
      * @method warn
@@ -1866,13 +1861,5 @@ const utils = {
             return true
         }
         return false
-    },
-    /**
-     * {string} 获取虚拟目录名称
-     */
-    get appDir () {
-        return process.env.APP_DIR || ''
     }
 }
-
-export default utils

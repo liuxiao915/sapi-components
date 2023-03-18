@@ -120,7 +120,7 @@ export default {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100%;
-    /deep/ .simplebar-scrollbar:before {
+    :deep(.simplebar-scrollbar:before) {
         background-color: rgba(0, 0, 0, 0.2);
     }
 }

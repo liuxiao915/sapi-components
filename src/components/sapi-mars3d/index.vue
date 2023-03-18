@@ -5,8 +5,8 @@
 
 <script>
 //导入mars3d主库
-import "mars3d/dist/mars3d.css";
-import * as mars3d from "mars3d";
+// import "mars3d/dist/mars3d.css";
+// import * as mars3d from "mars3d";
 import { onMounted, onBeforeUnmount } from 'vue'
 export default {
   name: 'sapiMars3d',
@@ -29,7 +29,7 @@ export default {
       mars3d.Util.fetchJson({ url: "config/mars3d-config.json" }).then(function (json) {
         // 创建三维地球场景
         const mapOptions = json.map3d
-        map = new mars3d.Map("mars3dContainer", mapOptions)
+        map = new mars3d.Map(`mars3dContainer${props.mapKey}`, mapOptions)
       })
     }
     const destroyMap = () => {
@@ -42,7 +42,7 @@ export default {
     }
     onMounted(() => {
       // 或者直接new mars3d.Map("mars3dContainer", {...一些选项})
-      initMap()
+      // initMap()
     })
     onBeforeUnmount(() => {
       destroyMap()

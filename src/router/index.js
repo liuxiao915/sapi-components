@@ -27,6 +27,11 @@ const routes = [
 				name: 'echarts',
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/echarts.vue')
 			},
+			{
+				path: '/table',
+				name: 'table',
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/table.vue')
+			},
 		]
   },
 ]
