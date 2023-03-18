@@ -1,7 +1,7 @@
 /**
  * 常用公用方法
- * @author zhangmq
- * @date 2017-07-17
+ * @author liux
+ * @date 2023-03-18
  */
 import axios from 'axios'
 import qs from 'qs'

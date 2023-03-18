@@ -2,7 +2,11 @@
   <div class="sapi-table">
     <sapi-table :data="state.tableData" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}">
       <sapi-table-column header-align="center" align="center" width="110px" label="区域" prop="name" fixed></sapi-table-column>
-      <sapi-table-column header-align="center" align="center" width="60px" label="开发成本" prop="exploitCost"></sapi-table-column>
+      <sapi-table-column header-align="center" align="center" width="60px" label="开发成本" prop="exploitCost">
+        <template #default="scope">
+                <span>{{ scope.row.exploitCost | $utils.toThousands(2) }}</span>
+            </template>
+      </sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="管理费用" prop="managementCost"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="营销费用" prop="marketingCost"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="税金" prop="taxes"></sapi-table-column>
@@ -12,7 +16,9 @@
 </template>
 <script>
 import { reactive, getCurrentInstance } from 'vue'
+import  sapiTable from '@/components/sapi-table/index.js'
 export default {
+  components: {sapiTable},
   setup() {
     const { proxy } = getCurrentInstance()
     const state = reactive({

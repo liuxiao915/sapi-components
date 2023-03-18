@@ -32,7 +32,7 @@
 // import vuescroll from 'vuescroll';
 
 export default {
-    name: 'sapiTable',
+    name: 'hTable',
     components: {
         // vuescroll
     },
@@ -141,7 +141,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .table-cell.table-header-cell {
         padding: 0 5px;
         box-sizing: border-box;

@@ -1,9 +1,11 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+import App from '@/App.vue'
+const app = createApp(App)
 import sapiTableColumn from './table-column.js'
 import hTable from './table.vue'
 import tableColumn from './table-column.vue'
 import tableHeadColumn from './table-head-column.vue'
-Vue.component('sapi-table-column', sapiTableColumn)
+app.component('sapi-table-column', sapiTableColumn)
 const getElParentNode = function(el, parentTagName) {
     if (el.tagName.toLowerCase() === parentTagName.toLowerCase()) {
         return el;
@@ -105,6 +107,7 @@ export default {
     },
     render(h) {
         const $slots = this.$slots.default;
+        console.log('slots', $slots)
         const columns = $slots.filter(slot => slot.componentOptions && slot.componentOptions.tag === 'sapi-table-column');
         const columnComponentProps = columns.map(column => column.componentOptions.propsData);
         const _this = this

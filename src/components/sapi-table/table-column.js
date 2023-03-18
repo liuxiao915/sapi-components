@@ -1,5 +1,6 @@
 export default {
     template: `<div><slot></slot></div>`,
+    name: 'sapiTableColumn',
     props: {
         prop: {
             type: String
