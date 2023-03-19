@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="8px" viewBox="0 0 11 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- <title>下降</title> -->
+    <g id="01-经济概览" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-01-经济概览" transform="translate(-450.000000, -780.000000)" fill="#1E9B1C">
+            <g id="编组-28" transform="translate(60.000000, 642.000000)">
+                <g id="编组-31" transform="translate(24.000000, 77.000000)">
+                    <g id="编组-3" transform="translate(103.000000, 16.000000)">
+                        <g id="Triangle" transform="translate(263.000000, 45.000000)">
+                            <polygon transform="translate(5.500000, 4.000000) rotate(180.000000) translate(-5.500000, -4.000000) " points="5.5 0 11 8 5.52271835 6.66666667 0 8"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

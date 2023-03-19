@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>16px/面性/通用/icon-warning-filling</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-261.000000, -1922.000000)">
+            <g id="编组-10" transform="translate(60.000000, 1881.999991)">
+                <g id="State" transform="translate(139.000000, 0.000000)">
+                    <g id="16px/面性/通用/icon-warning-filling" transform="translate(70.000000, 48.000009) scale(-1, 1) rotate(-90.000000) translate(-70.000000, -48.000009) translate(62.000000, 40.000009)">
+                        <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="1.75798048e-13" width="16" height="16"></rect>
+                        <g transform="translate(0.000000, 0.000000)" fill="#333333" fill-rule="nonzero" id="形状结合">
+                            <path d="M8,-1.03089976e-13 C12.4114286,-1.03089976e-13 16,3.57714286 16,8 C16,12.4228571 12.4228571,16 8,16 C3.57714286,16 0,12.4228571 0,8 C0,3.57714286 3.57714286,-1.03089976e-13 8,-1.03089976e-13 Z M4.5,7 C3.95,7 3.5,7.45 3.5,8 C3.5,8.55 3.95,9 4.5,9 C5.05,9 5.5,8.55 5.5,8 C5.5,7.45 5.05,7 4.5,7 Z M12,7.29999998 L7,7.29999998 L6.90501415,7.30639015 C6.56334362,7.35274175 6.3,7.64561726 6.3,7.99999998 C6.3,8.3865993 6.61340068,8.69999998 7,8.69999998 L7,8.69999998 L12,8.69999998 L12.0949859,8.6936098 C12.4366564,8.64725821 12.7,8.35438269 12.7,7.99999998 C12.7,7.61340065 12.3865993,7.29999998 12,7.29999998 L12,7.29999998 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

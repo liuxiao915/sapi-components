@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="57px" viewBox="0 0 65 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-chushenglv</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0B8EE3" stop-opacity="0.304933348" offset="0%"></stop>
+            <stop stop-color="#0AE4FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="88.3410397%" y1="47.1812775%" x2="47.6690531%" y2="53.8805136%" id="linearGradient-2">
+            <stop stop-color="#00E3FF" offset="0%"></stop>
+            <stop stop-color="#003CFF" stop-opacity="0.198369565" offset="39.3773916%"></stop>
+            <stop stop-color="#00B5FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#00A1FF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#00CFFF" stop-opacity="0.699464598" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M65,0 L55,32 L54.9506638,32.0006546 C54.1778249,35.909361 44.4216986,39 32.5,39 C20.5783014,39 10.8221751,35.909361 10.0493362,32.0006546 L10,32 L0,0 L65,0 Z" id="path-5"></path>
+        <ellipse id="path-6" cx="32" cy="31" rx="15" ry="5"></ellipse>
+        <filter x="-16.7%" y="-50.0%" width="133.3%" height="200.0%" filterUnits="objectBoundingBox" id="filter-7">
+            <feGaussianBlur stdDeviation="5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0.816576087   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#0CA1FF" offset="0%"></stop>
+            <stop stop-color="#50CEFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-01卫生总览" transform="translate(-1493.000000, -634.000000)">
+            <g id="icon-chushenglv" transform="translate(1493.000000, 634.000000)">
+                <g id="编组-7备份-2" transform="translate(0.000000, 13.000000)">
+                    <ellipse id="椭圆形" stroke="url(#linearGradient-1)" opacity="0.58984375" cx="32" cy="33" rx="30" ry="10"></ellipse>
+                    <ellipse id="椭圆形" stroke="url(#linearGradient-2)" opacity="0.58984375" cx="32.5" cy="31.5" rx="22" ry="7"></ellipse>
+                    <g id="形状结合" opacity="0.58984375">
+                        <use fill="url(#linearGradient-3)" xlink:href="#path-5"></use>
+                        <use fill="url(#linearGradient-4)" style="mix-blend-mode: soft-light;" xlink:href="#path-5"></use>
+                    </g>
+                    <g id="椭圆形" fill="black" fill-opacity="1">
+                        <use filter="url(#filter-7)" xlink:href="#path-6"></use>
+                    </g>
+                </g>
+                <g id="出生日期" transform="translate(13.000000, 0.000000)" fill="url(#linearGradient-8)" fill-rule="nonzero">
+                    <path d="M33.2686363,0.873565953 C33.7862123,1.72236738 34.001869,3.33940602 33.7948386,4.90177609 C33.6021853,6.36344092 33.0702322,7.66397733 32.2593631,8.67102987 C33.8423891,10.6905835 34.9040093,13.0691716 35.3504421,15.596674 L35.9542808,15.596674 C38.1856085,15.596674 40,17.4093686 40,19.6421479 C40,21.87205 38.1856085,23.6876218 35.9571562,23.6876218 L34.648839,23.6876218 C33.6194007,26.5125098 31.801012,28.9822139 29.4098196,30.8031673 C26.6891137,32.8868809 23.3556778,34.0108896 19.9295522,33.9999205 C16.5034616,34.0106732 13.1700935,32.8866874 10.4492847,30.8031673 C8.05950204,28.9814745 6.24222273,26.5119219 5.21314068,23.6876218 L4.04284379,23.6876218 C1.81151607,23.6876218 0,21.8749272 0,19.6421479 C0,17.4093686 1.81151607,15.596674 4.04284379,15.596674 L4.51153763,15.596674 C5.11163614,12.1958952 6.82042307,9.08974806 9.37100137,6.76338464 C14.2063762,2.34958373 21.273775,1.40764518 27.0951046,4.40112712 C27.8312127,4.05585196 28.6104522,3.54657111 29.2372942,2.99125357 C30.1574294,2.17410237 30.3989648,1.56987085 30.3989648,1.36558305 C30.3989648,0.841915731 30.7008842,0.367162393 31.1753289,0.145610835 C31.7906693,-0.147873047 32.707929,-0.0414132072 33.2686363,0.87068866 L33.2686363,0.873565953 Z M13.6582561,15.5592692 C12.7885782,16.0228479 12.2407603,16.924107 12.2293615,17.9100578 C12.2179627,18.8960086 12.7447976,19.8097081 13.6035251,20.2932952 C14.4622525,20.7768823 15.5161809,20.7533799 16.3525268,20.231993 C17.5866742,19.4626123 17.9891807,17.8527754 17.2625084,16.5924941 C16.535836,15.3322127 14.9415896,14.8751928 13.6582561,15.5592692 L13.6582561,15.5592692 Z M25.1599454,15.1996076 C24.1758659,15.1674425 23.252465,15.6744251 22.7509113,16.5222599 C22.2493576,17.3700948 22.2493576,18.4240447 22.7509113,19.2718795 C23.252465,20.1197144 24.1758659,20.626697 25.1599454,20.5945319 C26.6144844,20.5469896 27.7690383,19.3533313 27.7690383,17.8970697 C27.7690383,16.4408082 26.6144844,15.2471499 25.1599454,15.1996076 L25.1599454,15.1996076 Z" id="形状"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

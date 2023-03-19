@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>16px/线性/通用/icon-fullscreen-expand</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-678.000000, -1366.000000)">
+            <g id="编组-8" transform="translate(60.000000, 1325.999991)">
+                <g id="State" transform="translate(556.000000, 0.000003)">
+                    <g id="16px/线性/通用/icon-fullscreen-expand" transform="translate(62.000000, 40.000000)">
+                        <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <g transform="translate(0.000000, 0.000006)" fill="#333333">
+                            <polygon id="直线-10" fill-rule="nonzero" points="1.37107766 2.32425532 2.36102715 1.33430582 6.03798241 5.01126109 5.04803292 6.00121058"></polygon>
+                            <polygon id="矩形" transform="translate(2.500000, 2.500000) rotate(-270.000000) translate(-2.500000, -2.500000) " points="2.27373675e-12 -2.27373675e-12 5 5 2.27373675e-12 5"></polygon>
+                            <polygon id="直线-10" fill-rule="nonzero" transform="translate(12.339170, 3.667758) scale(-1, 1) translate(-12.339170, -3.667758) " points="10.9956667 1.33430582 14.672622 5.01126109 13.6826725 6.00121058 10.0057172 2.32425532"></polygon>
+                            <polygon id="直线-10" fill-rule="nonzero" transform="translate(3.704530, 12.343500) scale(1, -1) translate(-3.704530, -12.343500) " points="1.37107766 10.999997 2.36102715 10.0100475 6.03798241 13.6870028 5.04803292 14.6769522"></polygon>
+                            <polygon id="直线-10" fill-rule="nonzero" transform="translate(12.339170, 12.343500) scale(-1, -1) translate(-12.339170, -12.343500) " points="10.9956667 10.0100475 14.672622 13.6870028 13.6826725 14.6769522 10.0057172 10.999997"></polygon>
+                            <polygon id="矩形" transform="translate(13.500000, 2.500000) scale(-1, 1) rotate(-270.000000) translate(-13.500000, -2.500000) " points="11 -2.27373675e-12 16 5 11 5"></polygon>
+                            <polygon id="矩形" transform="translate(2.500000, 13.500000) scale(1, -1) rotate(-270.000000) translate(-2.500000, -13.500000) " points="2.27373675e-12 11 5 16 2.27373675e-12 16"></polygon>
+                            <polygon id="矩形" transform="translate(13.500000, 13.500000) scale(-1, -1) rotate(-270.000000) translate(-13.500000, -13.500000) " points="11 11 16 16 11 16"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

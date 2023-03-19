@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>16px/线性/通用/icon-fullscreen-shrink</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-817.000000, -1366.000000)">
+            <g id="编组-8" transform="translate(60.000000, 1325.999991)">
+                <g id="State" transform="translate(695.000000, 0.000006)">
+                    <g id="16px/线性/通用/icon-fullscreen-shrink" transform="translate(62.000000, 40.000003)">
+                        <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <g id="16px/线性/通用/icon-fullscreen" transform="translate(0.995667, 1.000003)" fill="#333333">
+                            <polygon id="直线-10" fill-rule="nonzero" points="11.3653604 10.3343088 15.0423157 14.0112641 14.0523662 15.0012136 10.3754109 11.3242583"></polygon>
+                            <polygon id="矩形" transform="translate(11.504333, 11.499997) rotate(-270.000000) translate(-11.504333, -11.499997) " points="9.00433324 8.99999696 14.0043332 13.9999969 9.00433324 13.9999969"></polygon>
+                            <polygon id="直线-10" fill-rule="nonzero" transform="translate(1.343503, 12.667761) scale(-1, 1) translate(-1.343503, -12.667761) " points="-0.989949494 11.3242583 1.85522941e-13 10.3343088 3.67695526 14.0112641 2.68700577 15.0012136"></polygon>
+                            <polygon id="直线-10" fill-rule="nonzero" transform="translate(12.708863, 1.343503) scale(1, -1) translate(-12.708863, -1.343503) " points="10.3754109 4.17305479e-14 11.3653604 -0.989949494 15.0423157 2.68700577 14.0523662 3.67695526"></polygon>
+                            <polygon id="直线-10" fill-rule="nonzero" transform="translate(1.343503, 1.343503) scale(-1, -1) translate(-1.343503, -1.343503) " points="-0.989949494 9.5122525e-13 1.85670984e-13 -0.989949494 3.67695526 2.68700577 2.68700577 3.67695526"></polygon>
+                            <polygon id="矩形" transform="translate(2.506500, 11.499997) scale(-1, 1) rotate(-270.000000) translate(-2.506500, -11.499997) " points="0.00649986277 8.99783034 5.00649986 14.0021636 0.00649986277 14.0021636"></polygon>
+                            <polygon id="矩形" transform="translate(11.504333, 2.500003) scale(1, -1) rotate(-270.000000) translate(-11.504333, -2.500003) " points="9.00433324 3.01608633e-06 14.0043332 5.00000299 9.00433324 5.00000299"></polygon>
+                            <polygon id="矩形" transform="translate(2.502167, 2.500003) scale(-1, -1) rotate(-270.000000) translate(-2.502167, -2.500003) " points="0.00216663185 -0.00216361577 5.00216965 5.00216965 0.00216663185 5.00216965"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

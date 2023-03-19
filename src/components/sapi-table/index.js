@@ -99,9 +99,7 @@ export default {
         }
     },
     render() {
-        const $slots = this.$slots.default;
-        console.log(this.$slots)
-        const columns = $slots.filter(slot => {
+        const columns = this.$slots.default.filter(slot => {
             return slot.componentOptions && slot.componentOptions.tag === 'sapi-table-column'
         });
         const columnComponentProps = columns.map(column => column.componentOptions.propsData);

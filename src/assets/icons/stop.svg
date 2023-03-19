@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>16px/线性/通用/icon-stop</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-1234.000000, -810.000000)">
+            <g id="编组-5" transform="translate(60.000000, 769.999991)">
+                <g id="State" transform="translate(1112.000000, 0.000006)">
+                    <g id="16px/线性/通用/icon-stop" transform="translate(62.000000, 40.000000)">
+                        <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <g fill="#333333" fill-rule="nonzero">
+                            <path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M8,1.4 C4.35492065,1.4 1.4,4.35492065 1.4,8 C1.4,11.6450793 4.35492065,14.6 8,14.6 C11.6450793,14.6 14.6,11.6450793 14.6,8 C14.6,4.35492065 11.6450793,1.4 8,1.4 Z" id="椭圆形"></path>
+                            <polygon id="矩形" transform="translate(8.053553, 7.853553) rotate(-45.000000) translate(-8.053553, -7.853553) " points="7.35355339 0.853553391 8.75355339 0.853553391 8.75355339 14.8535534 7.35355339 14.8535534"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

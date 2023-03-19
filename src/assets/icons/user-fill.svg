@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>16px/面性/通用/icon-user-fill</title>
+    <defs>
+        <circle id="path-1" cx="8" cy="8" r="8"></circle>
+        <circle id="path-3" cx="7.80000002" cy="7.80001213" r="7.3"></circle>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-399.000000, -1782.000000)">
+            <g id="编组-9" transform="translate(60.000000, 1742.999988)">
+                <g id="State" transform="translate(278.000000, 0.000000)">
+                    <g id="16px/面性/通用/icon-user-fill" transform="translate(62.000000, 40.000000)">
+                        <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="蒙版" fill="#333333" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="蒙版" stroke="#333333" stroke-width="1.4" fill-rule="nonzero" xlink:href="#path-3"></use>
+                            <g id="wode-2" mask="url(#mask-4)" fill="#FFFFFF" fill-rule="nonzero">
+                                <g transform="translate(0.666667, 3.333333)" id="形状">
+                                    <path d="M11.0806666,8.39241284 L3.58600008,8.39241284 C1.60559191,8.39241284 0,10.0409631 0,12.0743579 L0,14.527222 C0.00232761137,15.3396228 0.643168905,15.9976101 1.43440004,16 L13.2322666,16 C14.0234978,15.9976101 14.6643391,15.3396228 14.6666667,14.527222 L14.6666667,12.0743579 C14.6666667,10.0409631 13.061259,8.39241284 11.0806666,8.39241284 Z M7.33342547,7.99621588 C9.48391987,7.99621588 11.2273498,6.20613972 11.2273498,3.99810794 C11.2273498,1.79007616 9.48391988,0 7.33342547,0 C5.18293105,0 3.43950111,1.79007616 3.43950111,3.99810794 C3.43950111,6.20613972 5.18274679,7.99621588 7.33342547,7.99621588 Z M8.91285029,5.39482522 C8.91285029,5.90057235 8.20578541,6.31058133 7.33342547,6.31058133 C6.46106552,6.31058133 5.75381638,5.90057235 5.75381638,5.39482522 C5.75381638,4.88907809 8.91285029,4.88888888 8.91285029,5.39482522 Z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
