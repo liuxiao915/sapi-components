@@ -1,5 +1,10 @@
+<template>
+    <div>
+        <slot></slot>
+    </div>
+</template>
+<script>
 export default {
-    template: `<div><slot></slot></div>`,
     name: 'sapiTableColumn',
     props: {
         prop: {
@@ -33,3 +38,4 @@ export default {
         }
     }
 }
+</script>

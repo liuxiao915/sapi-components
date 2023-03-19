@@ -1,4 +1,4 @@
-import utils from '@/utils/index.js'
+import { utils } from '@/utils/index.js'
 import watermarkDom from 'watermark-dom'
 
 const watermark = {

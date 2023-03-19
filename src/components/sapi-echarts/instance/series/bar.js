@@ -1,4 +1,4 @@
-import utils from '@/utils/index.js'
+import { utils } from '@/utils/index.js'
 
 export function barMixin (Chart) {
     Chart.prototype._getBarBaseOption = function () {

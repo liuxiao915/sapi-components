@@ -1,11 +1,8 @@
-import { createApp } from 'vue'
-import App from '@/App.vue'
-const app = createApp(App)
-import sapiTableColumn from './table-column.js'
+import { h, render } from 'vue'
+import sapiTableColumn from './sapi-table-column.vue'
 import hTable from './table.vue'
 import tableColumn from './table-column.vue'
 import tableHeadColumn from './table-head-column.vue'
-app.component('sapi-table-column', sapiTableColumn)
 const getElParentNode = function(el, parentTagName) {
     if (el.tagName.toLowerCase() === parentTagName.toLowerCase()) {
         return el;
@@ -23,6 +20,12 @@ const getElParentNode = function(el, parentTagName) {
 }
 export default {
     name: 'sapi-table',
+    components: {
+        hTable,
+        tableColumn,
+        tableHeadColumn,
+        sapiTableColumn
+    },
     props: {
         data: {
             type: Array,
@@ -95,24 +98,16 @@ export default {
             type: Function
         }
     },
-    components: {
-        hTable,
-        tableColumn,
-        tableHeadColumn
-    },
-    data() {
-        return {
-
-        }
-    },
     render(h) {
         const $slots = this.$slots.default;
-        console.log('slots', $slots)
-        const columns = $slots.filter(slot => slot.componentOptions && slot.componentOptions.tag === 'sapi-table-column');
+        console.log(this.$slots)
+        const columns = $slots.filter(slot => {
+            return slot.componentOptions && slot.componentOptions.tag === 'sapi-table-column'
+        });
         const columnComponentProps = columns.map(column => column.componentOptions.propsData);
         const _this = this
         const headerChildNodes = columnComponentProps.map((property, index) => {
-            return h('table-head-column', {
+            return h(tableHeadColumn, {
                 props: {
                     column: property,
                     columnIndex: index,
@@ -168,7 +163,7 @@ export default {
                         vm.$emit('cell-click', row, rowIndex, property, columnIndex, e)
                     }
                 }
-                return h('table-column', tabelColumnProps)
+                return h(tableColumn, tabelColumnProps)
             })
         }
 
@@ -189,7 +184,6 @@ export default {
                     const rowIndex = i;
                     const row = data[rowIndex];
                     let isExpand = false;
-
                     const rowProps = {
                         class: {
                             'sapi-table_row': true
@@ -197,7 +191,6 @@ export default {
                         style: {},
                         on: {}
                     }
-
                     const className = rowKey ? `sapi-tree-table_row--level-${level - 1}-${i}` : '';
                     rowProps.class[className] = true;
                     if (rowKey) {
@@ -210,17 +203,14 @@ export default {
                             }
                         }
                     }
-
                     if (typeof this.rowClassName === 'function') {
                         const rowClass = this.rowClassName(row, rowIndex);
                         rowProps.class[rowClass] = true
                     }
-
                     if (typeof this.rowStyle === 'function') {
                         const rowStyle = this.rowStyle(row, rowIndex);
                         rowProps.style = rowStyle;
                     }
-                    
                     if (this.$listeners['row-click'] || this.highlightCurrentRow) {
                         const vm = this;
                         rowProps.on.click = function(e) {
@@ -239,20 +229,17 @@ export default {
                             }
                         }
                     }
-                    
                     const expand = !!rowKey && !!row[children] && !!row[children].length;
-
                     treeColumns.push(h('tr', rowProps, getColumnChildNodes(row, rowIndex, level, (level - 1) * indent, expand, isExpand, showFixedCellContent)))
                     if (expand) {
                         getColumns(row[children], level + 1, isExpand)
                     }
                 }
             }
-            
             getColumns(this.data || []);
             return treeColumns;
         }
-        return h('h-table', {
+        return h(hTable, {
             props: {
                 height: this.height,
                 fixedTableWidth: fixedWidth,
@@ -269,23 +256,13 @@ export default {
                             [this.headerRowClassName]: true
                         }
                     }
-                    return h('thead', {
-                        
-                    }, [
-                        h('tr', trProps, headerChildNodes)
-                    ])
+                    return h('thead', {}, [h('tr', trProps, headerChildNodes)])
                 },
                 body: () => {
-                    
-                    return h('tbody', {
-
-                    } , getTreeColumnChildNodes(false))
+                    return h('tbody', {} , getTreeColumnChildNodes(false))
                 },
                 fixedbody: () => {
-                    
-                    return h('tbody', {
-
-                    } , getTreeColumnChildNodes(true))
+                    return h('tbody', {} , getTreeColumnChildNodes(true))
                 }
             }
         }, [])
