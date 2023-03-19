@@ -98,7 +98,7 @@ export default {
             type: Function
         }
     },
-    render(h) {
+    render() {
         const $slots = this.$slots.default;
         console.log(this.$slots)
         const columns = $slots.filter(slot => {

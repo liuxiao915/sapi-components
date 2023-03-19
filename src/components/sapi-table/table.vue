@@ -6,11 +6,9 @@
             </table>
         </div>
         <div class="sapi-table_body-wrap" :style="{ height: tableBodyHeight }">
-            <!-- <vuescroll :ops="ops" @handle-scroll="handleTableScroll"> -->
-                <table class="sapi-table_body-table">
-                    <slot name="body"></slot>
-                </table>
-            <!-- </vuescroll> -->
+            <table class="sapi-table_body-table">
+                <slot name="body"></slot>
+            </table>
         </div>
             
         <div class="fixed-sapi-table_wrapper" v-if="!!fixedTableWidth" :style="{width: fixedTableWidth + 'px', height: tableHeight}">
