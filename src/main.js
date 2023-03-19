@@ -1,5 +1,3 @@
-import { createApp } from 'vue'
-import App from './App.vue'
 import '@/assets/styles/main.less'
 // markdown样式
 import 'github-markdown-css/github-markdown-light.css'
@@ -9,6 +7,6 @@ import '@/assets/sapi-fonts/iconfont.js';
 import router from './router'
 import components from "@/components/index";
 import { utils } from '@/utils/index'
-const app = createApp(App)
+import app from '@/hooks/index'
 app.config.globalProperties.$utils = utils
 app.use(components).use(router).mount('#app')
