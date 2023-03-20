@@ -99,13 +99,13 @@ export default {
         }
     },
     render() {
-        const columns = this.$slots.default.filter(slot => {
+        const columns = this.$slots.default().filter(slot => {
             return slot.componentOptions && slot.componentOptions.tag === 'sapi-table-column'
         });
         const columnComponentProps = columns.map(column => column.componentOptions.propsData);
         const _this = this
         const headerChildNodes = columnComponentProps.map((property, index) => {
-            return h(tableHeadColumn, {
+            return ()=>h(tableHeadColumn, {
                 props: {
                     column: property,
                     columnIndex: index,
@@ -263,6 +263,6 @@ export default {
                     return h('tbody', {} , getTreeColumnChildNodes(true))
                 }
             }
-        }, [])
+        }, ()=>[])
     }
 }

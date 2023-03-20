@@ -161,7 +161,7 @@ export default {
         z-index: 4;
         transform: translateZ(0px);
         -webkit-transform: translateZ(0px);
-        .vux-table {
+        table {
             font-size: 12px;
             table-layout: fixed;
             position: relative;
@@ -197,8 +197,11 @@ export default {
             overflow: hidden;
             position: relative;
             z-index: 2;
-            .vux-table {
+            height: 40px;
+            table {
                 z-index: 2;
+                width: 100%;
+                height: 100%;
             }
         }
         .sapi-table_body-wrap {
@@ -206,7 +209,7 @@ export default {
             position: relative;
             overflow: auto;
             z-index: 2;
-            .vux-table {
+            table {
                 z-index: 2;
                 tbody, tr, td, .table-cell, .table-cell>span {
                     position: relative;
@@ -227,7 +230,7 @@ export default {
                 top: 0;
                 left: 0;
                 z-index: 4;
-                .vux-table {
+                table {
                     z-index: 4;
                 }
             }
@@ -235,7 +238,7 @@ export default {
                 position: absolute;
                 left: 0;
                 z-index: 3;
-                .vux-table {
+                table {
                     z-index: 3;
                     tbody, tr, td, .table-cell, .table-cell>span {
                         position: relative;

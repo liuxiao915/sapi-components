@@ -6,8 +6,14 @@
   </div>
 </template>
 <script>
+import { $showLoading, $hiddenLoading } from "@/components/sapi-loading/index";
 export default {
   setup() {
+    $showLoading();
+    setTimeout(() => {
+      // 卸载loading组件
+      $hiddenLoading();
+    }, 3000);
     return {}
   }
 }
