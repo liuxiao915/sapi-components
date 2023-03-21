@@ -8,5 +8,7 @@ import router from './router'
 import components from "@/components/index";
 import { utils } from '@/utils/index'
 import app from '@/hooks/index'
+import Message from '@/components/sapi-message/index.js'
 app.config.globalProperties.$utils = utils
+app.config.globalProperties.$message = Message
 app.use(components).use(router).mount('#app')

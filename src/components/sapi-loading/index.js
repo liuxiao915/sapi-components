@@ -15,7 +15,6 @@ function mountComponent(RootComponent) {
 // 创建一个loading组件
 export function $showLoading() {
     ({ instance, unmount } = mountComponent(Loading));
-    console.log(instance);
 }
 // 销毁loading组件
 export function $hiddenLoading() {
