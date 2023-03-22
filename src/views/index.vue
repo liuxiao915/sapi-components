@@ -1,13 +1,14 @@
 <template>
   <sapi-layout :data="state.menuData" @selectTabs="selectMenu">
     <template #right>
-      <div class="sapi-tabs">
+      <!-- <div class="sapi-tabs">
         <div :class="['sapi-tabs-item', activeTab === index ? 'active' : '']" v-for="(item, index) in state.tabsData" :key="index" @click="changeTab(item)">{{ item.label }}</div>
-      </div>
+      </div> -->
       <router-view v-slot="{ Component }">
         <keep-alive>
-          <component :is="Component" />
+          <component :is="Component" v-if="$route.meta.keepAlive" :key="$route.name" />
         </keep-alive>
+        <component :is="Component" v-if="!$route.meta.keepAlive" :key="$route.name" />
       </router-view>
     </template>
   </sapi-layout>
@@ -39,6 +40,8 @@ export default {
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
         {path: '/echarts', name: 'echarts', label: 'echarts图表'},
         {path: '/table', name: 'table', label: 'table'},
+        {path: '/message', name: 'message', label: 'message'},
+        {path: '/loading', name: 'loading', label: 'loading'},
       ],
       tabsData: [
         {label: '实例', value: 0},

@@ -10,27 +10,44 @@ const routes = [
 			{
 				path: '/icon',
 				name: 'icon',
+				meta: { keepAlive: false },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-icon/index.vue')
 			},
 			{
 				path: '/tree',
 				name: 'tree',
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/tree.vue')
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree.vue')
 			},
 			{
 				path: '/mars3d',
 				name: 'mars3d',
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/mars3d.vue')
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-mars3d.vue')
 			},
 			{
 				path: '/echarts',
 				name: 'echarts',
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/echarts.vue')
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-echarts.vue')
 			},
 			{
 				path: '/table',
 				name: 'table',
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/table.vue')
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table.vue')
+			},
+			{
+				path: '/message',
+				name: 'message',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-message.vue')
+			},
+			{
+				path: '/loading',
+				name: 'loading',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-loading.vue')
 			},
 		]
   },
