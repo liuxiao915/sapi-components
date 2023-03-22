@@ -27,13 +27,9 @@
 </template>
 
 <script>
-// import vuescroll from 'vuescroll';
 
 export default {
     name: 'hTable',
-    components: {
-        // vuescroll
-    },
     props: {
         height: {
             type: String,
@@ -50,26 +46,7 @@ export default {
         return {
             tableHeight: '',
             tableHeadHeight: '',
-            tableBodyHeight: '',
-            ops: {
-                vuescroll: {
-                    mode: 'native'
-                },
-                scrollPanel: {},
-                rail: {},
-                bar: {
-                    showDelay: 500,
-                    onlyShowBarOnScroll: true,
-                    keepShow: false,
-                    background: '#c1c1c1',
-                    opacity: 1,
-                    hoverStyle: false,
-                    specifyBorderRadius: false,
-                    minSize: false,
-                    size: '3px',
-                    disable: false,
-                }
-            }
+            tableBodyHeight: ''
         }
     },
     computed: {
@@ -162,6 +139,8 @@ export default {
         transform: translateZ(0px);
         -webkit-transform: translateZ(0px);
         table {
+            width: 100%;
+            height: 100%;
             font-size: 12px;
             table-layout: fixed;
             position: relative;
@@ -206,10 +185,13 @@ export default {
         }
         .sapi-table_body-wrap {
             width: 100%;
+            height: 300px;
             position: relative;
             overflow: auto;
             z-index: 2;
             table {
+                width: 100%;
+                height: 100%;
                 z-index: 2;
                 tbody, tr, td, .table-cell, .table-cell>span {
                     position: relative;
@@ -231,6 +213,8 @@ export default {
                 left: 0;
                 z-index: 4;
                 table {
+                    width: 100%;
+                    height: 100%;
                     z-index: 4;
                 }
             }
@@ -239,6 +223,8 @@ export default {
                 left: 0;
                 z-index: 3;
                 table {
+                    width: 100%;
+                    height: 100%;
                     z-index: 3;
                     tbody, tr, td, .table-cell, .table-cell>span {
                         position: relative;

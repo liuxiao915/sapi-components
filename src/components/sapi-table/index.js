@@ -34,7 +34,8 @@ export default {
             }
         },
         height: {
-            type: String
+            type: String,
+            default: '200'
         },
         indent: {
             type: Number,
@@ -100,9 +101,11 @@ export default {
     },
     render() {
         const columns = this.$slots.default().filter(slot => {
-            return slot.componentOptions && slot.componentOptions.tag === 'sapi-table-column'
+            return slot.type && slot.type.name === 'sapi-table-column'
         });
-        const columnComponentProps = columns.map(column => column.componentOptions.propsData);
+        console.log('columns', columns[0])
+        const columnComponentProps = columns.map(column => column.type.props);
+        console.log('columnComponentProps', columnComponentProps)
         const _this = this
         const headerChildNodes = columnComponentProps.map((property, index) => {
             return ()=>h(tableHeadColumn, {
@@ -127,7 +130,6 @@ export default {
                 }
             })
         })
-        
         const getColumnChildNodes = (row, rowIndex, level, indent, expand, isExpand, showFixedCellContent) => {
             return columnComponentProps.map((property, index) => {
                 const tabelColumnProps = {

@@ -11,7 +11,7 @@ export default {
       Message({ type: 'error', text: '失败' })
       setTimeout(() => {
         proxy.$message({ type: 'success', text: '成功' })
-      }, 4000);
+      }, 2000);
     })
     return {}
   }
