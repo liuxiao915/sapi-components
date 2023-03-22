@@ -1,22 +1,15 @@
-import { createApp } from "vue";
-import Loading from "./index.vue";
-let instance = null, unmount = null;
-function mountComponent(RootComponent) {
-    const app = createApp(RootComponent);
-    const root = document.createElement('div');
-    document.body.appendChild(root);
-    return {
-        instance: app.mount(root),
-        unmount() {
-          document.body.removeChild(root);
-        },
-    };
+import { createApp, reactive } from 'vue'
+import myLoad from './index.vue'
+const options = reactive({
+  show: false,
+  label: '加载中...'
+})
+const $loading = createApp(myLoad, { options }).mount(document.createElement('div'))
+export const showLoading = (label) => {
+  options.show = true
+  options.label = label
+  document.body.appendChild($loading.$el)
 }
-// 创建一个loading组件
-export function $showLoading() {
-    ({ instance, unmount } = mountComponent(Loading));
-}
-// 销毁loading组件
-export function $hiddenLoading() {
-    instance && unmount();
+export const hiddenLoading = () => {
+  options.show = false
 }
