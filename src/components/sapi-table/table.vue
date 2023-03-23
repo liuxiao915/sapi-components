@@ -65,7 +65,6 @@ export default {
         }
     },
     mounted() {
-        console.log('hTablehTablehTable')
         this.tableHeaderWrap = this.$el.querySelector('.sapi-table_header-wrap');
         const tableHeaderWrapRect = this.tableHeaderWrap.getBoundingClientRect();
         this.tableHeadHeight = tableHeaderWrapRect.bottom - tableHeaderWrapRect.top + 'px';

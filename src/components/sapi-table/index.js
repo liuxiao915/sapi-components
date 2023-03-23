@@ -103,68 +103,63 @@ export default {
         const columns = this.$slots.default().filter(slot => {
             return slot.type && slot.type.name === 'sapi-table-column'
         });
-        console.log('columns', columns[0])
-        const columnComponentProps = columns.map(column => column.type.props);
-        console.log('columnComponentProps', columnComponentProps)
+        const columnComponentProps = columns.map(column => column.props);
+        console.log('columnComponentProps:::', columnComponentProps)
         const _this = this
         const headerChildNodes = columnComponentProps.map((property, index) => {
             return ()=>h(tableHeadColumn, {
-                props: {
-                    column: property,
-                    columnIndex: index,
-                    headerCellClassName: this.headerCellClassName,
-                    headerCellStyle: this.headerCellStyle,
-                    data: this.data
-                },
-                scopedSlots: {
-                    default: (props) => {
-                        if(columns[index].data.scopedSlots && columns[index].data.scopedSlots.header) {
-                            return columns[index].data.scopedSlots.header(props)
-                        }
-                    }
-                },
+                column: property,
+                columnIndex: index,
+                headerCellClassName: this.headerCellClassName,
+                headerCellStyle: this.headerCellStyle,
+                data: this.data,
                 on: {
                     "sort-change"(column,sortable){
                         _this.$emit("sort-change",column, sortable)
                     }
                 }
+            },{
+                default: (props) => {
+                    console.log('columns[index]', columns[index])
+                    if(columns[index].data.scopedSlots && columns[index].data.scopedSlots.header) {
+                        return columns[index].data.scopedSlots.header(props)
+                    }
+                }
             })
         })
         const getColumnChildNodes = (row, rowIndex, level, indent, expand, isExpand, showFixedCellContent) => {
-            return columnComponentProps.map((property, index) => {
+            return columnComponentProps.forEach((property, index) => {
                 const tabelColumnProps = {
                     on: {},
-                    props: {
-                        row: row,
-                        rowIndex: rowIndex,
-                        column: property,
-                        columnIndex: index,
-                        cellClassName: this.cellClassName,
-                        cellStyle: this.cellStyle,
-                        formatter: this.formatter,
-                        rowKey: this.rowKey,
-                        level: level,
-                        indent: indent,
-                        expand: expand,
-                        isExpand: isExpand,
-                        showFixedCellContent: (property.fixed === true || property.fixed === '') && showFixedCellContent
-                    },
-                    scopedSlots: {
-                        default: (props) => {
-                            if (columns[index].data.scopedSlots && columns[index].data.scopedSlots.default) {
-                                return columns[index].data.scopedSlots.default(props)
-                            }
-                        }
-                    }
+                    row: row,
+                    rowIndex: rowIndex,
+                    column: property,
+                    columnIndex: index,
+                    cellClassName: this.cellClassName,
+                    cellStyle: this.cellStyle,
+                    formatter: this.formatter,
+                    rowKey: this.rowKey,
+                    level: level,
+                    indent: indent,
+                    expand: expand,
+                    isExpand: isExpand,
+                    showFixedCellContent: (property.fixed === true || property.fixed === '') && showFixedCellContent
                 }
-                if (this.$listeners['cell-click']) {
+                if (this.$attrs['cell-click']) {
                     const vm = this;
                     tabelColumnProps.on.click = function(e) {
                         vm.$emit('cell-click', row, rowIndex, property, columnIndex, e)
                     }
                 }
-                return h(tableColumn, tabelColumnProps)
+                return h(tableColumn, tabelColumnProps,{
+                    default: (props) => {
+                        if (columns[index].data.scopedSlots && columns[index].data.scopedSlots.default) {
+                            return columns[index].data.scopedSlots.default(props)
+                        }
+                    }
+                })
             })
+            return arr
         }
 
         const fixedWidth = columnComponentProps.reduce((total, column) => {
@@ -211,10 +206,10 @@ export default {
                         const rowStyle = this.rowStyle(row, rowIndex);
                         rowProps.style = rowStyle;
                     }
-                    if (this.$listeners['row-click'] || this.highlightCurrentRow) {
+                    if (this.$attrs['row-click'] || this.highlightCurrentRow) {
                         const vm = this;
                         rowProps.on.click = function(e) {
-                            if (vm.$listeners['row-click']) {
+                            if (vm.$attrs['row-click']) {
                                 vm.$emit('row-click', row, rowIndex, e)
                             }
 
@@ -239,32 +234,30 @@ export default {
             getColumns(this.data || []);
             return treeColumns;
         }
+        getTreeColumnChildNodes(false)
         return h(hTable, {
-            props: {
                 height: this.height,
                 fixedTableWidth: fixedWidth,
                 data: this.data
-            },
-            scopedSlots: {
-                header: () => {
-                    const trProps = {
-                        class: {},
-                        style: this.headerRowStyle
-                    };
-                    if (this.headerRowClassName) {
-                        trProps.class = {
-                            [this.headerRowClassName]: true
-                        }
+            }, {
+            header: () => {
+                const trProps = {
+                    class: {},
+                    style: this.headerRowStyle
+                };
+                if (this.headerRowClassName) {
+                    trProps.class = {
+                        [this.headerRowClassName]: true
                     }
-                    return h('thead', {}, [h('tr', trProps, headerChildNodes)])
-                },
-                body: () => {
-                    return h('tbody', {} , getTreeColumnChildNodes(false))
-                },
-                fixedbody: () => {
-                    return h('tbody', {} , getTreeColumnChildNodes(true))
                 }
+                return h('thead', {}, [h('tr', trProps, headerChildNodes)])
+            },
+            body: () => {
+                return h('tbody', {} , getTreeColumnChildNodes(false))
+            },
+            fixedbody: () => {
+                return h('tbody', {} , getTreeColumnChildNodes(true))
             }
-        }, ()=>[])
+        })
     }
 }

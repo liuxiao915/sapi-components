@@ -98,7 +98,6 @@ export default {
             }else if (this.column.prop && this.isNullOrUndefined(this.row[this.column.prop])) {
                 this.cellTxt = '';
             } else {
-                console.log('this.row', this.row)
                 console.log('this.column.prop', this.column.prop)
                 this.cellTxt = this.row[this.column.prop];
             }
