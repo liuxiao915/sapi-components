@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <slot></slot>
-    </div>
+    <div><slot></slot></div>
 </template>
 <script>
 export default {
-    name: 'sapiTableColumn',
+    name: 'sapi-table-column',
     props: {
         prop: {
             type: String
@@ -34,7 +32,7 @@ export default {
         },
         createTime: {
             type: String,
-            default: false
+            default: ''
         }
     }
 }

@@ -3,7 +3,7 @@
         <div v-if="computedShowContent" class="table-cell" :style="bindCellStyle" :class="cellClass">
             <span v-if="!!rowKey && columnIndex === 0" class="sapi-table__indent" :style="{ 'padding-left': indent + 'px' }"></span>
             <span v-if="!!rowKey && columnIndex === 0 && expand" class="sapi-table__expand-icon" @click="handleExpandClick" :class="{'is-expanded': isExpanded}">
-                <x-icon type="ios-arrow-right" size="14"></x-icon>
+                <!-- <x-icon type="ios-arrow-right" size="14"></x-icon> -->
             </span>
             <span v-if="!!rowKey && columnIndex === 0 && !expand" class="sapi-table__indent" style="padding-left: 16px"></span>
             <slot :row="row" :column="column" :rowIndex="rowIndex" :columnIndex="columnIndex">
@@ -17,7 +17,7 @@
 const reg = /sapi-tree-table_row--level-([0-9]+)-([0-9]+)/
 
 export default {
-    name: 'sapi-table-column',
+    name: 'table-column',
     props: {
         row: {
             type: Object
@@ -98,7 +98,6 @@ export default {
             }else if (this.column.prop && this.isNullOrUndefined(this.row[this.column.prop])) {
                 this.cellTxt = '';
             } else {
-                console.log('this.column.prop', this.column.prop)
                 this.cellTxt = this.row[this.column.prop];
             }
 

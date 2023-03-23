@@ -14,7 +14,6 @@
 
 <script>
 export default {
-    name: 'table-head-column',
     props: {
         column: {
             type: Object,

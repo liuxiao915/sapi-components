@@ -3,6 +3,8 @@ import sapiTableColumn from './sapi-table-column.vue'
 import hTable from './table.vue'
 import tableColumn from './table-column.vue'
 import tableHeadColumn from './table-head-column.vue'
+import app from '@/hooks/index'
+// app.component('sapi-table-column', sapiTableColumn)
 const getElParentNode = function(el, parentTagName) {
     if (el.tagName.toLowerCase() === parentTagName.toLowerCase()) {
         return el;
@@ -23,8 +25,8 @@ export default {
     components: {
         hTable,
         tableColumn,
-        tableHeadColumn,
-        sapiTableColumn
+        sapiTableColumn,
+        tableHeadColumn
     },
     props: {
         data: {
@@ -34,8 +36,7 @@ export default {
             }
         },
         height: {
-            type: String,
-            default: '200'
+            type: String
         },
         indent: {
             type: Number,
@@ -100,19 +101,17 @@ export default {
         }
     },
     render() {
-        const columns = this.$slots.default().filter(slot => {
-            return slot.type && slot.type.name === 'sapi-table-column'
-        });
+        const $slots = this.$slots.default();
+        const columns = $slots.filter(slot => slot.type && slot.type.name === 'sapi-table-column');
         const columnComponentProps = columns.map(column => column.props);
-        console.log('columnComponentProps:::', columnComponentProps)
         const _this = this
         const headerChildNodes = columnComponentProps.map((property, index) => {
-            return ()=>h(tableHeadColumn, {
-                column: property,
-                columnIndex: index,
-                headerCellClassName: this.headerCellClassName,
-                headerCellStyle: this.headerCellStyle,
-                data: this.data,
+            return h(tableHeadColumn, {
+                    column: property,
+                    columnIndex: index,
+                    headerCellClassName: this.headerCellClassName,
+                    headerCellStyle: this.headerCellStyle,
+                    data: this.data,
                 on: {
                     "sort-change"(column,sortable){
                         _this.$emit("sort-change",column, sortable)
@@ -120,15 +119,15 @@ export default {
                 }
             },{
                 default: (props) => {
-                    console.log('columns[index]', columns[index])
-                    if(columns[index].data.scopedSlots && columns[index].data.scopedSlots.header) {
+                    if(columns[index].type.scopedSlots && columns[index].type.scopedSlots.header) {
                         return columns[index].data.scopedSlots.header(props)
                     }
                 }
-            })
+            },)
         })
+        
         const getColumnChildNodes = (row, rowIndex, level, indent, expand, isExpand, showFixedCellContent) => {
-            return columnComponentProps.forEach((property, index) => {
+            return columnComponentProps.map((property, index) => {
                 const tabelColumnProps = {
                     on: {},
                     row: row,
@@ -144,22 +143,22 @@ export default {
                     expand: expand,
                     isExpand: isExpand,
                     showFixedCellContent: (property.fixed === true || property.fixed === '') && showFixedCellContent
+                    
                 }
                 if (this.$attrs['cell-click']) {
                     const vm = this;
                     tabelColumnProps.on.click = function(e) {
-                        vm.$emit('cell-click', row, rowIndex, property, columnIndex, e)
+                        vm.$emit('cell-click', row, rowIndex, property, index, e)
                     }
                 }
-                return h(tableColumn, tabelColumnProps,{
+                return h(tableColumn, tabelColumnProps, {
                     default: (props) => {
-                        if (columns[index].data.scopedSlots && columns[index].data.scopedSlots.default) {
-                            return columns[index].data.scopedSlots.default(props)
+                        if (columns[index].type.scopedSlots && columns[index].type.scopedSlots.default) {
+                            return columns[index].type.scopedSlots.default(props)
                         }
                     }
                 })
             })
-            return arr
         }
 
         const fixedWidth = columnComponentProps.reduce((total, column) => {
@@ -180,9 +179,7 @@ export default {
                     const row = data[rowIndex];
                     let isExpand = false;
                     const rowProps = {
-                        class: {
-                            'sapi-table_row': true
-                        },
+                        class: {'sapi-table_row': true},
                         style: {},
                         on: {}
                     }
@@ -224,7 +221,9 @@ export default {
                             }
                         }
                     }
-                    const expand = !!rowKey && !!row[children] && !!row[children].length;
+                    
+                    const expand = rowKey && row[children] && row[children].length;
+
                     treeColumns.push(h('tr', rowProps, getColumnChildNodes(row, rowIndex, level, (level - 1) * indent, expand, isExpand, showFixedCellContent)))
                     if (expand) {
                         getColumns(row[children], level + 1, isExpand)
@@ -234,12 +233,13 @@ export default {
             getColumns(this.data || []);
             return treeColumns;
         }
-        getTreeColumnChildNodes(false)
         return h(hTable, {
+            props: {
                 height: this.height,
                 fixedTableWidth: fixedWidth,
                 data: this.data
-            }, {
+            },
+        }, {
             header: () => {
                 const trProps = {
                     class: {},
@@ -252,11 +252,9 @@ export default {
                 }
                 return h('thead', {}, [h('tr', trProps, headerChildNodes)])
             },
-            body: () => {
-                return h('tbody', {} , getTreeColumnChildNodes(false))
+            body: () => {return h('tbody', {} , getTreeColumnChildNodes(false))
             },
-            fixedbody: () => {
-                return h('tbody', {} , getTreeColumnChildNodes(true))
+            fixedbody: () => {return h('tbody', {} , getTreeColumnChildNodes(true))
             }
         })
     }
