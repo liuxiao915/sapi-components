@@ -126,7 +126,6 @@ export default {
         })
         const getColumnChildNodes = (row, rowIndex, level, indent, expand, isExpand, showFixedCellContent) => {
             return columnComponentProps.map((property, index) => {
-                console.log('property.fixed::', property.fixed)
                 const tabelColumnProps = {
                     onClick(e) {
                         if (vm.$attrs['cell-click']) {

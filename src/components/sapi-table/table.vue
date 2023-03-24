@@ -73,7 +73,6 @@ export default {
         this.tableHeaderWidth = tableHeaderRect.right - tableHeaderRect.left;
         this.isLockX = this.tableHeaderWidth <= document.documentElement.clientWidth;
         this.setHeight();
-        console.log(this.fixedTableWidth)
         if (this.fixedTableWidth) {
             this.fixedTableBody = this.$el.querySelector('.fixed-sapi-table_body-wrap');
         }
