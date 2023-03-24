@@ -14,6 +14,7 @@ requireAll(req)
 // export default (Vue) => {}
 export default {
   install (Vue) {
+    Vue.component('sapi-table', () => import('@/components/sapi-table/index.js'))
     // 获取components目录下的.vue文件
     const requireComponent = require.context('.', true, /(\.vue)$/)
     requireComponent.keys().forEach((fileName) => {
@@ -24,5 +25,6 @@ export default {
       // 接收到的实例进行全局组件的挂载
       Vue.component(config.default.name, config.default || config)
     })
+    
   }
 }

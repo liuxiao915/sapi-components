@@ -101,7 +101,6 @@ export default {
     render() {
         const $slots = this.$slots.default();
         const columns = $slots.filter(slot => slot.type && slot.type.name === 'sapi-table-column');
-        console.log('columns:::', columns)
         const columnComponentProps = columns.map(column => column.props);
         const vm = this
         const headerChildNodes = columnComponentProps.map((property, index) => {
@@ -118,8 +117,8 @@ export default {
                 }
             },{
                 default: (props) => {
-                    if(columns[index].type.scopedSlots && columns[index].type.scopedSlots.header) {
-                        return columns[index].data.scopedSlots.header(props)
+                    if(columns[index].children && columns[index].children.hasOwnProperty('header')) {
+                        return columns[index].children.header(props)
                     }
                 }
             },)
@@ -148,8 +147,8 @@ export default {
                 }
                 return h(tableColumn, tabelColumnProps, {
                     default: (props) => {
-                        if (columns[index].type.scopedSlots && columns[index].type.scopedSlots.default) {
-                            return columns[index].type.scopedSlots.default(props)
+                        if (columns[index].children && columns[index].children.hasOwnProperty('default')) {
+                            return columns[index].children.default(props)
                         }
                     }
                 })

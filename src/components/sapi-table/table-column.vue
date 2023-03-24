@@ -1,7 +1,6 @@
 <template>
     <td :style="{ textAlign: column.align, ...cellWidthStyle }">
         <div v-if="computedShowContent" class="table-cell" :style="bindCellStyle" :class="cellClass">
-            <span class="icon iconfont iconxiangyou"></span>
             <span v-if="!!rowKey && columnIndex === 0" class="sapi-table__indent" :style="{ 'padding-left': indent + 'px' }"></span>
             <span v-if="!!rowKey && columnIndex === 0 && expand" class="sapi-table__expand-icon" @click="handleExpandClick" :class="{'is-expanded': isExpanded}">
                 <span class="iconfont iconxiangyou"></span>

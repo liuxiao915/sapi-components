@@ -3,14 +3,15 @@
     <sapi-table :data="state.tableData" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}" :formatter="formatter">
       <sapi-table-column header-align="center" align="center" width="110px" label="区域" prop="name"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="开发成本" prop="exploitCost">
-        <template>
-          <span>666666</span>
-      </template>
+        <template #header>插槽表头</template>
+        <template #default="scope">
+          <span>{{ scope.row.exploitCost }}</span>
+        </template>
       </sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="管理费用" prop="managementCost"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="营销费用" prop="marketingCost"></sapi-table-column>
-      <sapi-table-column header-align="center" align="center" width="60px" label="税金" prop="taxes"></sapi-table-column>
-      <sapi-table-column header-align="center" align="center" width="60px" label="签约金额" prop="contractAmount"></sapi-table-column>
+      <sapi-table-column header-align="center" align="center" label="税金" prop="taxes"></sapi-table-column>
+      <sapi-table-column header-align="center" align="center" label="签约金额" prop="contractAmount"></sapi-table-column>
     </sapi-table>
   </div>
 </template>
@@ -18,12 +19,11 @@
 import { reactive, getCurrentInstance } from 'vue'
 import  sapiTable from '@/components/sapi-table/index.js'
 export default {
-  components: {sapiTable},
+  components: { sapiTable },
   setup() {
     const { proxy } = getCurrentInstance()
     const state = reactive({
       tableData: [
-        {name: '区域', exploitCost: '111', managementCost: '222', marketingCost: '333', taxes: '444', contractAmount: '555'},
         {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '5555'}
       ]
     })
