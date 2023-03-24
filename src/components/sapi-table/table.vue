@@ -1,24 +1,24 @@
 <template>
     <div class="sapi-table-wrapper" :style="{ height: height }">
         <div class="sapi-table_header-wrap">
-            <table :cell-bordered="false" class="sapi-table_header-table">
+            <table :cell-bordered="true" class="sapi-table_header-table">
                 <slot name="header"></slot>
             </table>
         </div>
         <div class="sapi-table_body-wrap" :style="{ height: tableBodyHeight }">
-                <table :cell-bordered="false" class="sapi-table_body-table">
-                    <slot name="body"></slot>
-                </table>
+            <table :cell-bordered="true" class="sapi-table_body-table">
+                <slot name="body"></slot>
+            </table>
         </div>
             
         <div class="fixed-sapi-table_wrapper" v-if="fixedTableWidth" :style="{width: fixedTableWidth + 'px', height: tableHeight}">
             <div class="fixed-sapi-table_header-wrap">
-                <table :cell-bordered="false" class="sapi-table_header-table sapi-table_fixed-header-table">
+                <table :cell-bordered="true" class="sapi-table_header-table sapi-table_fixed-header-table">
                     <slot name="header"></slot>
                 </table>
             </div>
             <div class="fixed-sapi-table_body-wrap" :style="{ top: tableHeadHeight }">
-                <table :cell-bordered="false" class="sapi-table_body-table">
+                <table :cell-bordered="true" class="sapi-table_body-table">
                     <slot name="fixedbody"></slot>
                 </table>
             </div>
@@ -73,6 +73,7 @@ export default {
         this.tableHeaderWidth = tableHeaderRect.right - tableHeaderRect.left;
         this.isLockX = this.tableHeaderWidth <= document.documentElement.clientWidth;
         this.setHeight();
+        console.log(this.fixedTableWidth)
         if (this.fixedTableWidth) {
             this.fixedTableBody = this.$el.querySelector('.fixed-sapi-table_body-wrap');
         }

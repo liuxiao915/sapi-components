@@ -14,6 +14,12 @@ const routes = [
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-icon/index.vue')
 			},
 			{
+				path: '/iconfont',
+				name: 'iconfont',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-iconfont.vue')
+			},
+			{
 				path: '/tree',
 				name: 'tree',
 				meta: { keepAlive: false },

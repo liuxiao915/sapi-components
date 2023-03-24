@@ -1,11 +1,11 @@
 <template>
   <div class="sapi-table">
-    <sapi-table :data="state.tableData" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}">
+    <sapi-table :data="state.tableData" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}" :formatter="formatter">
       <sapi-table-column header-align="center" align="center" width="110px" label="区域" prop="name"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="开发成本" prop="exploitCost">
-        <template #default="scope">
-                <span>666666</span>
-            </template>
+        <template>
+          <span>666666</span>
+      </template>
       </sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="管理费用" prop="managementCost"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="营销费用" prop="marketingCost"></sapi-table-column>
@@ -23,7 +23,8 @@ export default {
     const { proxy } = getCurrentInstance()
     const state = reactive({
       tableData: [
-        {name: '区域', exploitCost: '111', managementCost: '222', marketingCost: '333', taxes: '444', contractAmount: '555'}
+        {name: '区域', exploitCost: '111', managementCost: '222', marketingCost: '333', taxes: '444', contractAmount: '555'},
+        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '5555'}
       ]
     })
     const formatter = (row,rowIndex,column,columnIndex) => {
@@ -46,8 +47,8 @@ export default {
   height: 100%;
 }
   .project-table-header {
-    color: #ffffff;
-    background-color: #4B9BFF;
+    color: #ffffff!important;
+    background-color: #4B9BFF!important;
   }
   .table-cell.padding-left__10px {
     padding-left: 10px;

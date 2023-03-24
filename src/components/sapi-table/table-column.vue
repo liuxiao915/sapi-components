@@ -1,9 +1,10 @@
 <template>
     <td :style="{ textAlign: column.align, ...cellWidthStyle }">
         <div v-if="computedShowContent" class="table-cell" :style="bindCellStyle" :class="cellClass">
+            <span class="icon iconfont iconxiangyou"></span>
             <span v-if="!!rowKey && columnIndex === 0" class="sapi-table__indent" :style="{ 'padding-left': indent + 'px' }"></span>
             <span v-if="!!rowKey && columnIndex === 0 && expand" class="sapi-table__expand-icon" @click="handleExpandClick" :class="{'is-expanded': isExpanded}">
-                <!-- <x-icon type="ios-arrow-right" size="14"></x-icon> -->
+                <span class="iconfont iconxiangyou"></span>
             </span>
             <span v-if="!!rowKey && columnIndex === 0 && !expand" class="sapi-table__indent" style="padding-left: 16px"></span>
             <slot :row="row" :column="column" :rowIndex="rowIndex" :columnIndex="columnIndex">
@@ -215,7 +216,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .table-cell {
     .sapi-table__indent {
         display: inline-block;
