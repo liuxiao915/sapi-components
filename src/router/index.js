@@ -20,6 +20,12 @@ const routes = [
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-iconfont.vue')
 			},
 			{
+				path: '/button',
+				name: 'button',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-button/index.vue')
+			},
+			{
 				path: '/tree',
 				name: 'tree',
 				meta: { keepAlive: false },

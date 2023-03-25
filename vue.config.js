@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const resolve = (dir) => path.join(__dirname, dir)
 const { defineConfig } = require('@vue/cli-service')
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+const docsLoader = require.resolve('./src/utils/docs-loader.js')
 
 
 module.exports = defineConfig({
@@ -53,7 +54,15 @@ module.exports = defineConfig({
     ]
 
     return {
-      // module: { unknownContextCritical: false }, // 配置加载的模块类型，cesium时必须配置
+      module: { 
+        rules: [
+          {
+            resourceQuery: /blockType=docs/,
+            loader: docsLoader
+          }
+        ],
+        // unknownContextCritical: false // 配置加载的模块类型，cesium时必须配置
+       },
       plugins: plugins
     }
   },

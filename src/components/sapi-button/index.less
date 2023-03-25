@@ -1,0 +1,133 @@
+.sapi-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: rgba(84, 181, 255, 0.7) 1px solid;
+  color: #1f2d3d;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-radius: 2px;
+
+  &--variant {
+    &-base {
+      color: #54B5FF;
+      background-color: rgba(84, 181, 255, 0.3);
+      padding: 8px 20px;
+      border: rgba(84, 181, 255, 0.7) 1px solid;
+
+      &.sapi-button--theme {
+        &-primary {
+          background-color: #1890ff;
+          color: #ffffff;
+        }
+
+        &-success {
+          background-color: #00A874;
+          color: #ffffff;
+        }
+
+        &-warning {
+          background-color: #ED7B2F;
+          color: #ffffff;
+        }
+
+        &-danger {
+          background-color: #E34D59;
+          color: #ffffff;
+        }
+      }
+    }
+
+    &-outline {
+      color: #54B5FF;
+      padding: 8px 20px;
+      border: rgba(84, 181, 255, 0.7) 1px solid;
+    }
+
+    &-dashed {
+      color: #54B5FF;
+      padding: 8px 20px;
+      border: rgba(84, 181, 255, 0.7) 1px dashed;
+    }
+
+    &-text {
+      color: #54B5FF;
+      padding: 8px 20px;
+      border: none;
+    }
+  }
+
+  &--shape {
+    &-square {
+      width: 35px;
+      height: 35px;
+      padding: 0;
+    }
+
+    &-round {
+      border-radius: 16px;
+    }
+
+    &-circle {
+      width: 35px;
+      height: 35px;
+      padding: 0;
+      text-align: center;
+      border-radius: 16px;
+    }
+  }
+
+  &--theme {
+    &-primary {
+      background-color: transparent;
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+
+    &-success {
+      background-color: transparent;
+      color: #00A874;
+      border-color: #00A874;
+    }
+
+    &-warning {
+      background-color: transparent;
+      color: #ED7B2F;
+      border-color: #ED7B2F;
+    }
+
+    &-danger {
+      background-color: transparent;
+      color: #E34D59;
+      border-color: #E34D59;
+    }
+  }
+
+  &.sapi-is-disabled {
+    color: #bfcbd9;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #7a7c83;
+    border-color: #7a7c83;
+  }
+
+  &.sapi-size-s {
+    height: 26px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  &.sapi-size-l {
+    height: 40px;
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+}

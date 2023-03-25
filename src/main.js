@@ -3,6 +3,8 @@ import '@/assets/styles/main.less'
 import 'github-markdown-css/github-markdown-light.css'
 import '@/assets/sapi-fonts/iconfont.css';
 import '@/assets/sapi-fonts/iconfont.js';
+// 代码高亮
+import 'highlight.js/styles/github.css'
 //导入路由配置
 import router from './router'
 import components from "@/components/index";

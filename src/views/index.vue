@@ -36,6 +36,7 @@ export default {
     const state = reactive({
       menuData: [
         {path: '/icon', name: 'icon', label: 'icon 图标'},
+        {path: '/button', name: 'button', label: 'button'},
         {path: '/iconfont', name: 'iconfont', label: 'iconfont 图标'},
         {path: '/tree', name: 'tree', label: '树形'},
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
