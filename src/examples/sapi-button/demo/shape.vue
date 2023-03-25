@@ -18,7 +18,6 @@
           shape="square"
           variant="base"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
       <div class="item">
@@ -34,7 +33,6 @@
           shape="circle"
           variant="base"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
     </div>
@@ -52,7 +50,6 @@
           shape="square"
           variant="outline"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
       <div class="item">
@@ -68,7 +65,6 @@
           shape="circle"
           variant="outline"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
     </div>
@@ -86,7 +82,6 @@
           shape="square"
           variant="dashed"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
       <div class="item">
@@ -102,7 +97,6 @@
           shape="circle"
           variant="dashed"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
     </div>
@@ -120,7 +114,6 @@
           shape="square"
           variant="text"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
       <div class="item">
@@ -136,14 +129,12 @@
           shape="circle"
           variant="text"
         >
-          <WechatOutlined />
         </sapi-button>
       </div>
     </div>
   </div>
 </template>
 <script>
-// import { WechatOutlined } from '@ant-design/icons-vue'
 export default {
   name: 'Shape',
   setup(){

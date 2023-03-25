@@ -1,6 +1,6 @@
 <template>
   <div v-if="key === 'demo'">
-    <sapi-code-card v-for="(item,index) in components" :key="index" :component="item" :name="item.name"></sapi-code-card>
+    <sapi-code-card v-for="(item,index) in components" :key="index" :component="item"></sapi-code-card>
   </div>
   <div v-if="key === 'api'">
     <md class="markdown-body" />

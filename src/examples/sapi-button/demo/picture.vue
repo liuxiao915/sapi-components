@@ -7,11 +7,9 @@
     <div class="demo-button-row">
       <div class="demo-button-col">
         <sapi-button theme="primary">
-          <PlusOutlined />
           新建
         </sapi-button>
         <sapi-button variant="outline">
-          <CloudUploadOutlined />
           上传文件
         </sapi-button>
       </div>
@@ -19,19 +17,16 @@
         <sapi-button
           shape="circle"
         >
-          <WechatOutlined />
         </sapi-button>
         <sapi-button
           shape="circle"
         >
-          <QqOutlined />
         </sapi-button>
       </div>
     </div>
   </div>
 </template>
 <script>
-  // import { PlusOutlined, CloudUploadOutlined, WechatOutlined, QqOutlined } from '@ant-design/icons-vue'
 export default {
   name: 'Picture',
   setup(){

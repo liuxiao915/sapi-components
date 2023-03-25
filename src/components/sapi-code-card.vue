@@ -4,11 +4,13 @@
     <component :is="component" />
   </div>
   <div class="code-card">
-    <sapi-icon title="获取json" v-if="showJson" name='JSON' style="cursor: pointer;margin-right: 16px" @click="$emit('getCode',component.setup().option)"/>
-    <button title="复制代码" class="copy-btn" style="cursor: pointer" :data-clipboard-text="component.options.__sourceCode" @click="copyCode()">
-      <span class="iconfont iconmove-copy"></span>
-    </button>
-    <sapi-icon title="查看代码" :icon-class="codeVisible?'unexpand':'expand'" style="cursor: pointer;margin-left: 16px" @click="handleCodeVisible"/>
+    <sapi-icon title="获取json" name='JSON' v-show="false" style="cursor: pointer;margin-right: 16px" @click="$emit('getCode',component.setup().option)"/>
+    <sapi-button title="复制代码" variant="text" class="copy-btn" style="cursor: pointer" :data-clipboard-text="component.options.__sourceCode" @click="copyCode()">
+      <sapi-icon name="file-copy" style="cursor: pointer;" />
+    </sapi-button>
+    <sapi-button title="查看代码" variant="text" style="cursor: pointer" @click="handleCodeVisible">
+      <sapi-icon :name="codeVisible?'unexpand':'expand'" style="cursor: pointer;" />
+    </sapi-button>
   </div>
   <div v-show="codeVisible" class="component-source">
     <pre>
@@ -20,7 +22,7 @@
 </template>
 
 <script>
-import {highlight} from 'highlight.js';
+import * as highlight from 'highlight.js';
 import 'highlight.js/styles/github.css'
 import Clipboard from 'clipboard'
 import {defineComponent, nextTick, onMounted, ref, getCurrentInstance} from "vue"
@@ -32,8 +34,7 @@ export default defineComponent({
       component: {
         type: Object,
         required: true
-      },
-      showJson:false
+      }
     },
     setup(){
       const { proxy } = getCurrentInstance()

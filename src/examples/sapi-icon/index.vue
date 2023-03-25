@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {defineComponent, ref, watch} from 'vue'
+import {defineComponent, ref, watch, getCurrentInstance} from 'vue'
 import md from './ioc-icon.md'
 // import props from '@/examples/common/props'
 // import IocDivider from "@/components/divider";
@@ -26,6 +26,7 @@ export default defineComponent({
   },
   // props,
   setup (props) {
+    const { proxy } = getCurrentInstance()
     const key = ref(props.tabActive)
     watch(
       () => props.tabActive,
@@ -56,11 +57,11 @@ export default defineComponent({
       // 复制代码
       const clipboard = new Clipboard(id)
       clipboard.on('success', () => {
-        message.success('复制成功');
+        proxy.$message({ type: 'success', text: '复制成功' })
         clipboard.destroy()
       })
       clipboard.on('error', () => {
-        message.success('复制失败，请联系管理员');
+        proxy.$message({ type: 'error', text: '复制失败' })
         clipboard.destroy()
       })
 
