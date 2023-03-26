@@ -1,13 +1,6 @@
 <template>
-  <div v-if="key === 'demo'">
-    <sapi-code-card v-for="(item,index) in components" :key="index" :component="item"></sapi-code-card>
-  </div>
-  <div v-if="key === 'api'">
-    <md class="markdown-body" />
-  </div>
-  <div v-if="key === 'design'">
-    <h1>啥都没有</h1>
-  </div>
+  <sapi-code-card v-for="(item,index) in components" :key="index" :component="item"></sapi-code-card>
+  <md class="markdown-body" />
 </template>
 
 <script>

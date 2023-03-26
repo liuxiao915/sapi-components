@@ -45,10 +45,9 @@ export default {
 <style lang="less" scoped>
 .sapi-table {
   height: 100%;
-}
-  .project-table-header {
-    color: #ffffff!important;
-    background-color: #4B9BFF!important;
+  :deep(.project-table-header) {
+    color: #ffffff;
+    background-color: #4B9BFF;
   }
   .table-cell.padding-left__10px {
     padding-left: 10px;
@@ -58,4 +57,5 @@ export default {
     padding-right: 10px;
     box-sizing: border-box;
   }
+}
 </style>
