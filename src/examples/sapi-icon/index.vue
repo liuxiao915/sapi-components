@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import {defineComponent, ref, watch, getCurrentInstance} from 'vue'
+import {defineComponent, ref, getCurrentInstance} from 'vue'
 import md from './ioc-icon.md'
 import Clipboard from "clipboard";
 export default defineComponent({
@@ -22,13 +22,6 @@ export default defineComponent({
   },
   setup (props) {
     const { proxy } = getCurrentInstance()
-    const key = ref(props.tabActive)
-    watch(
-      () => props.tabActive,
-      () => {
-        key.value = props.tabActive
-      }
-    )
     const iocIconList = ref([])
     const showCode = ref(-1)
     const getNameList = ()=>{
@@ -59,10 +52,8 @@ export default defineComponent({
         proxy.$message({ type: 'error', text: '复制失败' })
         clipboard.destroy()
       })
-
     }
     return {
-      key,
       iconNameList:getNameList(),
       iocIconList,
       showCode,
