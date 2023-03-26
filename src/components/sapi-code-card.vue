@@ -5,12 +5,12 @@
   </div>
   <div class="code-card">
     <sapi-icon title="获取json" name='JSON' v-show="false" style="cursor: pointer;margin-right: 16px" @click="$emit('getCode',component.setup().option)"/>
-    <sapi-button title="复制代码" variant="text" class="copy-btn" style="cursor: pointer" :data-clipboard-text="component.options.__sourceCode" @click="copyCode()">
+    <button title="复制代码" variant="text" :class="'copy-btn'" style="cursor: pointer" :data-clipboard-text="component.options.__sourceCode" @click="copyCode()">
       <sapi-icon name="file-copy" style="cursor: pointer;" />
-    </sapi-button>
-    <sapi-button title="查看代码" variant="text" style="cursor: pointer" @click="handleCodeVisible">
+    </button>
+    <button title="查看代码" variant="text" style="cursor: pointer" @click="handleCodeVisible">
       <sapi-icon :name="codeVisible?'unexpand':'expand'" style="cursor: pointer;" />
-    </sapi-button>
+    </button>
   </div>
   <div v-show="codeVisible" class="component-source">
     <pre>

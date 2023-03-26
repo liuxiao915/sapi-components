@@ -5,7 +5,6 @@
         <p v-if="showCode !== index" style="margin-top: 12px">{{item}}</p>
         <div v-if="showCode === index" style="margin-top: 12px">
           <sapi-icon :data-clipboard-text="item" class="file-copy"  name="file-copy" @click="copyCode('.file-copy')"/>
-          <!-- <ioc-divider layout="vertical" /> -->
           <sapi-icon :data-clipboard-text="iocIconList[index]" class="file-icon" name="file-icon" @click="copyCode('.file-icon')"/>
         </div>
     </div>
@@ -16,15 +15,11 @@
 <script>
 import {defineComponent, ref, watch, getCurrentInstance} from 'vue'
 import md from './ioc-icon.md'
-// import props from '@/examples/common/props'
-// import IocDivider from "@/components/divider";
 import Clipboard from "clipboard";
 export default defineComponent({
   components: {
-    // IocDivider,
     md
   },
-  // props,
   setup (props) {
     const { proxy } = getCurrentInstance()
     const key = ref(props.tabActive)
@@ -96,10 +91,6 @@ export default defineComponent({
 }
 .svg-icon{
   font-size: 24px;
-}
-
-.ioc-divider--vertical{
-  border-left: 1px solid #bfbfbfcc;
 }
 .file-copy,.file-icon{
   font-size: 16px;
