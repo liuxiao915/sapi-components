@@ -1,5 +1,26 @@
 import { createRouter,createWebHashHistory } from 'vue-router'
+// const context = require.context('../examples/', true, /\/index.vue$/)
+// const components = {}
+// context.keys().forEach((key) => {
+//   const name = key.replace(/^\.\/(.*)\.\w+$/, '$1').split('/')[0]
+//   components[`${name}`] = context(key).default || context(key)
+// })
 
+
+// 非懒加载
+// import Index from '@/views/index'
+
+// vue异步组件
+// const Index = resolve => require(['@/views/index'], resolve)
+
+// import
+// 指定了相同的webpackChunkName--ImportIndex，会合并打包成一个js文件，用于合并大的模块代码
+// const Index = () => import(/* webpackChunkName: 'ImportIndex' */ '@/views/index');
+
+// webpack提供的require.ensure()
+// 该方法也可指定相同的chunkName，合并打包成一个js文件。
+// 传入空字符串 则每个component会单独生成一个js文件
+// const Index = r => require.ensure([], () => r(require('@/views/index')), 'ImportIndex')
 const routes = [
   {
     path: '/',

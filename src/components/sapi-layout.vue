@@ -34,6 +34,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .sapi-layout {
+  position: relative;
+  z-index: 10;
   height: 100%;
   header {
     height: 50px;

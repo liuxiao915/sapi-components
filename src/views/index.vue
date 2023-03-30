@@ -1,9 +1,6 @@
 <template>
   <sapi-layout :data="state.menuData" @selectTabs="selectMenu">
     <template #right>
-      <!-- <div class="sapi-tabs">
-        <div :class="['sapi-tabs-item', activeTab === index ? 'active' : '']" v-for="(item, index) in state.tabsData" :key="index" @click="changeTab(item)">{{ item.label }}</div>
-      </div> -->
       <router-view v-slot="{ Component }">
         <keep-alive>
           <component :is="Component" v-if="$route.meta.keepAlive" :key="$route.name" />
@@ -16,12 +13,7 @@
 <script>
 import { useRouter } from 'vue-router'
 import { ref, reactive } from 'vue'
-// const context = require.context('../examples/', true, /\/index.vue$/)
-// const components = {}
-// context.keys().forEach((key) => {
-//   const name = key.replace(/^\.\/(.*)\.\w+$/, '$1').split('/')[0]
-//   components[`${name}`] = context(key).default || context(key)
-// })
+
 export default {
   props: {
     menuData:{
