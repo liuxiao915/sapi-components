@@ -27,7 +27,6 @@ module.exports = function (source, map) {
     // 3. 源码转换
     const sourceCode = handlerSource(parsed)
     const sourceCodeTitle = parsed.customBlocks[0].content
-    console.log('sourceCodeTitle:::', sourceCodeTitle)
     // 4. 将结果添加到 组件对象上面
     this.callback(
         null,

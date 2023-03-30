@@ -5,8 +5,9 @@
 
 <script>
 //导入mars3d主库
-// import "mars3d/dist/mars3d.css";
-// import * as mars3d from "mars3d";
+import "mars3d/dist/mars3d.css";
+import * as mars3d from "mars3d";
+import {option} from "./config.js";
 import { onMounted, onBeforeUnmount } from 'vue'
 export default {
   name: 'sapiMars3d',
@@ -41,7 +42,7 @@ export default {
       map = null
     }
     onMounted(() => {
-      // 或者直接new mars3d.Map("mars3dContainer", {...一些选项})
+      map = new mars3d.Map("mars3dContainer", option)
       // initMap()
     })
     onBeforeUnmount(() => {

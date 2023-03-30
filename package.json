@@ -19,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@turf/turf": "^6.5.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
@@ -32,6 +33,8 @@
     "highlight.js": "^11.7.0",
     "less": "^4.1.3",
     "less-loader": "^11.1.0",
+    "mars3d": "^3.5.1",
+    "mars3d-cesium": "^1.103.2",
     "qs": "^6.11.1",
     "resize-observer-polyfill": "^1.5.1",
     "sass-resources-loader": "^2.2.5",
