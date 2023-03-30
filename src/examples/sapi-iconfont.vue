@@ -1937,7 +1937,7 @@ export default {
   *zoom: 1;
   li {
     float:left;
-    height: 200px;
+    height: 160px;
     width: 100px;
     margin-bottom: 10px;
     margin-right: 20px;
@@ -1953,16 +1953,16 @@ export default {
   }
   .icon {
     display: block;
-    height: 100px;
+    height: 80px;
     line-height: 100px;
-    font-size: 36px;
+    font-size: 28px;
     margin: 10px auto;
     color: #333;
     -webkit-transition: font-size 0.25s linear, width 0.25s linear;
     -moz-transition: font-size 0.25s linear, width 0.25s linear;
     transition: font-size 0.25s linear, width 0.25s linear;
     &:hover {
-      font-size: 80px;
+      font-size: 60px;
     }
   }
   .svg-icon {
