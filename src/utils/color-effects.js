@@ -1,5 +1,4 @@
-{
-  //定义点击出现文字类
+//定义点击出现文字类
 function ClickFrontShow() {
   //定义所需文字和颜色
   this.front = ['高兴', '开心', '❤', '欢乐', '愉悦', '愉快', '快乐', '欢喜', '喜悦', '欢欣', '欢畅', '欢腾', '雀跃', '欢快'];
@@ -73,10 +72,10 @@ ClickFrontShow.prototype.init = function(frontArray, colorArray) {
   this.colo = colorArray || this.colo;
   this.listenMouse();
 }
+
 //实例化
-var frontShow = new ClickFrontShow();
+export const frontShow = new ClickFrontShow();
 
 //用户可在此传递参数，默认第一个参数是字体数组；
 //第二个参数是颜色数组，必须是数组类型！
-frontShow.init();
-}
+// frontShow.init();
