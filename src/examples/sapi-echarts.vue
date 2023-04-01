@@ -1,5 +1,5 @@
 <template>
-  <spaiEcharts type="bar" :option="state.option" />
+  <spaiEcharts type="pie" :option="state.option" />
 </template>
 <script>
 import { reactive } from 'vue'
