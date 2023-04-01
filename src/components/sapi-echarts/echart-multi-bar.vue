@@ -6,7 +6,7 @@
 
 <script>
 import chartContentBox from './echart-content-box.vue'
-import merge from 'lodash.merge'
+import { merge } from 'lodash'
 export default {
     name: 'echart-multi-bar',
     components: {

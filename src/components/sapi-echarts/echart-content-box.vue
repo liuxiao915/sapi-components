@@ -4,7 +4,7 @@
 <script>
 import * as echarts from 'echarts'
 import ResizeObserver from 'resize-observer-polyfill'
-import merge from 'lodash.merge'
+import { merge } from 'lodash'
 
 const debounce = function (fn, delay) {
     let timer = null
@@ -66,7 +66,6 @@ export default {
             this.chart.setOption(option, { notMerge: true })
             this.$emit('setChart', this.chart)
             this.chart.on('finished', () => {
-                // console.log('finished')
                 this.$emit('finished', true)
             });
             this.doing = false

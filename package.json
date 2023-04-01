@@ -33,6 +33,7 @@
     "highlight.js": "^11.7.0",
     "less": "^4.1.3",
     "less-loader": "^11.1.0",
+    "lodash": "^4.17.21",
     "mars3d": "^3.5.1",
     "mars3d-cesium": "^1.103.2",
     "qs": "^6.11.1",
