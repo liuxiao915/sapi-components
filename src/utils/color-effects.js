@@ -1,7 +1,7 @@
 //定义点击出现文字类
 function ClickFrontShow() {
   //定义所需文字和颜色
-  this.front = ['高兴', '开心', '❤', '欢乐', '愉悦', '愉快', '快乐', '欢喜', '喜悦', '欢欣', '欢畅', '欢腾', '雀跃', '欢快'];
+  this.front = ['高兴', '开心', '❤', '欢乐', '愉悦', '愉快', '快乐', '欢喜', '喜悦', '欢欣', '欢畅', '欢腾', '雀跃', '欢快', '★', '☆'];
   this.colo = ['#FF69B4', '#ff6651', 'orange', '#FF00FF', '#00FF7F', '#00BFFF', '#BA55D3'];
   //获取body元素
   this.elBody = document.getElementsByTagName("body")[0];

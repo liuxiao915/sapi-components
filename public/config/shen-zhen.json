@@ -1,0 +1,459 @@
+{
+  "map3d": {
+    "scene": {
+      "center": {
+        "x": 114.17,
+        "y": 22.65,
+        "z": 100000,
+        "pitch": -90,
+        "roll": 0
+      },
+      "contextOptions": {
+        "infoBox": false,
+        "webgl": {
+          "preserveDrawingBuffer": true
+        }
+      },
+      "scene3DOnly": false,
+      "shadows": false,
+      "removeDblClick": true,
+      "sceneMode": 3,
+      "showSun": true,
+      "showMoon": false,
+      "showSkyBox": false,
+      "showSkyAtmosphere": true,
+      "fog": true,
+      "fxaa": true,
+      "globe": {
+        "depthTestAgainstTerrain": false,
+        "baseColor": "#2B323E",
+        "showGroundAtmosphere": true,
+        "enableLighting": false
+      },
+      "cameraController": {
+        "zoomFactor": 3.0,
+        "minimumZoomDistance": 50,
+        "maximumZoomDistance": 700000,
+        "enableRotate": true,
+        "enableTranslate": true,
+        "enableTilt": true,
+        "enableZoom": true,
+        "enableCollisionDetection": true,
+        "minimumCollisionTerrainHeight": 15000
+      }
+    },
+    "control": {
+      "homeButton": false,
+      "baseLayerPicker": false,
+      "sceneModePicker": false,
+      "vrButton": false,
+      "fullscreenButton": false,
+      "navigationHelpButton": false,
+      "animation": false,
+      "timeline": false,
+      "infoBox": false,
+      "geocoder": false,
+      "geocoderConfig": {
+        "key": ["ae29a37307840c7ae4a785ac905927e0"]
+      },
+      "selectionIndicator": false,
+      "defaultContextMenu": false,
+      "mouseDownView": false,
+      "contextmenu": {
+        "preventDefault": true,
+        "hasDefault": true
+      },
+      "locationBar": {
+        "enabled": false,
+        "fps": true,
+        "crs": "CGCS2000_GK_Zone_3",
+        "crsDecimal": 0,
+        "template": "<div>经度:{lng}</div> <div>纬度:{lat}</div> <div class='hide1000'>横{crsx}  纵{crsy}</div> <div>海拔：{alt}米</div> <div class='hide700'>层级：{level}</div><div>方向：{heading}°</div> <div>俯仰角：{pitch}°</div><div class='hide700'>视高：{cameraHeight}米</div>"
+      }
+    },
+    "extend_sz": {
+      "west": 113.531,
+      "south": 22.935,
+      "east": 114.713,
+      "north": 22.352
+    },
+    "extend_ss": {
+      "west": 114.68815432965872,
+      "south": 22.638449324268855,
+      "east": 115.42826684515776,
+      "north": 23.080914210824943
+    },
+    "licenseKey": "6THQPxvsWN98LkA4XwbMegmZHWgXxicMYG6HGFV6P4hRR9DaNiTeGWmrnVomPXYkgLn7wa1ACaov+jlOK+tecUbDzw710HvcXAfbWwKZL6M=",
+    "gz_path": "http://10.253.102.69",
+    "terrain": {
+      "name": "地形30米",
+      "url": "/gw/COMMON/dem/dem30/",
+      "queryParameters": {
+        "TileMatrixSet": "EPSG:4490",
+        "layer": "dem30"
+      }
+    },
+    "basemaps": {
+      "gzSatelliteST": {
+        "type": "xyz",
+        "option": {
+          "id": "gzSatelliteST",
+          "name": "深汕区航空影像(2019年)",
+          "url": "/gw/OGC/Map/SS_IMG_2019/{z}/{x}/{y}",
+          "subdomains": "1234"
+        }
+      },
+      "gzSatellite": {
+        "type": "xyz",
+        "option": {
+          "id": "gzSatellite",
+          "name": "深圳市航空影像(2022年)",
+          "url": "/gw/OGC/Map/SZ_IMG_2022/{z}/{x}/{y}",
+          "subdomains": "1234"
+        }
+      },
+      "gzWhiteSatellite": {
+        "type": "xyz",
+        "option": {
+          "id": "gzWhiteSatellite",
+          "name": "深圳市电子地图底图淡白色版(4490)",
+          "url": "/gw/OGC/Map/SZ_VEC_W4490/rest/w_shenzhen/EPSG:4490/EPSG:4490:{sz}/{y}/{x}?format=image/png"
+        }
+      },
+      "gzBlueSatellite": {
+        "type": "xyz",
+        "option": {
+          "id": "gzBlueSatellite",
+          "name": "一网统管风格矢量电子地图",
+          "subdomains": "0123",
+          "url": "/gw/OGC/Map/YWTG_SZ_VEC/rest/YWTG:YWTG/EPSG:4490/EPSG:4490:{sz}/{y}/{x}?format=image/png"
+        }
+      },
+      "gzWhiteModel": {
+        "type": "tile",
+        "option": {
+          "id": "gzWhiteModel",
+          "name": "深圳市白模建筑",
+          "url": "/gw/TILE_3D_MODEL/sz/shenzhenBM/tileset.json"
+        }
+      },
+      "gzSZTiles": {
+        "type": "tile",
+        "option": {
+          "id": "gzSZTiles",
+          "name": "深圳市倾斜摄影模型(2021年)",
+          "url": "/gw/TILE_3D_MODEL/sz/shenzhen2021/tileset.json"
+        }
+      }
+    },
+    "development": {
+      "devMode": "development",
+      "publicPath": ""
+    },
+
+    "layers": [
+      {
+        "id": "1",
+        "key": "Urban-spatio-temporal-data",
+        "title": "城市时空数据",
+        "children": [
+          {
+            "id": "101",
+            "key": "Full-space-3D-model-data",
+            "title": "全空间三维模型数据",
+            "children": [
+              {
+                "id": "10101",
+                "key": "gzSZTiles",
+                "title": "倾斜摄影",
+                "type": "3dtiles",
+                "option": {
+                  "id": "gzSZTiles",
+                  "name": "深圳市倾斜摄影模型(2021年)",
+                  "url": "http://10.253.102.69/gw/TILE_3D_MODEL/sz/shenzhen2021/tileset.json"
+                }
+              },
+              {
+                "id": "10102",
+                "key": "gzWhiteModel",
+                "title": "三维白模",
+                "type": "3dtiles",
+                "option": {
+                  "id": "gzWhiteModel",
+                  "name": "深圳市白模建筑",
+                  "url": "http://10.253.102.69/gw/TILE_3D_MODEL/sz/shenzhenBM/tileset.json"
+                }
+              },
+              {
+                "id": "10103",
+                "key": "dem30",
+                "title": "卫星影像（可结合高程数据展示）",
+                "type":"terrain",
+                "option": {
+                  "id": "dem30",
+                  "name": "深圳市地形30米",
+                  "url": "http://10.253.102.69//gw/COMMON/dem/dem30/",
+                  "queryParameters": {
+                    "TileMatrixSet": "EPSG:4490",
+                    "layer": "dem30"
+                   }
+                }
+              }
+            ]
+          },
+          {
+            "id": "102",
+            "key": "Basic-geographic-information-data",
+            "title": "基础地理信息数据",
+            "children": [
+              {
+                "key": "Realm-and-Administrative-Region",
+                "title": "境界与政区",
+                "children": [
+                  {
+                    "key": "XZQH_QX_A",
+                    "title": "市边界",
+                    "type": "wfs",
+                    "disabled": true,
+                    "option":{
+                      "url":""
+                    }
+                  },
+                  {
+                    "key": "XZQH_YWTGQU_A",
+                    "title": "区边界",
+                    "type": "wfs",
+                    "option":{
+                      "url":"http://10.253.102.69/gw/OGC/GeoData/WFS/XZQH_YWTGQU_A?service=WFS&version=2.0.0&request=GetFeature&typeName=XZQH:qu_ywtg&outputFormat=application/json"
+                    }
+                  },
+                  {
+                    "key": "XZQH_YGTGJD_A",
+                    "title": "街道边界",
+                    "type": "wfs",
+                    "option":{
+                      "url":"http://10.253.102.69/gw/OGC/GeoData/WFS/XZQH_YGTGJD_A?service=WFS&version=2.0.0&request=GetFeature&typeName=XZQH:jd_ywtg&outputFormat=application/json"
+                    }
+                  },
+                  {
+                    "key": "XZQH_YWTGSQ_A",
+                    "title": "社区边界",
+                    "type": "wfs",
+                    "option":{
+                      "url": "http://10.253.102.69/gw/OGC/GeoData/WFS/XZQH_YWTGSQ_A?service=WFS&version=2.0.0&request=GetFeature&outputFormat=application/json&typeName=XZQH:sq_ywtg"
+                    }
+                  },
+                  {
+                    "key": "XZQH_QX_A",
+                    "title": "网格边界",
+                    "disabled": true
+                  }
+                ]
+              },
+              {
+                "key": "Electronic-map",
+                "title": "电子地图",
+                "children": [
+                  {
+                    "key": "gzBlueSatellite",
+                    "title": "“一网统管”深治慧定制版"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "key": "Urban-management-object-data",
+        "title": "城市管理对象数据",
+        "disabled": true,
+        "children": [
+          {
+            "key": "GeologicalSurvey",
+            "title": "基础管理对象",
+            "disabled": true,
+            "children": [
+              {
+                "key": "CollapseKeyPreventionArea",
+                "disabled": true,
+                "title": "土地"
+              },
+              {
+                "key": "GeologicalDisasterPreventionArea",
+                "disabled": true,
+                "title": "房屋"
+              },
+              {
+                "key": "GeologicalDisasterPreventionArea",
+                "disabled": true,
+                "title": "人口"
+              },
+              {
+                "key": "GeologicalDisasterPreventionArea",
+                "disabled": true,
+                "title": "法人"
+              },
+              {
+                "key": "GeologicalDisasterPreventionArea",
+                "disabled": true,
+                "title": "道路"
+              },
+              {
+                "key": "GeologicalDisasterPreventionArea",
+                "disabled": true,
+                "title": "公共交通"
+              },
+              {
+                "key": "GeologicalDisasterPreventionArea",
+                "disabled": true,
+                "title": "水系"
+              }
+            ]
+          },
+          {
+            "key": "Thematic",
+            "title": "专题数据对象",
+            "disabled": true,
+            "children": [
+              {
+                "key": "Ecological",
+                "disabled": true,
+                "title": "生态专题"
+              },
+              {
+                "key": "housing",
+                "disabled": true,
+                "title": "住建专题"
+              },
+              {
+                "key": "Economics",
+                "disabled": true,
+                "title": "经济专题"
+              },
+              {
+                "key": "Epidemic",
+                "disabled": true,
+                "title": "疫情防控专题"
+              },
+              {
+                "key": "emergency",
+                "disabled": true,
+                "title": "应急专题"
+              },
+              {
+                "key": "education",
+                "disabled": true,
+                "title": "教育专题"
+              },
+              {
+                "key": "Grass-roots-governance",
+                "disabled": true,
+                "title": "基层治理专题"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "key": "City-operation-perception-data",
+        "title": "城市运行感知数据",
+        "disabled": true,
+        "children": [
+          {
+            "key": "IoT-perception-data",
+            "disabled": true,
+            "title": "物联感知数据",
+            "children": [
+              {
+                "key": "Track-awareness-data",
+                "disabled": true,
+                "title": "轨迹感知数据",
+                "children": [
+                  {
+                    "key": "Crowd-movement-track",
+                    "disabled": true,
+                    "title": "人群活动轨迹"
+                  },
+                  {
+                    "key": "Vehicle-activity-track",
+                    "disabled": true,
+                    "title": "交通工具活动轨迹"
+                  }
+                ]
+              },
+              {
+                "key": "Video-monitoring-data",
+                "disabled": true,
+                "title": "视频监控数据",
+                "children": [
+                  {
+                    "key": "data-stream",
+                    "disabled": true,
+                    "title": "数据流"
+                  },
+                  {
+                    "key": "video-file",
+                    "disabled": true,
+                    "title": "视频文件"
+                  }
+                ]
+              },
+              {
+                "key": "Device-aware-data",
+                "disabled": true,
+                "title": "设备感知数据"
+              },
+              {
+                "key": "Environmentally-aware-data",
+                "disabled": true,
+                "title": "环境感知数据"
+              },
+              {
+                "key": "Meteorological-perception-data",
+                "disabled": true,
+                "title": "气象感知数据"
+              },
+              {
+                "key": "Hydrologic-perception-data",
+                "disabled": true,
+                "title": "水文感知数据"
+              }
+            ]
+          },
+          {
+            "key": "Internet-Open-Data",
+            "disabled": true,
+            "title": "互联网开放数据",
+            "children": [
+              {
+                "key": "sInternet-electronic-map",
+                "title": "互联网电子地图",
+                "disabled": true,
+                "children": [
+                  {
+                    "key": "Global",
+                    "disabled": true,
+                    "title": "全球"
+                  },
+                  {
+                    "key": "China",
+                    "disabled": true,
+                    "title": "中国"
+                  },
+                  {
+                    "key": "shenzhen",
+                    "disabled": true,
+                    "title": "深圳"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
