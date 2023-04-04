@@ -1,13 +1,24 @@
+### mars3d类对象中获取原生Cesium对象
+
 | mars3d类                                                     | 内部Cesium对象                                               | 说明                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------- |
-| [mars3d.Map](http://mars3d.cn/api/Map.html#viewer) | [map.viewer](http://mars3d.cn/api/cesium/Viewer.html) | 地球主对象                                     |
+| [mars3d.Map](http://mars3d.cn/api/Map.html#viewer)           | [map.viewer](http://mars3d.cn/api/cesium/Viewer.html)        | 地球主对象                                     |
 | [mars3d.layer.BaseTileLayer](http://mars3d.cn/api/BaseTileLayer.html#layer) | [tileLayer.layer ](http://mars3d.cn/api/cesium/ImageryLayer.html)和 [tileLayer.imageryProvider](http://mars3d.cn/api/cesium/ImageryProvider.html) | 瓦片图层对象                                   |
 | [mars3d.layer.TilesetLayer](http://mars3d.cn/api/TilesetLayer.html#tileset) | [tilesetLayer.tileset ](http://mars3d.cn/api/cesium/Cesium3DTileset.html)(在readyPromise异步获取使用) | 3dtiles三维模型图层                            |
 | [mars3d.graphic.BaseGraphic](http://mars3d.cn/api/BaseGraphic.html#czmObject) | graphic.czmObject (不同子类实现)                             | 矢量数据对象，不同子类中实现，比如下面 Polygon |
 | [mars3d.graphic.PolygonEntity](http://mars3d.cn/api/PolygonEntity.html#entity) | [graphic.czmObject ](http://mars3d.cn/api/cesium/Entity.html)或 [graphic.entity](http://mars3d.cn/api/cesium/Entity.html) | Entity矢量数据对象，其他类型使用相似           |
 | [mars3d.graphic.PolygonPrimitive](http://mars3d.cn/api/PolygonPrimitive.html#primitive) | [graphic.czmObject ](http://mars3d.cn/api/cesium/Primitive.html)或 [graphic.primitive](http://mars3d.cn/api/cesium/Primitive.html) | Primitive矢量数据对象，其他类型使用相似        |
 
-mars3d地图选项参数说明
+
+
+### mars3d.Map类 参数说明
+
+| 参数名     | 类型                    | 参数解释                                  |
+| ---------- | ----------------------- | ----------------------------------------- |
+| id         | String 或 Cesium.Viewer | 地图容器的div的id或已经构造好的viewer对象 |
+| mapOptions | Object                  | 创建地球的参数                            |
+
+### mapOptions 参数包括：
 
 | 参数名   | 类型   | 参数API                                                      | 说明     |
 | -------- | ------ | ------------------------------------------------------------ | -------- |
