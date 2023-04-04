@@ -14,7 +14,7 @@ export default {
     // 地图唯一性标识
     mapKey: {
       type: String,
-      default: ''
+      default: 'default'
     },
     options: {
       type: Object,
@@ -57,6 +57,9 @@ export default {
         if (map.viewer.sceneModePicker) {
           map.viewer.sceneModePicker.viewModel.duration = 0.0
         }
+        // 删除火星logo，可能存在删不掉的情况，
+        // 通过设置窗体高度将logo挤出去，但是截图时会带上
+        map.viewer.scene.primitives.remove(map.viewer.scene.primitives.get(0))
         // webgl渲染失败后，刷新页面
         // map.on(mars3d.EventType.renderError, async () => {
         //   await $alert("程序内存消耗过大，请重启浏览器")
@@ -95,15 +98,10 @@ export default {
       // }
     }
     onMounted(() => {
-      // 或者直接
-      // new mars3d.Map("mars3dContainer", {//...一些选项})
-      initMap()
+      initMap() // 或者直接 new mars3d.Map("mars3dContainer", {//...一些选项})
     })
     onUnmounted(() => {
-      if (map) {
-        map.destroy()
-        map = null
-      }
+      destroyMap()
     })
     return {
       mapKeyId
