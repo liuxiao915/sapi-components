@@ -14,7 +14,7 @@
 
 <script>
 import {defineComponent, ref, getCurrentInstance} from 'vue'
-import md from './ioc-icon.md'
+import md from './sapi-icon.md'
 import Clipboard from "clipboard";
 export default defineComponent({
   components: {
@@ -30,7 +30,7 @@ export default defineComponent({
       let iconList = requireAll(moduleList)
       const iconNameList = iconList.map(module => {
         const name = module.default.id.substring(5)
-        iocIconList.value.push(`<ioc-icon name='${name}' />`)
+        iocIconList.value.push(`<sapi-icon name='${name}' />`)
         return name
       })
       return iconNameList

@@ -34,7 +34,7 @@ export function useCommonClassName(){
 }
 
 export function usePrefixClass(str){
-    if(!str) return 'ioc'
+    if(!str) return 'sapi'
     return computed(()=>{
         let nstr = str.replace(/([A-Z])/g,function (match){
             return '-' + match.toLowerCase()
