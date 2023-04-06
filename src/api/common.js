@@ -1,4 +1,4 @@
-import request from '@/utils/request.js'
+import axios from '@/hooks/axios.js'
 const BASEURL = '/api-proxy'
 
 /*
@@ -10,7 +10,7 @@ const BASEURL = '/api-proxy'
 
 export function get(url, params = {}) {
   return new Promise((resolve, reject) => {
-    request
+    axios
       .get(BASEURL + url, {
         params: params
       })
@@ -24,7 +24,7 @@ export function get(url, params = {}) {
 }
 export function post(url, params = {}) {
   return new Promise((resolve, reject) => {
-    request({
+    axios({
       url: BASEURL + url,
       data: params,
       method: 'POST'

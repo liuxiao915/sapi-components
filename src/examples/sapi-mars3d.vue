@@ -5,12 +5,15 @@
 </template>  
 
 <script>
+import * as mars3d from "mars3d";
 import sapiMars3d from "@/components/sapi-mars3d";
+import { getCurrentInstance } from 'vue'
 export default {
   components: {
     sapiMars3d
   },
   setup() {
+    const { proxy } = getCurrentInstance()
     const markDataList = [
       {
         id: 0,
@@ -79,14 +82,74 @@ export default {
         image: require("@/assets/images/mars3d/yellow.png"),
       },
     ]
-      const clickCallbackFun = (e) => {
-      alert("进入回调");
+    const clickCallbackFun = (e) => {
+      proxy.$message({ type: 'success', text: e.graphic.options.name })
       console.log("监听layer，单击了矢量对象", e);
+    }
+    const addMarkLayer = (map, list, clickCallback, options = {}) => {
+      if (!(list && list.length > 0)) return
+      // 创建矢量数据图层
+      try {
+        const graphicLayer = new mars3d.layer.GraphicLayer({
+          clampToGround: options.clampToGround ? options.clampToGround : false,
+          clustering: options.clustering ? options.clustering : null
+        })
+        // 高亮时的样式（默认为})
+        map.addLayer(graphicLayer)
+        const scale = (options.styleOptions?.scale || 0.5) * 1
+        const highlightScale = (options.styleOptions?.highlightScale || 0.8) * 1
+        list.forEach((item) => {
+          const graphic = new mars3d.graphic.BillboardPrimitive({
+            name: item.name,
+            position: item.position,
+            style: {
+              image: item.image,
+              scale,
+              horizontalOrigin: mars3d.Cesium.HorizontalOrigin.CENTER,
+              verticalOrigin: mars3d.Cesium.VerticalOrigin.BOTTOM,
+              clampToGround: options.clampToGround ? options.clampToGround : false,
+              disableDepthTestDistance: Number.POSITIVE_INFINITY,
+              // 高亮时的样式（默认为鼠标移入，也可以指定type:'click'单击高亮），构造后也可以openHighlight、closeHighlight方法来手动调用
+              highlight: {
+                type: mars3d.EventType.click,
+                scale: highlightScale
+              }
+            },
+            attr: { ...item }
+          })
+          graphicLayer.addGraphic(graphic)
+        })
+        const _map = map
+        if (clickCallback) {
+          // 在layer上绑定监听事件
+          graphicLayer.on(mars3d.EventType.click, function (event) {
+            if (!event.graphic) {
+              // 单击了聚合的点
+              _map.flyTo(event.pickedObject.id, { duration: 1 })
+            } else {
+              clickCallback(event)
+            }
+          })
+          graphicLayer.on(mars3d.EventType.mouseOver, function (event) {
+            if (event && event.graphic) {
+              event.graphic.setStyle({ scale: highlightScale })
+            }
+          })
+          graphicLayer.on(mars3d.EventType.mouseOut, function (event) {
+            if (event && event.graphic) {
+              event.graphic.setStyle({ scale })
+            }
+          })
+        }
+        return graphicLayer
+      } catch (error) {
+        console.error('addMarkLayer', error)
+        return
+      }
     }
     const onMapload = (map) => {
       // 默认视角在深圳
-      // const map = map;
-      const markLayer = map.addMarkLayer(
+      const markLayer = addMarkLayer(map,
         markDataList,
         clickCallbackFun,
         {
@@ -96,6 +159,9 @@ export default {
           },
         }
       );
+    }
+    return {
+      onMapload
     }
   }
 };
