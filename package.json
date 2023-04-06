@@ -36,6 +36,8 @@
     "lodash": "^4.17.21",
     "mars3d": "^3.5.1",
     "mars3d-cesium": "^1.103.2",
+    "mars3d-heatmap": "^3.5.2",
+    "mars3d-tdt": "^3.5.2",
     "qs": "^6.11.1",
     "resize-observer-polyfill": "^1.5.1",
     "sass-resources-loader": "^2.2.5",
