@@ -56,7 +56,7 @@ const routes = [
 				path: '/mars3d',
 				name: 'mars3d',
 				meta: { keepAlive: false },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-mars3d.vue')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/spai-mars3d/index.vue')
 			},
 			{
 				path: '/echarts',
