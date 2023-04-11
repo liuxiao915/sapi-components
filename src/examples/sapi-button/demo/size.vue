@@ -4,7 +4,7 @@
 </docs>
 <template>
   <div class="sapi-demo-block-column">
-    <div class="sapi-demo-block-row">
+    <div class="sapi-row">
       <sapi-button size="small" variant="base">
         填充按钮
       </sapi-button>
@@ -18,7 +18,7 @@
         文字按钮
       </sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
+    <div class="sapi-row">
       <sapi-button size="medium" variant="base">
         填充按钮
       </sapi-button>
@@ -32,7 +32,7 @@
         文字按钮
       </sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
+    <div class="sapi-row">
       <sapi-button size="large" variant="base">
         填充按钮
       </sapi-button>
