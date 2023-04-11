@@ -1,6 +1,5 @@
-## API
-closureIcon
-### Button Props
+### API
+#### sapiIcon Props
 
 | 名称     | 类型     | 默认值    | 说明   | 必传                                                                                           |
 | -------- | ------- | ------- | -------| --- |
@@ -16,7 +15,7 @@ closureIcon
 | bottomBackground    | String  | -  | 弹框底部的box颜色  | N
 | bottomPadding    | String/Number  | -  | 弹框底部的box的内边距  | N
 
-### Button Solt
+#### sapiIcon Solt
 
 #### slot有两个插槽
 

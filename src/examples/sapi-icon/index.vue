@@ -1,10 +1,11 @@
 <template>
-  <div style="display: flex;flex-wrap: wrap">
-    <div v-for="(item,index) in iconNameList" :key="index" class="icons-view__wrapper" @mouseleave="focusOut" @mouseover="focus(index)">
+  <div class="wrapper">
+    <h3>icon列表</h3>
+    <div v-for="(item,index) in iconNameList" :key="index" class="icons-list" @mouseleave="focusOut" @mouseover="focus(index)">
         <sapi-icon :name="item" style="fill: blue"></sapi-icon>
         <p v-if="showCode !== index" style="margin-top: 12px">{{item}}</p>
         <div v-if="showCode === index" style="margin-top: 12px">
-          <sapi-icon :data-clipboard-text="item" class="file-copy"  name="file-copy" @click="copyCode('.file-copy')"/>
+          <sapi-icon :data-clipboard-text="item" class="file-copy" name="file-copy" @click="copyCode('.file-copy')"/>
           <sapi-icon :data-clipboard-text="iocIconList[index]" class="file-icon" name="file-icon" @click="copyCode('.file-icon')"/>
         </div>
     </div>
@@ -65,8 +66,15 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-.icons-view__wrapper {
-  width: calc(16.6667%);
+.wrapper {
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-columns: repeat(auto-fill, 185px);
+  margin-bottom: 20px;
+}
+.icons-list {
+  text-align: center;
+  width: 100%;
   height: 100px;
   font-size: 12px;
   display: flex;
