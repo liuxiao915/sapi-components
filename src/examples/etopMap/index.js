@@ -2,7 +2,6 @@
 import Layer from './layer' // 图层管理
 import * as turf from '@turf/turf'
 import axios from '@/hooks/axios'
-// import { options } from 'less'
 import { showStandColumn } from './js/landForeducation3D'
 import { showStandColumn2D } from './js/landForeducation2D'
 import { addEmergencyFun } from './js/emergency'
@@ -23,11 +22,9 @@ import BaseRoamLineUtils from './js/BaseRoamLineUtils'
 import TilesetUtils from './js/TilesetUtils'
 import * as mars3d from 'mars3d'
 
-// const mars3d = window.mars3d
 class EtopMap {
   constructor(map, options) {
     this.map = map
-
     //开启显式渲染
     map.scene.requestRenderMode = true
     //将turf绑定全局

@@ -11,54 +11,25 @@
   <p>直接使用文字作为按钮。是视觉吸引力最弱的一个按钮，通常出现在表格操作栏、标题和字段旁等。</p>
 </docs>
 <template>
-  <div class="sapi-demo-block-row">
-    <sapi-button
-      theme="default"
-      variant="base"
-    >
-      填充按钮
-    </sapi-button>
-    <sapi-button
-      theme="default"
-      variant="outline"
-    >
-      描边按钮
-    </sapi-button>
-    <sapi-button
-      theme="default"
-      variant="dashed"
-    >
-      虚框按钮
-    </sapi-button>
-    <sapi-button
-      theme="default"
-      variant="text"
-    >
-      文字按钮
-    </sapi-button>
-<!--    <sapi-popup trigger="hover"  v-model:visible="visible" placement="top" >
-      <span>测试数据代码</span>
-      <template #reference>
-        <sapi-button
-          theme="default"
-          variant="text"
-        >
-          点击触发
-        </sapi-button>
-      </template>
-    </sapi-popup>
-    {{visible}}-->
+  <div class="sapi-row">
+    <sapi-button theme="default" variant="base">填充按钮</sapi-button>
+    <sapi-button theme="default" variant="outline">描边按钮</sapi-button>
+    <sapi-button theme="default" variant="dashed">虚框按钮</sapi-button>
+    <sapi-button theme="default" variant="text">文字按钮</sapi-button>
   </div>
 </template>
 <script>
-import {ref} from "vue";
+import { ref } from "vue";
 export default {
   name: 'Base',
-  setup(){
+  setup() {
     const visible = ref(true)
-    return{
+    return {
       visible
     }
   }
 }
 </script>
+<style scoped lang="less">
+  @import '../index.less';
+</style>

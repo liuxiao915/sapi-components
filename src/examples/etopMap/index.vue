@@ -71,7 +71,6 @@
 import 'mars3d/dist/mars3d.css'
 import * as mars3d from 'mars3d'
 
-import echarts from 'echarts'
 //引入mars3d-echarts
 import './lib/echarts.min.js'
 import './lib/mars3d-echarts.js'
@@ -281,21 +280,6 @@ export default {
         : 'height: auto'
     }
   },
-  watch: {
-    // curLayerName: {
-    //   handler(n, o) {
-    //     console.log("curLayerName---",n , o)
-    //     // this.curLayerName = n
-    //     this.loadBaseLayer(n)
-    //   },
-    // },
-    // baseLayerArr: {
-    //   handler(newValue, oldValue) {
-    //     this.baseLayerArr1 = newValue
-    //   },
-    //   deep: true,
-    // },
-  },
   beforeMount() {
     window.isSZ = true
     if (this.appendToBody) {
@@ -325,22 +309,6 @@ export default {
       gl = null
     }
   },
-
-  /* unmounted() {
-    const canvas = document.getElementsByClassName('cesium-viewer');
-    let bool1=typeof (canvas) != 'undefined';
-    let bool2=canvas.length>0&&canvas.length<5
-    if ( bool1&&bool2) {
-      const gl = canvas[0].canvas[0].children[0].children[0].children[0].getContext('webgl');
-      canvas.addEventListener('webglcontextlost', (event) => {
-        console.log(event);
-      });
-      //用于模拟canvas丢失
-      //gl.getExtension('WEBGL_lose_context').loseContext();
-    } else {
-       console.log('地图组件没有准备或者地图组件重复！！！！！！！！！查找document.getElementsByClassName("cesium-viewer")')
-    }
-  }, */
 
   methods: {
     isMenuBoxFun(val) {
@@ -431,7 +399,6 @@ export default {
         bigScale = this.scale
       }
 
-      console.log('-----bigScale--', bigScale)
       const etopMap = new EtopMap(map, {
         bigScale: bigScale,
         scaleType: this.scaleType

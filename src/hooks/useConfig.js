@@ -1,15 +1,14 @@
 import { computed } from 'vue';
 
-export function useCommonClassName(){
-    const componentName = usePrefixClass()
-  return {
+export function useCommonClassName(str){
+    const componentName = usePrefixClass(str).value
+    return {
         SIZE: computed(() => ({
-            small: `${componentName}-size-s`,
-            medium: `${componentName}-size-m`,
-            large: `${componentName}-size-l`,
+            mini: `${componentName}-mini`,
+            small: `${componentName}-small`,
+            medium: `${componentName}-medium`,
+            large: `${componentName}-large`,
             default: '',
-            xs: `${componentName}-size-xs`,
-            xl: `${componentName}-size-xl`,
             block: `${componentName}-size-full-width`,
         })),
         STATUS: computed(() => ({
@@ -29,14 +28,14 @@ export function useCommonClassName(){
             visible: `${componentName}-is-visible`,
             expanded: `${componentName}-is-expanded`,
             indeterminate: `${componentName}-is-indeterminate`,
-        })),
-    };
+        }))
+    }
 }
 
 export function usePrefixClass(str){
-    if(!str) return 'sapi'
     return computed(()=>{
-        let nstr = str.replace(/([A-Z])/g,function (match){
+        if(!str) return 'sapi'
+        let nstr = str.replace(/([A-Z])/g, (match) => {
             return '-' + match.toLowerCase()
         })
         if(nstr.slice(0,1) === '-'){

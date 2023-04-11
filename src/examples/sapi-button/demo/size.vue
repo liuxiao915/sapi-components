@@ -5,114 +5,57 @@
 <template>
   <div class="sapi-demo-block-column">
     <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          size="small"
-          variant="base"
-        >
-          填充按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="small"
-          variant="outline"
-        >
-          描边按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="small"
-          variant="dashed"
-        >
-          虚框按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="small"
-          variant="text"
-        >
-          文字按钮
-        </sapi-button>
-      </div>
+      <sapi-button size="small" variant="base">
+        填充按钮
+      </sapi-button>
+      <sapi-button size="small" variant="outline">
+        描边按钮
+      </sapi-button>
+      <sapi-button size="small" variant="dashed">
+        虚框按钮
+      </sapi-button>
+      <sapi-button size="small" variant="text">
+        文字按钮
+      </sapi-button>
     </div>
     <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          size="medium"
-          variant="base"
-        >
-          填充按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="medium"
-          variant="outline"
-        >
-          描边按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="medium"
-          variant="dashed"
-        >
-          虚框按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="medium"
-          variant="text"
-        >
-          文字按钮
-        </sapi-button>
-      </div>
+      <sapi-button size="medium" variant="base">
+        填充按钮
+      </sapi-button>
+      <sapi-button size="medium" variant="outline">
+        描边按钮
+      </sapi-button>
+      <sapi-button size="medium" variant="dashed">
+        虚框按钮
+      </sapi-button>
+      <sapi-button size="medium" variant="text">
+        文字按钮
+      </sapi-button>
     </div>
     <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          size="large"
-          variant="base"
-        >
-          填充按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="large"
-          variant="outline"
-        >
-          描边按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="large"
-          variant="dashed"
-        >
-          虚框按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          size="large"
-          variant="text"
-        >
-          文字按钮
-        </sapi-button>
-      </div>
+      <sapi-button size="large" variant="base">
+        填充按钮
+      </sapi-button>
+      <sapi-button size="large" variant="outline">
+        描边按钮
+      </sapi-button>
+      <sapi-button size="large" variant="dashed">
+        虚框按钮
+      </sapi-button>
+      <sapi-button size="large" variant="text">
+        文字按钮
+      </sapi-button>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'Size',
-  setup(){
+  setup() {
     return {}
   }
 }
 </script>
+<style scoped lang="less">
+  @import '../index.less';
+</style>

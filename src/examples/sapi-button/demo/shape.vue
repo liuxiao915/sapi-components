@@ -4,141 +4,80 @@
 </docs>
 <template>
   <div class="sapi-demo-block-column">
-    <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          shape="rectangle"
-          variant="base"
-        >
-          填充按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="square"
-          variant="base"
-        >
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="round"
-          variant="base"
-        >
-          填充按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="circle"
-          variant="base"
-        >
-        </sapi-button>
-      </div>
+    <div class="sapi-row">
+
+      <sapi-button shape="rectangle" variant="base">
+        填充按钮
+      </sapi-button>
+
+      <sapi-button shape="square" variant="base">
+      </sapi-button>
+
+      <sapi-button shape="round" variant="base">
+        填充按钮
+      </sapi-button>
+
+      <sapi-button shape="circle" variant="base">
+      </sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          shape="rectangle"
-          variant="outline"
-        >
-          描边按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="square"
-          variant="outline"
-        >
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="round"
-          variant="outline"
-        >
-          描边按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="circle"
-          variant="outline"
-        >
-        </sapi-button>
-      </div>
+    <div class="sapi-row">
+
+      <sapi-button shape="rectangle" variant="outline">
+        描边按钮
+      </sapi-button>
+
+      <sapi-button shape="square" variant="outline">
+      </sapi-button>
+
+      <sapi-button shape="round" variant="outline">
+        描边按钮
+      </sapi-button>
+
+      <sapi-button shape="circle" variant="outline">
+      </sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          shape="rectangle"
-          variant="dashed"
-        >
-          虚框按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="square"
-          variant="dashed"
-        >
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="round"
-          variant="dashed"
-        >
-          虚框按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="circle"
-          variant="dashed"
-        >
-        </sapi-button>
-      </div>
+    <div class="sapi-row">
+
+      <sapi-button shape="rectangle" variant="dashed">
+        虚框按钮
+      </sapi-button>
+
+      <sapi-button shape="square" variant="dashed">
+      </sapi-button>
+
+      <sapi-button shape="round" variant="dashed">
+        虚框按钮
+      </sapi-button>
+
+      <sapi-button shape="circle" variant="dashed">
+      </sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <div class="item">
-        <sapi-button
-          shape="rectangle"
-          variant="text"
-        >
-          文字按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="square"
-          variant="text"
-        >
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="round"
-          variant="text"
-        >
-          文字按钮
-        </sapi-button>
-      </div>
-      <div class="item">
-        <sapi-button
-          shape="circle"
-          variant="text"
-        >
-        </sapi-button>
-      </div>
+    <div class="sapi-row">
+
+      <sapi-button shape="rectangle" variant="text">
+        文字按钮
+      </sapi-button>
+
+      <sapi-button shape="square" variant="text">
+      </sapi-button>
+
+      <sapi-button shape="round" variant="text">
+        文字按钮
+      </sapi-button>
+
+      <sapi-button shape="circle" variant="text">
+      </sapi-button>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'Shape',
-  setup(){
+  setup() {
     return {}
   }
 }
 </script>
+<style scoped lang="less">
+  @import '../index.less';
+</style>

@@ -1,24 +1,26 @@
 <template>
-  <div v-html="component.options.__sourceCodeTitle"></div>
-  <div class="blcok-card">
-    <component :is="component" />
-  </div>
-  <div class="code-card">
-    <sapi-icon title="获取json" name='JSON' v-show="false" style="cursor: pointer;margin-right: 16px" @click="$emit('getCode',component.setup().option)"/>
-    <button title="复制代码" variant="text" :class="'copy-btn'" style="cursor: pointer" :data-clipboard-text="component.options.__sourceCode" @click="copyCode()">
-      <sapi-icon name="file-copy" style="cursor: pointer;" />
-    </button>
-    <button title="查看代码" variant="text" style="cursor: pointer" @click="handleCodeVisible">
-      <sapi-icon :name="codeVisible?'unexpand':'expand'" style="cursor: pointer;" />
-    </button>
-  </div>
-  <div v-show="codeVisible" class="component-source">
-    <pre>
-      <code ref="code" class="html">
-        <p v-text="component.options.__sourceCode"></p>
-      </code>
-    </pre>
-  </div>
+  <section>
+    <div class="docs-card" v-html="component.options.__sourceCodeTitle"></div>
+    <div class="examples-card">
+      <component :is="component" />
+    </div>
+    <div class="btn-card">
+      <sapi-icon title="获取json" name='JSON' v-show="false" style="cursor: pointer;margin-right: 16px" @click="$emit('getCode',component.setup().option)"/>
+      <button title="复制代码" class="copy-btn" style="cursor: pointer; border-style: none;" :data-clipboard-text="component.options.__sourceCode" @click="copyCode()">
+        <sapi-icon name="file-copy" style="cursor: pointer;" />
+      </button>
+      <button title="查看代码" style="cursor: pointer; border-style: none;" @click="handleCodeVisible">
+        <sapi-icon :name="codeVisible?'unexpand':'expand'" style="cursor: pointer;" />
+      </button>
+    </div>
+    <div v-show="codeVisible" class="code-card">
+      <pre>
+        <code ref="code" class="html">
+          <p v-text="component.options.__sourceCode"></p>
+        </code>
+      </pre>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -76,7 +78,15 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-  .code-card{
+section {
+  margin-bottom: 30px;
+  .docs-card {
+    margin-bottom: 20px;
+  }
+  .examples-card {
+    margin-bottom: 20px;
+  }
+  .btn-card{
     display: flex;
     justify-content: center;
     padding: 12px 0;
@@ -84,11 +94,13 @@ export default defineComponent({
     opacity: 0.7;
     transition: opacity .3s;
     background-color: #eeeeee;
+    margin-bottom: 20px;
+    .copy-btn {
+      margin-right: 20px;
+    }
   }
-  .component-source{
+  .code-card {
     border: 1px solid #eeeeee;
   }
-  :deep(code) {
-    margin-top: 50px!important;
-  }
+}
 </style>

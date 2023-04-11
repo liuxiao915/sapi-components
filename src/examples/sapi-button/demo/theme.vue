@@ -8,22 +8,13 @@
       <sapi-button theme="default">
         填充按钮
       </sapi-button>
-      <sapi-button
-        theme="default"
-        variant="outline"
-      >
+      <sapi-button theme="default" variant="outline">
         描边按钮
       </sapi-button>
-      <sapi-button
-        theme="default"
-        variant="dashed"
-      >
+      <sapi-button theme="default" variant="dashed">
         虚框按钮
       </sapi-button>
-      <sapi-button
-        theme="default"
-        variant="text"
-      >
+      <sapi-button theme="default" variant="text">
         文字按钮
       </sapi-button>
     </div>
@@ -31,22 +22,13 @@
       <sapi-button theme="primary">
         填充按钮
       </sapi-button>
-      <sapi-button
-        theme="primary"
-        variant="outline"
-      >
+      <sapi-button theme="primary" variant="outline">
         描边按钮
       </sapi-button>
-      <sapi-button
-        theme="primary"
-        variant="dashed"
-      >
+      <sapi-button theme="primary" variant="dashed">
         虚框按钮
       </sapi-button>
-      <sapi-button
-        theme="primary"
-        variant="text"
-      >
+      <sapi-button theme="primary" variant="text">
         文字按钮
       </sapi-button>
     </div>
@@ -54,22 +36,13 @@
       <sapi-button theme="danger">
         填充按钮
       </sapi-button>
-      <sapi-button
-        theme="danger"
-        variant="outline"
-      >
+      <sapi-button theme="danger" variant="outline">
         描边按钮
       </sapi-button>
-      <sapi-button
-        theme="danger"
-        variant="dashed"
-      >
+      <sapi-button theme="danger" variant="dashed">
         虚框按钮
       </sapi-button>
-      <sapi-button
-        theme="danger"
-        variant="text"
-      >
+      <sapi-button theme="danger" variant="text">
         文字按钮
       </sapi-button>
     </div>
@@ -77,22 +50,13 @@
       <sapi-button theme="warning">
         填充按钮
       </sapi-button>
-      <sapi-button
-        theme="warning"
-        variant="outline"
-      >
+      <sapi-button theme="warning" variant="outline">
         描边按钮
       </sapi-button>
-      <sapi-button
-        theme="warning"
-        variant="dashed"
-      >
+      <sapi-button theme="warning" variant="dashed">
         虚框按钮
       </sapi-button>
-      <sapi-button
-        theme="warning"
-        variant="text"
-      >
+      <sapi-button theme="warning" variant="text">
         文字按钮
       </sapi-button>
     </div>
@@ -100,22 +64,13 @@
       <sapi-button theme="success">
         填充按钮
       </sapi-button>
-      <sapi-button
-        theme="success"
-        variant="outline"
-      >
+      <sapi-button theme="success" variant="outline">
         描边按钮
       </sapi-button>
-      <sapi-button
-        theme="success"
-        variant="dashed"
-      >
+      <sapi-button theme="success" variant="dashed">
         虚框按钮
       </sapi-button>
-      <sapi-button
-        theme="success"
-        variant="text"
-      >
+      <sapi-button theme="success" variant="text">
         文字按钮
       </sapi-button>
     </div>
@@ -124,8 +79,11 @@
 <script>
 export default {
   name: 'Theme',
-  setup(){
+  setup() {
     return {}
   }
 }
 </script>
+<style scoped lang="less">
+  @import '../index.less';
+</style>

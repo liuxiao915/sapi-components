@@ -15,8 +15,11 @@
 <script>
 export default {
   name: 'Status',
-  setup(){
+  setup() {
     return {}
   }
 }
 </script>
+<style scoped lang="less">
+  @import '../index.less';
+</style>

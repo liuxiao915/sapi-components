@@ -4,125 +4,41 @@
 </docs>
 <template>
   <div class="sapi-demo-block-column">
-    <div class="sapi-demo-block-row">
-      <sapi-button
-        ghost
-        variant="outline"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        variant="dashed"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        variant="text"
-      >
-        镂空按钮
-      </sapi-button>
+    <div class="sapi-row">
+      <sapi-button ghost variant="outline">镂空按钮</sapi-button>
+      <sapi-button ghost variant="dashed">镂空按钮</sapi-button>
+      <sapi-button ghost variant="text">镂空按钮</sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <sapi-button
-        ghost
-        theme="primary"
-        variant="outline"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="primary"
-        variant="dashed"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="primary"
-        variant="text"
-      >
-        镂空按钮
-      </sapi-button>
+    <div class="sapi-row">
+      <sapi-button ghost theme="primary" variant="outline">镂空按钮</sapi-button>
+      <sapi-button ghost theme="primary" variant="dashed">镂空按钮</sapi-button>
+      <sapi-button ghost theme="primary" variant="text">镂空按钮</sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <sapi-button
-        ghost
-        theme="success"
-        variant="outline"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="success"
-        variant="dashed"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="success"
-        variant="text"
-      >
-        镂空按钮
-      </sapi-button>
+    <div class="sapi-row">
+      <sapi-button ghost theme="success" variant="outline">镂空按钮</sapi-button>
+      <sapi-button ghost theme="success" variant="dashed">镂空按钮</sapi-button>
+      <sapi-button ghost theme="success" variant="text">镂空按钮</sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <sapi-button
-        ghost
-        theme="warning"
-        variant="outline"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="warning"
-        variant="dashed"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="warning"
-        variant="text"
-      >
-        镂空按钮
-      </sapi-button>
+    <div class="sapi-row">
+      <sapi-button ghost theme="warning" variant="outline">镂空按钮</sapi-button>
+      <sapi-button ghost theme="warning" variant="dashed">镂空按钮</sapi-button>
+      <sapi-button ghost theme="warning" variant="text">镂空按钮</sapi-button>
     </div>
-    <div class="sapi-demo-block-row">
-      <sapi-button
-        ghost
-        theme="danger"
-        variant="outline"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="danger"
-        variant="dashed"
-      >
-        镂空按钮
-      </sapi-button>
-      <sapi-button
-        ghost
-        theme="danger"
-        variant="text"
-      >
-        镂空按钮
-      </sapi-button>
+    <div class="sapi-row">
+      <sapi-button ghost theme="danger" variant="outline">镂空按钮</sapi-button>
+      <sapi-button ghost theme="danger" variant="dashed">镂空按钮</sapi-button>
+      <sapi-button ghost theme="danger" variant="text">镂空按钮</sapi-button>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'Ghost',
-  setup(){
+  setup() {
     return {}
   }
 }
 </script>
+<style scoped lang="less">
+  @import '../index.less';
+</style>
