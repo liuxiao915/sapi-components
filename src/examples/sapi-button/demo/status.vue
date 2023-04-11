@@ -3,7 +3,7 @@
   <p>提供加载、禁用两种状态。</p>
 </docs>
 <template>
-  <div class="sapi-demo-block-row">
+  <div class="wrapper">
     <sapi-button disabled>
       填充按钮
     </sapi-button>
