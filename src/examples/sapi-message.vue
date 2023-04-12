@@ -10,7 +10,7 @@ export default {
     onMounted(() => {
       Message({ type: 'error', text: '失败' })
       setTimeout(() => {
-        proxy.$message({ type: 'success', text: '成功' })
+        proxy.$message({ type: 'success', text: '成功成功' })
       }, 2000);
     })
     return {}

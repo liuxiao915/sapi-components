@@ -81,7 +81,141 @@ export const pieOption = (unit = '', title = '', total = '-', seriesData = []) =
     ]
   }
 }
-
+// 饼图,图例在右
+export const pieRightOption = (unit = '', title = '', total = '', seriesData = []) => {
+  return {
+    color: [
+      '#1890FF',
+      '#26C9C3',
+      '#95DE64',
+      '#FFC53D',
+      '#5470c6',
+      '#91cc75',
+      '#fac858',
+      '#ee6666',
+      '#73c0de',
+      '#3ba272',
+      '#fc8452',
+      '#9a60b4',
+      '#ea7ccc'
+    ],
+    tooltip: {
+      trigger: 'item',
+      formatter: (params) => {
+        if (params.data.rate) {
+          return `<div style="padding: 5px;font-size: 12px;color: #FFFFFF;font-family: PingFangSC-Regular;">
+            ${params.marker}<span>${params.name}：</span><span>${utils.toThousands(params.value)}${unit}</span>
+            <span>${utils.toThousands(params.data.proportion)}${params.data.percentage}</span>
+          </div>`
+        } else {
+          return `<div style="padding: 5px;font-size: 12px;color: #FFFFFF;font-family: PingFangSC-Regular;">
+            ${params.marker}<span>${params.name}：</span><span>${utils.toThousands(params.value)}${unit}</span>
+          </div>`
+        }
+      },
+      textStyle: {
+        fontSize: 14
+      }
+    },
+    grid: {
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      containLabel: true
+    },
+    legend: [
+      {
+        orient: 'vertical',
+        icon: 'circle',
+        top: 'center',
+        left: '50%',
+        textStyle: {
+          align: 'left',
+          fontSize: 12,
+          verticalAlign: 'middle',
+          color: '#666666',
+          lineHeight: 16
+        }
+      },
+      {
+        orient: 'vertical',
+        icon: 'none',
+        top: 'center',
+        right: 0,
+        align: 'right',
+        textStyle: {
+          align: 'left',
+          verticalAlign: 'middle',
+          lineHeight: 16,
+          color: '#212121',
+          fontWeight: 400,
+          rich: {
+            value: {
+              fontSize: 12,
+              color: '#212121'
+            }
+          }
+        },
+        formatter: (name) => {
+          if (seriesData.length) {
+            const item = seriesData.filter((item) => item.name === name)[0]
+            return `{value| ${utils.toThousands(item.value)}${item.unit || unit}}`
+          }
+        }
+      }
+    ],
+    xAxis: [
+      {
+        show: false
+      }
+    ],
+    yAxis: [
+      {
+        show: false
+      }
+    ],
+    series: [
+      {
+        type: 'pie',
+        center: ['22%', '50%'],
+        radius: ['52%', '77%'],
+        hoverAnimation: false,
+        label: {
+          normal: {
+            show: true,
+            position: 'center',
+            color: '#9A9EBA',
+            formatter: '{val|' + utils.toThousands(total) + '}\n{titleTxt|' + unit + '}',
+            rich: {
+              val: {
+                fontSize: 20,
+                lineHeight: 36,
+                fontWeight: 500,
+                color: '#212121'
+              },
+              titleTxt: {
+                fontSize: 12,
+                fontWeight: 500,
+                color: '#666666'
+              }
+            }
+          },
+          emphasis: {
+            show: true,
+            textStyle: {
+              fontSize: 14
+            }
+          }
+        },
+        labelLine: {
+          show: false
+        },
+        data: seriesData
+      }
+    ]
+  }
+}
 /**
 * 柱状图
 * @method barOption

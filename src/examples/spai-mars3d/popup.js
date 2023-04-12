@@ -34,11 +34,23 @@ export const initOPenPopup = (map) => {
   })
 }
 
-export const bindMapDom = () => {
+export const bindMapPopup = (map) => {
   // 关闭弹窗
-  map.closeTooltip()
-  console.log('clickCallbackFun--openPopup')
+  setTimeout(() => {
+    map.closePopup()
+  }, 2000);
   // 传入坐标和内容，可以直接任意弹出
   const position = [113.95073239750282, 22.564112402018165, 0]
-  map.openPopup(position, "你好你好你好你好你好")
+  map.openPopup(position, "你好你好你好你好")
+}
+
+
+export const bindMapTooltip = (map) => {
+  // 关闭提示窗
+  setTimeout(() => {
+    map.closeTooltip()
+  }, 2000);
+  // 传入坐标和内容，可以直接任意弹出
+  const position = [113.95073239750282, 22.564112402018165, 0]
+  map.openTooltip(position, "你好你好你好你好")
 }

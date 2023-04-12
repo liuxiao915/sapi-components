@@ -62,7 +62,7 @@ const routes = [
 				path: '/echarts',
 				name: 'echarts',
 				meta: { keepAlive: false },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-echarts.vue')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-echarts/index.vue')
 			},
 			{
 				path: '/table',

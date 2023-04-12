@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-    <h3>icon列表</h3>
     <div v-for="(item,index) in iconNameList" :key="index" class="icons-list" @mouseleave="focusOut" @mouseover="focus(index)">
         <sapi-icon :name="item" style="fill: blue"></sapi-icon>
         <p v-if="showCode !== index" style="margin-top: 12px">{{item}}</p>

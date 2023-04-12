@@ -11,7 +11,7 @@
 </template>
 <script>
 import { computed, defineComponent } from 'vue';
-import { usePrefixClass,useCommonClassName } from '@/hooks/useConfig';
+import { usePrefixClass,useCommonClassName } from '@/utils/setAttrs.js'
 import './index.less'
 
 export default defineComponent({

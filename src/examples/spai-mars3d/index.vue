@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="onBindMapDemo">Map上直接弹出</button>
-    <button @click="onBindMapDemo">跳转到指定点位</button>
+    <button @click="onBindMapPopup">Map上弹出Popup</button>
+    <button @click="onBindMapTooltip">Map上弹出Tooltip</button>
     <sapiMars3d @onload="onMapload" />
   </div>
 </template>  
@@ -9,8 +9,7 @@
 <script>
 import * as mars3d from "mars3d";
 import sapiMars3d from "@/components/sapi-mars3d";
-import { initOPenPopup, bindMapDom } from './popup.js'
-import { flyToPoint } from './flyToPoint.js'
+import { initOPenPopup, bindMapPopup, bindMapTooltip } from './popup.js'
 import { dataList, addMarkLayer } from './scatterData.js'
 import { getCurrentInstance } from 'vue'
 export default {
@@ -23,7 +22,7 @@ export default {
     const onMapload = (mapInstance) => {
       map = mapInstance
       // map上的弹窗
-      initOPenPopup(map)
+      // initOPenPopup(map)
       // 添加散点数据
       const markLayer = addMarkLayer(map, dataList, clickCallback, {
         styleOptions: {
@@ -32,20 +31,23 @@ export default {
         }}
       );
     }
-    const onBindMapDemo = () => {
-      bindMapDom()
-      // flyToPoint(map)
+    const onBindMapPopup = () => {
+      bindMapPopup(map)
+    }
+    const onBindMapTooltip = () => {
+      bindMapTooltip(map)
     }
 
     const clickCallback = (e) => {
       proxy.$message({ type: 'success', text: e.graphic.options.name })
-      map.flyToPoint(new mars3d.LngLatPoint(117,40), { duration: 0 })
+      // 跳转到指定位置
+      // map.flyToPoint(new mars3d.LngLatPoint(117,40), { duration: 0 })
     }
-    
     
     return {
       onMapload,
-      onBindMapDemo
+      onBindMapPopup,
+      onBindMapTooltip
     }
   }
 };
