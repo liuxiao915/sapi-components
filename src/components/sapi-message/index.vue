@@ -4,7 +4,7 @@
       <!-- 上面绑定的是样式 -->
       <!-- 不同提示图标会变 -->
       <i class="iconfont" :class="[style[type].icon]"></i>
-      <span class="text">{{text}}</span>
+      <span class="message">{{ message }}</span>
     </div>
   </Transition>
 </template>
@@ -14,7 +14,7 @@ import { onMounted, ref } from 'vue'
 export default {
   name: 'sapiMessage',
   props: {
-    text: {
+    message: {
       type: String,
       default: ''
     },
@@ -24,14 +24,15 @@ export default {
       default: 'warn'
     }
   },
-  setup () {
+  setup (props) {
     // 定义一个对象，包含三种情况的样式，对象key就是类型字符串
     const style = {
       warn: {
         icon: 'icontishi',
         color: '#E6A23C',
         backgroundColor: 'rgb(253, 246, 236)',
-        borderColor: 'rgb(250, 236, 216)'
+        borderColor: 'rgb(250, 236, 216)',
+        top: '25px'
       },
       error: {
         icon: 'iconguanbi5',

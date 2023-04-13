@@ -8,9 +8,9 @@ export default {
   setup() {
     const { proxy } = getCurrentInstance()
     onMounted(() => {
-      Message({ type: 'error', text: '失败' })
+      Message({ type: 'error', message: '失败' })
       setTimeout(() => {
-        proxy.$message({ type: 'success', text: '成功成功' })
+        proxy.$message({ type: 'success', message: '成功成功', style: { top: '200px' }, tiem: 20000 })
       }, 2000);
     })
     return {}
