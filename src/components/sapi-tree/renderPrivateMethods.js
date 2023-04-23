@@ -1,5 +1,4 @@
 var renderModel = {};
-
 //按需加载进行追加子节点
 function expandedAddChild(that, item, target) {
 	var children = that.props.children;
@@ -172,7 +171,7 @@ renderModel.appendAllNode = function(that, datas) {
 			}
 		}
 
-		innerHtml += "<li class='tree-node tree-node-expanded" + className + "' data-index='" + i + "'><div class='tree-node-text'><span class='tree-node-icon icon-arrow-right'></span>";
+		innerHtml += "<li class='tree-node tree-node-expanded" + className + "' data-index='" + i + "'><div class='tree-node-text'><span class='tree-node-icon iconfont iconxiangyou'></span>";
 		innerHtml += '<span class="tree-node-label">' + labelText + '</span></div>';
 		if(hasChild) {
 			var childHtml = renderModel.addChildHTML(that, data[children], i, true, true);
@@ -286,7 +285,7 @@ renderModel.addChildHTML = function(that, items, dataParenIndex, isEach, isExpan
 
 		html += "<div class='tree-node" + className + "' data-parent-index='" + dataParenIndex + "' data-index='" + i + "'>";
 		html += "<div class='tree-node-text' style='padding-left:" + paddingLeft + "px;'>";
-		html += '<span class="tree-node-icon icon-arrow-right"></span><span class="tree-node-label" ' + stitle + '>' + labelText + '</span></div>';
+		html += '<span class="tree-node-icon iconfont iconxiangyou"></span><span class="tree-node-label" ' + stitle + '>' + labelText + '</span></div>';
 		if(hasChild) {
 			var returnHtml = "";
 			//使用递归继续追加子节点html

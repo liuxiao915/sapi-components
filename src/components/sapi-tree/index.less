@@ -1,0 +1,57 @@
+.sapi-tree {
+  .tree-node-icon,
+  .tree-node-text,
+  .tree-node-label {
+    height: 36px;
+    line-height: 36px;
+  }
+  .tree-node-text {
+    vertical-align: middle;
+  }
+  .tree-node-text:hover {
+    .tree-node-icon {
+      color: #999;
+    }
+    background-color: #ededed;
+  }
+  .tree-node-text.active {
+    background-color: #f8f8f8;
+    color: #458aff;
+  }
+  .tree-node-icon {
+    display: block;
+    float: left;
+    width: 24px;
+    padding-left: 4px;
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+    transform: translateY(1px);
+  }
+  .tree-node-expanded>.tree-node-text>.tree-node-icon {
+    transform: rotate(90deg) translateX(-2px);
+  }
+  .tree-node-label {
+    float: left;
+    width: calc(100% - 28px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .tree-node-no-child>.tree-node-text>.tree-node-icon {
+    display: none;
+  }
+  .tree-node-no-child>.tree-node-text>.tree-node-label {
+    margin-left: 25px;
+  }
+  .tree-node-childs {
+    display: none;
+  }
+  .tree-node-no-child>.tree-node-childs {
+    display: none;
+  }
+  .tree-node-expanded>.tree-node-childs {
+    display: block;
+  }
+}

@@ -100,14 +100,14 @@ export default {
     },
     methods: {
         expandedClick() {
-            console.log(arguments);
+            console.log('expandedClick:::',arguments);
         },
         menuClick(data) {
-            // console.log(data);
+            console.log('menuClick:::',data);
         },
         //label点击事件
         handlerClick(data) {
-            // console.log(data);
+            console.log('handlerClick::',data);
         },
         //自定义文本
         renderContent(data) {

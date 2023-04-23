@@ -1,4 +1,5 @@
 import renderModel from "./renderPrivateMethods.js";
+import './index.less';
 export default {
 	data() {
 		return {
@@ -6,7 +7,6 @@ export default {
 		}
 	},
 	methods: {
-
 		render() {
 			var datas = this.data;
 			if (!datas || datas.length === 0) {
@@ -62,7 +62,7 @@ export default {
 					stitle = labelText;
 				}
 
-				innerHtml += "<li class='tree-node" + className + "' data-index='" + i + "'><div class='tree-node-text'><span class='tree-node-icon icon-arrow-right'></span>";
+				innerHtml += "<li class='tree-node" + className + "' data-index='" + i + "'><div class='tree-node-text'><span class='tree-node-icon iconfont iconxiangyou'></span>";
 				innerHtml += '<span class="tree-node-label" title="' + stitle + '">' + labelText + '</span></div>';
 				if (hasChild) {
 					if (defaultExpandAll === true) {
@@ -305,8 +305,5 @@ export default {
 				}
 			}
 		}
-	},
-	mounted() {
-
 	}
 }
