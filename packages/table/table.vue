@@ -474,6 +474,7 @@ export default {
             font-size: 12px;
             table-layout: fixed;
             position: relative;
+            border-spacing: 1px;
             tr {
                 background: #ffffff;
                 color: #606972;

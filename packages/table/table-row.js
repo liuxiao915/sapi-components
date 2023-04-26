@@ -95,22 +95,19 @@ export default {
             const rowStyle = this.rowStyle(this.row, this.rowIndex);
             rowProps.style = rowStyle;
         }
-        if (this.table.$attrs['row-click'] || this.highlightCurrentRow) {
-            console.log('vm.table.$attrs:::', vm.table.$attrs)
-            const vm = this;
-            rowProps.onClick = (e) => {
-                if (vm.table.$attrs['row-click']) {
-                    vm.table.$emit('row-click', this.row, this.rowIndex, e)
+        const vm = this;
+        rowProps.onClick = (e) => {
+            if (vm.table.$attrs['onRowClick']) {
+                vm.table.$emit('row-click', this.row, this.rowIndex, e)
+            }
+            if (vm.highlightCurrentRow) {
+                const el = e.target || e.srcElement;
+                const targetTr = vm.getElParentNode(el, 'tr');
+                const trs = Array.prototype.slice.call(targetTr.parentNode.querySelectorAll('tr'));
+                for(let tr of trs) {
+                    tr.classList.remove('current-row');
                 }
-                if (vm.highlightCurrentRow) {
-                    const el = e.target || e.srcElement;
-                    const targetTr = vm.getElParentNode(el, 'tr');
-                    const trs = Array.prototype.slice.call(targetTr.parentNode.querySelectorAll('tr'));
-                    for(let tr of trs) {
-                        tr.classList.remove('current-row');
-                    }
-                    targetTr.classList.add('current-row');
-                }
+                targetTr.classList.add('current-row');
             }
         }
         const expand = !!this.rowKey && !!this.row[children] && !!this.row[children].length;
@@ -136,9 +133,9 @@ export default {
                     isExpand: this.isExpand,
                     onClick: () => {},
                 }
-                if (this.table.$attrs['cell-click']) {
+                if (this.table.$attrs['onCellClick']) {
                     const vm = this;
-                    tabelColumnProps.on.click = function(e) {
+                    tabelColumnProps.onClick = (e) => {
                         vm.table.$emit('cell-click', this.row, this.rowIndex, column, index, e)
                     }
                 }
