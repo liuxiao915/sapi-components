@@ -1,5 +1,5 @@
 import tableTh from './table-th.vue'
-
+import { h } from 'vue'
 export default {
     name: 'SapiTableHeader',
     inject: {
@@ -39,7 +39,7 @@ export default {
             type: String
         },
     },
-    render (h) {
+    render () {
         const store = this.table.store
         const trProps = {
             class: {},
@@ -51,12 +51,9 @@ export default {
                 [this.headerRowClassName]: true
             }
         }
-        return h('thead', {
-            
-        }, [
+        return h('thead', {}, [
             h('tr', trProps, store.columns.map((column, index) => {
-                return h('table-th', {
-                    props: {
+                return h(tableTh, {
                         column: column,
                         columnIndex: index,
                         headerCellClassName: this.headerCellClassName,
@@ -64,14 +61,14 @@ export default {
                         sortOrders: this.sortOrders,
                         sortColumnId: this.sortColumnId
                     },
-                    scopedSlots: {
+                    {
                         default: (props) => {
                             if(column && column.renderHeader) {
                                 return column.renderHeader(props)
                             }
                         }
                     }
-                })
+                )
             }))
         ])
     }

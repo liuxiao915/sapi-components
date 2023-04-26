@@ -2,7 +2,7 @@
     <div class="sapi-table-wrapper" :style="{ height: height }">
         <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
         <div class="sapi-table_header-wrap">
-            <table :cell-bordered="border" class="sapi-table_header-table">
+            <table :cell-bordered="border" class="sapi-table_header-table" style="width: 100%">
                 <table-header
                     :headerRowClassName="headerRowClassName"
                     :headerRowStyle="headerRowStyle"

@@ -1,5 +1,5 @@
 import tableTd from './table-td.vue'
-
+import { h } from 'vue'
 export default {
     name: 'SapiTableRow',
     inject: {
@@ -70,17 +70,15 @@ export default {
             default: false
         }
     },
-    render (h) {
+    render () {
         const { children } = this.treeProps;
-        
         const rowProps = {
             class: {
                 'sapi-table_row': true
             },
             style: {},
-            on: {}
+            onClick: () => {}
         }
-
         const className =  this.rowKey ? `sapi-tree-table_row--level-${this.level - 1}-${this.rowIndex}` : '';
         rowProps.class[className] = true;
         if (this.rowKey) {
@@ -97,14 +95,13 @@ export default {
             const rowStyle = this.rowStyle(this.row, this.rowIndex);
             rowProps.style = rowStyle;
         }
-        
-        if (this.table.$listeners['row-click'] || this.highlightCurrentRow) {
+        if (this.table.$attrs['row-click'] || this.highlightCurrentRow) {
+            console.log('vm.table.$attrs:::', vm.table.$attrs)
             const vm = this;
-            rowProps.on.click = function(e) {
-                if (vm.table.$listeners['row-click']) {
+            rowProps.onClick = (e) => {
+                if (vm.table.$attrs['row-click']) {
                     vm.table.$emit('row-click', this.row, this.rowIndex, e)
                 }
-
                 if (vm.highlightCurrentRow) {
                     const el = e.target || e.srcElement;
                     const targetTr = vm.getElParentNode(el, 'tr');
@@ -116,9 +113,7 @@ export default {
                 }
             }
         }
-        
         const expand = !!this.rowKey && !!this.row[children] && !!this.row[children].length;
-
         return h('tr', rowProps, this.getTds(expand))
     },
     methods: {
@@ -126,37 +121,34 @@ export default {
             const store = this.table.store
             return store.columns.map((column, index) => {
                 const tabelColumnProps = {
-                    on: {},
-                    props: {
-                        row: this.row,
-                        rowIndex: this.rowIndex,
-                        column: column,
-                        columnIndex: index,
-                        cellClassName: this.cellClassName,
-                        cellStyle: this.cellStyle,
-                        tdClassName: this.tdClassName,
-                        formatter: this.formatter,
-                        rowKey: this.rowKey,
-                        level: this.level,
-                        indent: (this.level - 1) * this.indent,
-                        expand: expand,
-                        isExpand: this.isExpand
-                    },
-                    scopedSlots: {
-                        default: (props) => {
-                            if (column && column.renderCell) {
-                                return column.renderCell(props)
-                            }
-                        }
-                    }
+                    row: this.row,
+                    rowIndex: this.rowIndex,
+                    column: column,
+                    columnIndex: index,
+                    cellClassName: this.cellClassName,
+                    cellStyle: this.cellStyle,
+                    tdClassName: this.tdClassName,
+                    formatter: this.formatter,
+                    rowKey: this.rowKey,
+                    level: this.level,
+                    indent: (this.level - 1) * this.indent,
+                    expand: expand,
+                    isExpand: this.isExpand,
+                    onClick: () => {},
                 }
-                if (this.table.$listeners['cell-click']) {
+                if (this.table.$attrs['cell-click']) {
                     const vm = this;
                     tabelColumnProps.on.click = function(e) {
-                        vm.table.$emit('cell-click', this.row, this.rowIndex, property, columnIndex, e)
+                        vm.table.$emit('cell-click', this.row, this.rowIndex, column, index, e)
                     }
                 }
-                return this.$createElement('table-td', tabelColumnProps)
+                return h(tableTd, tabelColumnProps,{
+                    default: (props) => {
+                        if (column && column.renderCell) {
+                            return column.renderCell(props)
+                        }
+                    }
+                })
             })
         },
         getElParentNode (el, parentTagName) {

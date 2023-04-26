@@ -1,5 +1,5 @@
 import tableRow from './table-row'
-
+import { h } from 'vue'
 export default {
     name: 'SapiTableBody',
     inject: {
@@ -65,7 +65,7 @@ export default {
             type: Function
         }
     },
-    render (h) {
+    render () {
         const { children } = this.treeProps;
         const treeColumns = [];
         const getColumns = (data, level = 1, parentRowVNode = null, isParentRowExpand = true) => {
@@ -81,24 +81,22 @@ export default {
                         }
                     }
                 }
-                const rowVNode = h('table-row', {
-                    props: {
-                        row: row,
-                        rowIndex: rowIndex,
-                        level: level,
-                        parentNode: parentRowVNode,
-                        isExpand: isExpand && isParentRowExpand,
-                        indent: this.indent,
-                        rowKey: this.rowKey,
-                        treeProps: this.treeProps,
-                        rowClassName: this.rowClassName,
-                        rowStyle: this.rowStyle,
-                        cellClassName: this.cellClassName,
-                        cellStyle: this.cellStyle,
-                        tdClassName: this.tdClassName,
-                        formatter: this.formatter,
-                        highlightCurrentRow: this.highlightCurrentRow
-                    }
+                const rowVNode = h(tableRow, {
+                    row: row,
+                    rowIndex: rowIndex,
+                    level: level,
+                    // parentNode: parentRowVNode,
+                    isExpand: isExpand && isParentRowExpand,
+                    indent: this.indent,
+                    rowKey: this.rowKey,
+                    treeProps: this.treeProps,
+                    rowClassName: this.rowClassName,
+                    rowStyle: this.rowStyle,
+                    cellClassName: this.cellClassName,
+                    cellStyle: this.cellStyle,
+                    tdClassName: this.tdClassName,
+                    formatter: this.formatter,
+                    highlightCurrentRow: this.highlightCurrentRow
                 })
 
                 treeColumns.push(rowVNode)
@@ -106,21 +104,6 @@ export default {
                 if (!!this.rowKey && !!row[children] && !!row[children].length) {
                     getColumns(row[children], level + 1, rowVNode, isExpand)
                 }
-
-                // if (this.rowKey) {
-                //     this.$nextTick(() => {
-                //         rowVNode.componentInstance.nodeData = {
-                //             data: row,
-                //             level: level,
-                //             parentNode: parentRowVNode,
-                //             children: []
-                //         }
-                //         console.log('parentRowVNode:', parentRowVNode.componentInstance.nodeData)
-                //         if (parentRowVNode && parentRowVNode.componentInstance && parentRowVNode.componentInstance.nodeData) {
-                //             parentRowVNode.componentInstance.nodeData.children.push(rowVNode)
-                //         }
-                //     })
-                // }
             }
         }
         const { data } = this.table
@@ -135,7 +118,7 @@ export default {
                     'sapi-table_row sapi-table_pulling-row': true
                 },
                 style: {},
-                on: {}
+                onClick: () => {}
             }, [h('td', {
                 class: {
                     'sapi-table_row sapi-table_pulling-td': true
@@ -143,15 +126,10 @@ export default {
                 style: {
                     textAlign: 'center'
                 },
-                on: {},
-                attrs: {
-                    colspan: store.columns.length
-                }
+                colspan: store.columns.length,
+                onClick: () => {},
             }, loadTips)]))
         }
-
-        return h('tbody', {
-
-        } , treeColumns);
+        return h('tbody', {} , treeColumns);
     }
 }

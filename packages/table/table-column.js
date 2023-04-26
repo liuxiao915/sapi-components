@@ -1,3 +1,4 @@
+import { h } from 'vue'
 export default {
     name: 'SapiTableColumn',
     props: {
@@ -44,23 +45,21 @@ export default {
     mounted() {
         const props = ['prop', 'label', 'width', 'minWidth', 'fixed', 'align', 'headerAlign', 'sortable'];
         const column = this.getPropsData(props);
-        if (this.$scopedSlots.default) {
-            column.renderCell = (props) => this.$scopedSlots.default(props);
+        if (this.$slots.default) {
+            column.renderCell = (props) => this.$slots.default(props);
         }
-        if (this.$scopedSlots.header) {
-            column.renderHeader = (props) => this.$scopedSlots.header(props);
+        if (this.$slots.header) {
+            column.renderHeader = (props) => this.$slots.header(props);
         }
         this.columnConfig = column;
         // 注册 watcher
         this.registerNormalWatchers();
-        // const children = this.owner.$refs.hiddenColumns.children;
-        // const columnIndex = this.getColumnElIndex(children, this.$el);
         this.owner.insertColumn(this.columnConfig)
     },
     destroyed() {
         this.owner.removeColumn(this.columnConfig)
     },
-    render(h) {
+    render() {
         // slots 也要渲染，需要计算合并表头
         return h('div', this.$slots.default);
     },
