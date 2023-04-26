@@ -157,12 +157,12 @@ export default {
                 }
             }
             // 内容变化，刷新bscroll
-            const table = this.table.$children[0]
-            if (table && table.bscroll) {
-                this.$nextTick(() => {
-                    table.bscroll.refresh()
-                })
-            }
+            // const table = this.table.$children[0]
+            // if (table && table.bscroll) {
+            //     this.$nextTick(() => {
+            //         table.bscroll.refresh()
+            //     })
+            // }
         },
         isNullOrUndefined(val) {
             return val === undefined || val === null;

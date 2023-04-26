@@ -72,7 +72,6 @@
 import BScroll from '@better-scroll/core'
 import Pullup from '@better-scroll/pull-up'
 import ResizeObserver from 'resize-observer-polyfill';
-// import spinner from './spinner'
 import tableHeader from './table-header'
 import tableBody from './table-body'
 BScroll.use(Pullup)
@@ -443,21 +442,6 @@ export default {
 </script>
 
 <style lang="less">
-    .table-cell.table-header-cell {
-        padding: 0 5px;
-        box-sizing: border-box;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-    }
-    .table-cell {
-        display: inline-block;
-        line-height: 16px;
-        padding: 0 5px;
-        box-sizing: border-box;
-        position: relative;
-        z-index: 1;
-    }
     .sapi-table-wrapper {
         width: 100%;
         position: relative;
@@ -498,6 +482,21 @@ export default {
                     line-height: 1;
                 }
             }
+        }
+        .table-cell.table-header-cell {
+            padding: 0 5px;
+            box-sizing: border-box;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .table-cell {
+            display: inline-block;
+            line-height: 16px;
+            padding: 0 5px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
         }
         .sapi-table_header-wrap {
             width: 100%;

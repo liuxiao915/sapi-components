@@ -7,7 +7,6 @@
 </template>  
 
 <script>
-import * as mars3d from "mars3d";
 import sapiMars3d from "@/components/sapi-mars3d";
 import { initOPenPopup, bindMapPopup, bindMapTooltip } from './popup.js'
 import { dataList, addMarkLayer } from './scatterData.js'
@@ -27,7 +26,13 @@ export default {
       const markLayer = addMarkLayer(map, dataList, clickCallback, {
         styleOptions: {
           scale: 0.5,
-          highlightScale: 0.5,
+          highlightScale: 0.7
+        },
+        // 设置聚合相关参数（仅对Entity点数据有效）
+        clustering: {
+          enabled: true, // 是否开启聚合
+          pixelRange: 18, // 多少像素矩形范围内聚合
+          opacity:0.5
         }}
       );
     }
@@ -39,7 +44,8 @@ export default {
     }
 
     const clickCallback = (e) => {
-      proxy.$message({ type: 'success', text: e.graphic.options.name })
+      console.log('clickCallback:::',e)
+      proxy.$message({ type: 'success', message: e.graphic.options.name })
       // 跳转到指定位置
       // map.flyToPoint(new mars3d.LngLatPoint(117,40), { duration: 0 })
     }

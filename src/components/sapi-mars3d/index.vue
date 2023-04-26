@@ -114,9 +114,7 @@ export default {
 </script>
 <style lang="less" scoped> 
 .mars3d-container {
-  width: 100%;
-  height: 100%;
-  :deep(canvas) {
+  :deep(.cesium-widget canvas) {
     width: 100%;
     height: 100%;
   }

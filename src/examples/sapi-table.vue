@@ -1,6 +1,6 @@
 <template>
   <div class="sapi-table">
-    <sapi-table :data="state.tableData" height="300px" @cell-Click="cellClick" @row-Click="rowClick" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}">
+    <sapi-table rowKey="1111" :data="state.tableData" height="300px" @cell-Click="cellClick" @row-Click="rowClick" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}">
       <sapi-table-column header-align="center" align="center" width="110px" label="区域" prop="name" fixed></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="开发成本" prop="exploitCost">
         <template #header>插槽表头</template>
@@ -26,16 +26,19 @@ export default {
     const { proxy } = getCurrentInstance()
     const state = reactive({
       tableData: [
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
-        {name: '区域', exploitCost: '1111', managementCost: '2222', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
+        {name: '区域', exploitCost: '1-1', managementCost: '1-2', marketingCost: '1-3', taxes: '1-4', contractAmount: '1-5'},
+        {name: '区域', exploitCost: '2-1', managementCost: '2-2', marketingCost: '2-3', taxes: '2-4', contractAmount: '2-5'},
+        {name: '区域', exploitCost: '3-1', managementCost: '3-2', marketingCost: '3-3', taxes: '3-4', contractAmount: '3-5',children: [
+          {name: '区域-1', exploitCost: '3-1-1', managementCost: '3-2-1', marketingCost: '33', taxes: '44', contractAmount: '55'},
+          {name: '区域-2', exploitCost: '3-1-2', managementCost: '3-2-2', marketingCost: '33', taxes: '44', contractAmount: '55'}
+        ]},
+        {name: '区域', exploitCost: '4-1', managementCost: '4-2', marketingCost: '4-3', taxes: '4-4', contractAmount: '4-5'},
+        {name: '区域', exploitCost: '5-1', managementCost: '5-2', marketingCost: '5-3', taxes: '5-4', contractAmount: '5-5'},
+        {name: '区域', exploitCost: '6-1', managementCost: '6-2', marketingCost: '6-3', taxes: '6-4', contractAmount: '6-5'},
+        {name: '区域', exploitCost: '7-1', managementCost: '7-2', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
+        {name: '区域', exploitCost: '8-1', managementCost: '8-2', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
+        {name: '区域', exploitCost: '9-1', managementCost: '9-2', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
+        {name: '区域', exploitCost: '10-1', managementCost: '10-2', marketingCost: '3333', taxes: '4444', contractAmount: '55'},
       ]
     })
     const formatter = (row,rowIndex,column,columnIndex) => {

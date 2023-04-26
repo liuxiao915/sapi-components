@@ -85,7 +85,7 @@ export default {
                     row: row,
                     rowIndex: rowIndex,
                     level: level,
-                    // parentNode: parentRowVNode,
+                    parentNode: parentRowVNode,
                     isExpand: isExpand && isParentRowExpand,
                     indent: this.indent,
                     rowKey: this.rowKey,

@@ -28,11 +28,6 @@ export default {
             default: false
         }
     },
-    data() {
-        return {
-            
-        }
-    },
     computed: {
         owner() {
             let parent = this.$parent;

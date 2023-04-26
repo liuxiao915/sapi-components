@@ -1,71 +1,71 @@
 import * as mars3d from "mars3d";
-
+const image = require("@/assets/images/mars3d/yellow.png");
 export const dataList = [
   {
     id: 0,
     name: "南山区",
     position: [113.95073239750282, 22.564112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 2,
     name: "宝安区",
     position: [113.84573239750282, 22.650112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 4,
     name: "光明区",
     position: [113.93073239750282, 22.754112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 6,
     name: "罗湖区",
     position: [114.15073239750282, 22.571112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 8,
     name: "福田区",
     position: [114.03073239750282, 22.534112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 10,
     name: "龙岗区",
     position: [114.26673239750282, 22.722112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 12,
     name: "盐田区",
     position: [114.26873239750282, 22.611112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 14,
     name: "坪山区",
     position: [114.35173239750282, 22.663112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 16,
     name: "大鹏新区",
     position: [114.47673239750282, 22.591112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 18,
     name: "深汕合作区",
     position: [115.027275, 22.864112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
   {
     id: 20,
     name: "龙华区",
     position: [114.02073239750282, 22.640112402018165, 0],
-    image: require("@/assets/images/mars3d/yellow.png"),
+    image: image,
   },
 ]
 
@@ -74,8 +74,8 @@ export const addMarkLayer = (map, list, clickCallback, options = {}) => {
   // 创建矢量数据图层
   try {
     const graphicLayer = new mars3d.layer.GraphicLayer({
-      clampToGround: options.clampToGround ? options.clampToGround : false,
-      clustering: options.clustering ? options.clustering : null
+      clampToGround: options.clampToGround ? options.clampToGround : false, // 是否贴地
+      clustering: options.clustering ? options.clustering : null // 设置聚合相关参数（仅对Entity点数据有效）
     })
     // 高亮时的样式（默认为})
     map.addLayer(graphicLayer)
