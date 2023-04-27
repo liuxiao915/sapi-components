@@ -26,6 +26,7 @@ export default {
   },
   setup(props, { emit }) {
     let map = null;
+    let graphicLayer = null;
     const mapKeyId = computed(() => `mars3d-container-${props.mapKey}`)
     const initMap = () => {
       mars3d.Util.fetchJson({ url: "config/mars3d-config.json" }).then((data) => {
@@ -90,6 +91,10 @@ export default {
       if (map) {
         map.destroy()
         map = null
+      }
+      if(graphicLayer){
+        graphicLayer.destroy()
+        graphicLayer = null
       }
       // if(this.tilesetPlanClip){
       //   this.map.removeThing(this.tilesetPlanClip, true); //移除并销毁

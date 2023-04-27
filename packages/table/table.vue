@@ -1,5 +1,5 @@
 <template>
-    <div class="sapi-table-wrapper" :style="{ height: height }">
+    <div class="sapi-table-container" :style="{ height: height }">
         <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
         <div class="sapi-table_header-wrap">
             <table :cell-bordered="border" class="sapi-table_header-table" style="width: 100%">
@@ -442,7 +442,7 @@ export default {
 </script>
 
 <style lang="less">
-    .sapi-table-wrapper {
+    .sapi-table-container {
         width: 100%;
         position: relative;
         background: #ffffff;

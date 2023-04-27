@@ -10,6 +10,7 @@
 import sapiMars3d from "@/components/sapi-mars3d";
 import { initOPenPopup, bindMapPopup, bindMapTooltip } from './popup.js'
 import { dataList, addMarkLayer } from './scatterData.js'
+import { flyToPoint } from './flyToPoint.js'
 import { getCurrentInstance } from 'vue'
 export default {
   components: {
@@ -44,10 +45,13 @@ export default {
     }
 
     const clickCallback = (e) => {
-      console.log('clickCallback:::',e)
       proxy.$message({ type: 'success', message: e.graphic.options.name })
       // 跳转到指定位置
-      // map.flyToPoint(new mars3d.LngLatPoint(117,40), { duration: 0 })
+      flyToPoint(map)
+      setTimeout(() => {
+        const position = e.graphic.options.position
+        flyToPoint(map, [position[0], position[1], 100000])
+      }, 1000)
     }
     
     return {

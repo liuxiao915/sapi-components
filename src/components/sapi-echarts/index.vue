@@ -5,7 +5,7 @@
  @LastEditTime: 2023-04-01 14:03:11
 -->
 <template>
-  <div :id="id" class="sapi-echarts"></div>
+  <div :id="id" class="sapi-echarts-container"></div>
 </template>
 
 <script>
@@ -85,7 +85,6 @@ export default {
       this.echart.dispose()
     }
   },
-
   methods: {
     mergeOption() {
       const option = merge(baseOption(), this.option)
@@ -133,7 +132,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .sapi-echarts {
+  .sapi-echarts-container {
     height: 100%;
     width: 100%;
   }
