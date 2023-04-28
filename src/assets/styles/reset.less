@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   width: 100%;
@@ -12,41 +13,26 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-// body {
-//   overflow: scroll;
-//   -webkit-overflow-scrolling: touch;
-// }
-ul,
-ol {
-  list-style-type: none;
+
+body {
+  line-height: 1;
 }
 
-select {
-  /*清除select的边框样式 */
-  border: none;
-  /*清除select聚焦时候的边框颜色*/
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+ul, ol {
+  list-style: none;
 }
 
-
-option {
-  -moz-appearance: none;
-  /* Firefox */
-  -webkit-appearance: none;
-  /* Safari 和 Chrome */
-  appearance: none;
-  outline: none;
-  border: 0;
-  font-size: 16px !important;
+blockquote, q {
+  quotes:none;
 }
 
-/* --背景色字体颜色--*/
-option:hover {
-  color: #ffffff;
-  background-color: #ffffff;
-  outline: none;
-  border: 0;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

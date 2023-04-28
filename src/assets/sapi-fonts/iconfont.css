@@ -4,6 +4,18 @@
        url('iconfont.woff?t=1679151512908') format('woff'),
        url('iconfont.ttf?t=1679151512908') format('truetype');
 }
+/* ^= 是开头； $= 是结束；*= 是包含 */
+/* a[href$=".pdf"]   表示：href 属性值以 “.pdf” 结束的 <a>元素。 */
+[class^="icon-"], [class*="icon-"] {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .iconfont {
   font-family: "iconfont" !important;

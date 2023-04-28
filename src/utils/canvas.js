@@ -1,6 +1,6 @@
-export function createStar (canvas, w = 6400, counts = 100, alpha = 1) {
+export function createStar (canvas, w = window.screen.width, counts = 80, alpha = 1) {
   var ctx = canvas.getContext('2d')
-  const h = 1080
+  const h = window.screen.height
   canvas.width = w
   canvas.height = h
   function Build () {
@@ -14,21 +14,19 @@ export function createStar (canvas, w = 6400, counts = 100, alpha = 1) {
   }
   Build.prototype.init = function () {
     this.run()
-    this.render()
     this.animate()
   }
-  Build.prototype.add = function (coor) {
-    var grd = this.ctx.createRadialGradient(coor.x, coor.y, coor.size / 2, coor.x, coor.y, coor.size)
-    if (coor.size > this.maxSize) {
+  Build.prototype.add = function (item) {
+    var grd = this.ctx.createRadialGradient(item.x, item.y, item.size / 2, item.x, item.y, item.size)
+    if (item.size > this.maxSize) {
       return
     } else {
-      grd.addColorStop(0, coor.color)
-      // grd.addColorStop(1, 'white')
+      grd.addColorStop(0, item.color)
     }
     this.ctx.fillStyle = grd
     this.ctx.beginPath()
-    this.ctx.arc(coor.x, coor.y, coor.size, 0, Math.PI * 2, true)
-    this.ctx.transform(1, 0, 0, 1, 0, coor.z)
+    this.ctx.arc(item.x, item.y, item.size, 0, Math.PI * 2, true)
+    this.ctx.transform(1, 0, 0, 1, 0, item.z)
     this.ctx.closePath()
     this.ctx.fill()
     this.ctx.globalAlpha = alpha
@@ -37,7 +35,7 @@ export function createStar (canvas, w = 6400, counts = 100, alpha = 1) {
     var nums = 0
     const colorList = ['', '#0263C6', '#B9DBFF', '#F4F5FF', '#00FFF9', '#00ADFF', '#FFFFFF']
     while (nums < this.counts) {
-      var coor = {
+      var item = {
         x: Math.ceil(Math.random() * w),
         y: Math.ceil(Math.random() * h),
         posx: Math.random() * w - this.halfWidth,
@@ -48,7 +46,7 @@ export function createStar (canvas, w = 6400, counts = 100, alpha = 1) {
         r: Math.ceil(Math.random() * this.initSize),
         color: colorList[Math.ceil(Math.random() * 6)]
       }
-      this.arr.push(coor)
+      this.arr.push(item)
       nums++
     }
   }

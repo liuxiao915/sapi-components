@@ -192,7 +192,6 @@ export default {
       chart.setOption(Object.assign(option, opt || this.option))
       // 点击事件
       chart.resize()
-      // chart.getZr().off('click')
       chart.getZr().on('click', (params) => {
         this.$emit('handleMapClick', params)
       })
@@ -230,8 +229,6 @@ export default {
       const chartDom = document.getElementById(this.mapKeyId)
       // 兼容性处理，给滚轮绑定事件
       chartDom.addEventListener('mousewheel', this.onMouseWheel, false)
-      // chartDom.onmousewheel=this.onMouseWheel;
-      // chartDom.addEventListener('DomMouseWheel', this.onMouseWheel, false)
     },
     //  定义鼠标回调事件
     onMouseWheel(ev) {
@@ -258,41 +255,11 @@ export default {
       AsyncUpdate.then((res) => {
         this.$emit('changeFlag', !this.flags)
       })
-      // setTimeout(() => {
-      //   this.$emit('changeFlag', !this.flags)
-      // }, 6000)
-
-      // if (this.alpha >= 180) {
-      //    let option = this.chart.getOption()
-      //   option.geo3D[0].viewControl.minBeta = 0
-      //   option.geo3D[0].viewControl.maxBeta = 0
-      //   option.geo3D[0].viewControl.minAlpha = 90
-      //   option.geo3D[0].viewControl.maxAlpha = 90
-      //   this.chart.setOption(option)
-      //   this.chart.resize()
-      //   clearTimeout(this.timer);
-      //   return
-      // } else {
-      //   this.alpha += 180
-      //   let option = this.chart.getOption()
-      //    option.geo3D[0].viewControl.animationDurationUpdate = 500;
-      //   option.geo3D[0].viewControl.alpha = this.alpha
-      //   this.chart.setOption(option)
-      //   this.chart.resize()
-      // }
-      // this.timer = setTimeout(() => {
-      //   this.anphaUpdate()
-      // }, 0)
     },
     disabledMouse() {
       const option = this.chart.getOption()
-      // option.geo3D[0].viewControl.alpha = this.alpha
       option.geo3D[0].viewControl.maxDistance = 70
       option.geo3D[0].viewControl.minDistance = 70
-      // option.geo3D[0].viewControl.minBeta = 0
-      // option.geo3D[0].viewControl.maxBeta = 0
-      // option.geo3D[0].viewControl.minAlpha = 90
-      // option.geo3D[0].viewControl.maxAlpha = 90
       this.chart.setOption(option)
       this.chart.resize()
     }
