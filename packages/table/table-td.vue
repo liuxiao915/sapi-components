@@ -235,7 +235,7 @@ export default {
 .table-cell {
     .sapi-table__indent {
         display: inline-block;
-        height: 14px;
+        height: 12px;
     }
     .sapi-table__expand-icon {
         display: inline-block;
