@@ -29,8 +29,8 @@ export default {
         {name: '区域', exploitCost: '1-1', managementCost: '1-2', marketingCost: '1-3', taxes: '1-4', contractAmount: '1-5'},
         {name: '区域', exploitCost: '2-1', managementCost: '2-2', marketingCost: '2-3', taxes: '2-4', contractAmount: '2-5'},
         {name: '区域', exploitCost: '3-1', managementCost: '3-2', marketingCost: '3-3', taxes: '3-4', contractAmount: '3-5',children: [
-          {name: '区域-1', exploitCost: '3-1-1', managementCost: '3-2-1', marketingCost: '33', taxes: '44', contractAmount: '55'},
-          {name: '区域-2', exploitCost: '3-1-2', managementCost: '3-2-2', marketingCost: '33', taxes: '44', contractAmount: '55'}
+          {name: '区域', exploitCost: '3-1-1', managementCost: '3-2-1', marketingCost: '33', taxes: '44', contractAmount: '55'},
+          {name: '区域', exploitCost: '3-1-2', managementCost: '3-2-2', marketingCost: '33', taxes: '44', contractAmount: '55'}
         ]},
         {name: '区域', exploitCost: '4-1', managementCost: '4-2', marketingCost: '4-3', taxes: '4-4', contractAmount: '4-5'},
         {name: '区域', exploitCost: '5-1', managementCost: '5-2', marketingCost: '5-3', taxes: '5-4', contractAmount: '5-5'},

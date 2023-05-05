@@ -2,7 +2,7 @@
 function ClickFrontShow() {
   //定义所需文字和颜色
   this.front = ['高兴', '开心', '❤', '欢乐', '愉悦', '愉快', '快乐', '欢喜', '喜悦', '欢欣', '欢畅', '欢腾', '雀跃', '欢快', '★', '☆'];
-  this.colo = ['#FF69B4', '#ff6651', 'orange', '#FF00FF', '#00FF7F', '#00BFFF', '#BA55D3'];
+  this.colorList = ['#FF69B4', '#ff6651', 'orange', '#FF00FF', '#00FF7F', '#00BFFF', '#BA55D3'];
   //获取body元素
   this.elBody = document.getElementsByTagName("body")[0];
   //初始化randomNum
@@ -21,7 +21,7 @@ ClickFrontShow.prototype.createFront = function (classname) {
   let cssText = "position:absolute; width: 40px; height: 20px; cursor: default; transform: translate(-50%,-50%); font-weight: bold; opacity: 1; z-index: 1000; transition: 1s;";
   //随机字体和颜色
   let randomFront = self.front[self.finde];
-  let randomColor = self.colo[Math.round(Math.random()*(self.colo.length-1))];
+  let randomColor = self.colorList[Math.round(Math.random()*(self.colorList.length-1))];
   //字体下标增1
   self.finde = (self.finde+1) % self.front.length;
   //向body中添加元素
@@ -69,7 +69,7 @@ ClickFrontShow.prototype.listenMouse = function() {
 ClickFrontShow.prototype.init = function(frontArray, colorArray) {
   //自定义颜色和字体
   this.front = frontArray || this.front;
-  this.colo = colorArray || this.colo;
+  this.colorList = colorArray || this.colorList;
   this.listenMouse();
 }
 
