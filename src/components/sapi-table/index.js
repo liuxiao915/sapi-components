@@ -211,7 +211,7 @@ export default {
                     }
                     
                     const expand = rowKey && row[children] && row[children].length;
-                    treeColumns.push(h('tr', rowProps, getColumnChildNodes(row, rowIndex, level, (level - 1) * indent, expand, isExpand, showFixedCellContent)))
+                    treeColumns.push(h('tr', rowProps, getColumnChildNodes(row, rowIndex, level, (level - 1) * indent, !!expand, isExpand, showFixedCellContent)))
                     if (expand) {
                         getColumns(row[children], level + 1, isExpand)
                     }

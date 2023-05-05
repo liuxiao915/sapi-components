@@ -17,9 +17,10 @@
 </template>
 <script>
 import { reactive, getCurrentInstance } from 'vue'
-import sapiTable from '@/components/sapi-table/index.js'
+import  sapiTable from '../../packages/table/table.vue'
+import  sapiTableColumn from '../../packages/table/table-column.js'
 export default {
-  components: { sapiTable },
+  components: { sapiTable, sapiTableColumn },
   setup() {
     const { proxy } = getCurrentInstance()
     const state = reactive({

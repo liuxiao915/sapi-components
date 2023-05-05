@@ -1,24 +1,24 @@
 <template>
     <div class="sapi-table-container" :style="{ height: height }">
         <div class="sapi-table_header-wrap">
-            <table :cell-bordered="true" class="sapi-table_header-table">
+            <table :cell-bordered="true" class="sapi-table_header-table" style="width: 100%">
                 <slot name="header"></slot>
             </table>
         </div>
         <div class="sapi-table_body-wrap" :style="{ height: tableBodyHeight }">
-            <table :cell-bordered="true" class="sapi-table_body-table">
+            <table :cell-bordered="true" class="sapi-table_body-table" style="width: 100%">
                 <slot name="body"></slot>
             </table>
         </div>
             
         <div class="fixed-sapi-table_wrapper" v-if="fixedTableWidth" :style="{width: fixedTableWidth + 'px', height: tableHeight}">
             <div class="fixed-sapi-table_header-wrap">
-                <table :cell-bordered="true" class="sapi-table_header-table sapi-table_fixed-header-table">
+                <table :cell-bordered="true" class="sapi-table_header-table sapi-table_fixed-header-table" style="width: 100%">
                     <slot name="header"></slot>
                 </table>
             </div>
             <div class="fixed-sapi-table_body-wrap" :style="{ top: tableHeadHeight }">
-                <table :cell-bordered="true" class="sapi-table_body-table">
+                <table :cell-bordered="true" class="sapi-table_body-table" style="width: 100%">
                     <slot name="fixedbody"></slot>
                 </table>
             </div>
@@ -47,11 +47,6 @@ export default {
             tableHeight: '',
             tableHeadHeight: '',
             tableBodyHeight: ''
-        }
-    },
-    computed: {
-        computedScrollerHeight() {
-            return this.tableBodyHeight
         }
     },
     watch: {

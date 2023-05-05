@@ -62,7 +62,7 @@ export default {
 					stitle = labelText;
 				}
 
-				innerHtml += "<li class='tree-node" + className + "' data-index='" + i + "'><div class='tree-node-text'><span class='tree-node-icon iconfont iconxiangyou'></span>";
+				innerHtml += "<li class='tree-node" + className + "' data-index='" + i + "'><div class='tree-node-text'><span class='tree-node-icon icon-caret-right'></span>";
 				innerHtml += '<span class="tree-node-label" title="' + stitle + '">' + labelText + '</span></div>';
 				if (hasChild) {
 					if (defaultExpandAll === true) {

@@ -3,7 +3,7 @@
         <div class="table-cell" :style="bindCellStyle" :class="cellClass">
             <span v-if="!!rowKey && columnIndex === 0" class="sapi-table__indent" :style="{ 'padding-left': indent + 'px' }"></span>
             <span v-if="!!rowKey && columnIndex === 0 && expand" class="sapi-table__expand-icon" @click.stop="handleExpandClick" :class="{'is-expanded': isExpanded}">
-                <span class='iconfont iconxiangyou'></span>
+                <span class='icon-caret-right'></span>
             </span>
             <span v-if="!!rowKey && columnIndex === 0 && !expand" class="sapi-table__indent" style="padding-left: 16px"></span>
             <slot :row="row" :column="column" :rowIndex="rowIndex" :columnIndex="columnIndex">
@@ -238,8 +238,6 @@ export default {
         height: 14px;
     }
     .sapi-table__expand-icon {
-        position: relative;
-        top: 2px;
         display: inline-block;
         width: 14px;
         height: 14px;
