@@ -5,13 +5,18 @@
 }
 
 html,
-body {
+body, 
+#app {
   width: 100%;
   height:100%;
+  color: #2c3e50;
   font-family: -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  // 抗锯齿很好（字体看起来舒服，清晰）
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

@@ -235,10 +235,9 @@ export default {
                 }
                 return h('thead', {}, [h('tr', trProps, headerChildNodes)])
             },
-            body: () => {return h('tbody', {} , getTreeColumnChildNodes(false))
-            },
-            fixedbody: () => {return h('tbody', {} , getTreeColumnChildNodes(true))
-            }
+            body: () => h('tbody', {} , getTreeColumnChildNodes(false)),
+            fixedbody: () => h('tbody', {} , getTreeColumnChildNodes(true))
+            
         })
     }
 }

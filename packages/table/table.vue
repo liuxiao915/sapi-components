@@ -2,7 +2,7 @@
     <div class="sapi-table-container" :style="{ height: height }">
         <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
         <div class="sapi-table_header-wrap">
-            <table :cell-bordered="border" class="sapi-table_header-table" style="width: 100%">
+            <table class="sapi-table_header-table" style="width: 100%">
                 <table-header
                     :headerRowClassName="headerRowClassName"
                     :headerRowStyle="headerRowStyle"
@@ -14,7 +14,7 @@
             </table>
         </div>
         <div class="sapi-table_body-wrap" :style="{ height: tableBodyHeight }">
-            <table :cell-bordered="border" class="sapi-table_body-table" :style="{ width: tableHeaderWidth }">
+            <table class="sapi-table_body-table" :style="{ width: tableHeaderWidth }">
                 <table-body
                     :rowKey="rowKey"
                     :indent="indent"
@@ -34,7 +34,7 @@
         </div>
         <div class="fixed-sapi-table_wrapper" v-show="showFixed" v-if="!!fixedTableWidth" :style="{width: fixedTableWidth + 'px', height: tableHeight}">
             <div class="fixed-sapi-table_header-wrap">
-                <table :cell-bordered="border" class="sapi-table_header-table sapi-table_fixed-header-table" :style="{ width: tableHeaderWidth }">
+                <table class="sapi-table_header-table sapi-table_fixed-header-table" :style="{ width: tableHeaderWidth }">
                     <table-header
                         :headerRowClassName="headerRowClassName"
                         :headerRowStyle="headerRowStyle"
@@ -46,7 +46,7 @@
                 </table>
             </div>
             <div class="fixed-sapi-table_body-wrap" :style="{ top: fixedTableTop }">
-                <table :cell-bordered="border" class="fixed-sapi-table_body-table" :style="{ width: tableHeaderWidth }">
+                <table class="fixed-sapi-table_body-table" :style="{ width: tableHeaderWidth }">
                     <table-body
                         :rowKey="rowKey"
                         :indent="indent"
@@ -162,10 +162,6 @@ export default {
         },
         formatter: {
             type: Function
-        },
-        border: {
-            type: Boolean,
-            default : false
         },
         lazyload: {
             type: Function
