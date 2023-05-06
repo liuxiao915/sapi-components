@@ -111,7 +111,7 @@ export default {
                 headerCellStyle: this.headerCellStyle,
                 data: this.data,
                 onClick(e) {
-                    if (vm.$attrs['sort-change']) {
+                    if (vm.$attrs['onSortChange']) {
                         vm.$emit("sort-change", column, sortable)
                     }
                 }
@@ -127,7 +127,7 @@ export default {
             return columnComponentProps.map((property, index) => {
                 const tabelColumnProps = {
                     onClick(e) {
-                        if (vm.$attrs['cell-click']) {
+                        if (vm.$attrs['onCellClick']) {
                             vm.$emit('cell-click', row, rowIndex, property, index, e)
                         }
                     },
@@ -177,8 +177,8 @@ export default {
                         class: {'sapi-table_row': true},
                         style: typeof this.rowStyle === 'function' ? this.rowStyle(row, rowIndex) : {},
                         onClick(e) {
-                            if (vm.$attrs['row-click'] || vm.highlightCurrentRow) {
-                                if (vm.$attrs['row-click']) {
+                            if (vm.$attrs['onRowClick'] || vm.highlightCurrentRow) {
+                                if (vm.$attrs['onRowClick']) {
                                     vm.$emit('row-click', row, rowIndex, e)
                                 }
                                 if (vm.highlightCurrentRow) {
