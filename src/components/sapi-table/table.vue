@@ -1,24 +1,24 @@
 <template>
     <div class="sapi-table-container" :style="{ height: height }">
         <div class="sapi-table_header-wrap">
-            <table class="sapi-table_header-table" style="width: 100%">
+            <table class="sapi-table_header-table">
                 <slot name="header"></slot>
             </table>
         </div>
         <div class="sapi-table_body-wrap" :style="{ height: tableBodyHeight }">
-            <table class="sapi-table_body-table" style="width: 100%">
+            <table class="sapi-table_body-table">
                 <slot name="body"></slot>
             </table>
         </div>
             
         <div class="fixed-sapi-table_wrapper" v-if="fixedTableWidth" :style="{width: fixedTableWidth + 'px', height: tableHeight}">
             <div class="fixed-sapi-table_header-wrap">
-                <table class="sapi-table_header-table sapi-table_fixed-header-table" style="width: 100%">
+                <table class="sapi-table_header-table sapi-table_fixed-header-table">
                     <slot name="header"></slot>
                 </table>
             </div>
             <div class="fixed-sapi-table_body-wrap" :style="{ top: tableHeadHeight }">
-                <table class="sapi-table_body-table" style="width: 100%">
+                <table class="sapi-table_body-table">
                     <slot name="fixedbody"></slot>
                 </table>
             </div>
@@ -135,6 +135,7 @@ export default {
             font-size: 12px;
             table-layout: fixed;
             position: relative;
+            width: 100%;
             tr {
                 background: #ffffff;
                 color: #606972;

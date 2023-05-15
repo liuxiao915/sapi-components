@@ -71,6 +71,12 @@ const routes = [
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table.vue')
 			},
 			{
+				path: '/grid',
+				name: 'grid',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-grid')
+			},
+			{
 				path: '/message',
 				name: 'message',
 				meta: { keepAlive: false },
