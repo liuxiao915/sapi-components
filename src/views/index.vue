@@ -34,6 +34,7 @@ export default {
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
         {path: '/echarts', name: 'echarts', label: 'echarts图表'},
         {path: '/table', name: 'table', label: 'table'},
+        {path: '/scroll', name: 'scroll', label: 'scroll'},
         {path: '/message', name: 'message', label: 'message'},
         {path: '/loading', name: 'loading', label: 'loading'},
         {path: '/grid', name: 'grid', label: 'grid'}

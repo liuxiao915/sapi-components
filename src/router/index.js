@@ -68,7 +68,13 @@ const routes = [
 				path: '/table',
 				name: 'table',
 				meta: { keepAlive: false },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table.vue')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table-packages.vue')
+			},
+			{
+				path: '/scroll',
+				name: 'scroll',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/scroll.vue')
 			},
 			{
 				path: '/grid',

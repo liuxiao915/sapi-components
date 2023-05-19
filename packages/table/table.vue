@@ -278,6 +278,10 @@ export default {
                     right: false,
                     top: false
                 },
+                scrollbar: {
+                    fade: true,
+                    interactive: true
+                },
                 pullUpLoad:  {
                     threshold: -50
                 }
@@ -384,7 +388,6 @@ export default {
                     }
                     if (this.isPullUpLoad) {
                         td.innerHTML = '加载中'
-                        // spinner(td)
                         continue
                     }
                     if (!this.data || !this.data.length) {

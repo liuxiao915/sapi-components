@@ -93,9 +93,25 @@ export default {
       }
       // better-scroll的初始化
       this.scroll = new BScroll(this.$refs.wrapper, {
-        probeType: this.probeType,
-        click: this.click,
-        scrollX: this.scrollX
+        // probeType: this.probeType,
+        // click: this.click,
+        // scrollX: this.scrollX,
+
+        bounce: {
+          bottom: false,
+          left: false,
+          right: false,
+          top: false
+        },
+        probeType: 3,
+        scrollX: true,
+        scrollY: true,
+        click: true,
+        tap: true,
+        scrollbar: {
+          fade: true, // true 表示当滚动停止的时候滚动条是否需要渐隐
+          interactive: true // 表示滚动条是否可以交互
+        }
       })
 
       // 是否派发滚动事件
@@ -164,4 +180,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="less" scoped>
+.wrapper {
+  height: 100%;
+  .content {
+    height: 100%;
+  }
+}
+</style>
