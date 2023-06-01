@@ -44,6 +44,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "sass-resources-loader": "^2.2.5",
     "svg-sprite-loader": "^6.0.11",
+    "videojs-contrib-hls": "^5.15.0",
     "vue-markdown-loader": "^2.5.0",
     "watermark-dom": "^2.3.0"
   },

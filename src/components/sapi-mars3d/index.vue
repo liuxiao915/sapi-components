@@ -10,7 +10,7 @@ import "mars3d-cesium/Build/Cesium/Widgets/widgets.css"
 //导入mars3d主库
 import "mars3d/dist/mars3d.css";
 import * as mars3d from "mars3d";
-import { computed, onMounted, onUnmounted } from 'vue'
+import { computed, onMounted, onUnmounted, watch } from 'vue'
 export default {
   name: 'sapiMars3d',
   props: {
@@ -21,8 +21,12 @@ export default {
     },
     options: {
       type: Object,
-      default: () => ({})
+      default: () => {}
     },
+    controlOption: {
+      type: Object,
+      default: null
+    }
   },
   setup(props, { emit }) {
     let map = null;
@@ -74,6 +78,9 @@ export default {
         emit("onload", map)
       })
     }
+    watch(() => props.controlOption, () => {
+      addControl()
+    })
     // map构造完成后的一些处理
     const onMapLoad = () => {
       // // Mars3D地图内部使用，如右键菜单弹窗
@@ -105,6 +112,13 @@ export default {
       //   this.graphicLayer = null
       // }
     }
+    // 添加控件功能
+    const addControl = (controlOption) => {
+      // 构造鹰眼地图
+      const overviewMap = new mars3d.control.OverviewMap(controlOption)
+      map.addControl(overviewMap)
+    }
+    
     onMounted(() => {
       initMap() // 或者直接 new mars3d.Map("mars3dContainer", {//...一些选项})
     })

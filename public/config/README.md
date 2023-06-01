@@ -28,7 +28,19 @@
 | basemaps | Array  | [参数清单](http://mars3d.cn/api/Map.html#.basemapOptions) | 底图图层 |
 | layers   | Array  | [参数清单](http://mars3d.cn/api/Map.html#.layerOptionsmap) | 图层     |
 
+### 控件清单
 
+| 类名                            | 说明                               |
+| ------------------------------- | ---------------------------------- |
+| mars3d.control.Compass()        | 导航球控件                         |
+| mars3d.control.DistanceLegend() | 比例尺控件                         |
+| mars3d.control.LocationBar()    | 鼠标经纬度等信息状态栏             |
+| mars3d.control.MouseDownView()  | 鼠标旋转、放大时的按键效果美化图标 |
+| mars3d.control.ToolButton()     | 工具栏 单个按钮控件                |
+| mars3d.control.Zoom()           | 工具栏 放大缩小按钮控件            |
+| mars3d.control.OverviewMap()    | 鹰眼地图 控件                      |
+
+注：本教程中所列清单可能不全，具体已功能示例和API为准。
 
 
 ```js
