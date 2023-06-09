@@ -1,7 +1,7 @@
 import app from '@/hooks/index'
 //导入路由配置
 import router from './router'
-
+import '@/hooks/polyfill.js' // 去除touch事件谷歌提示
 import components from "@/components/index";
 import { utils } from '@/utils/index'
 // 全局样式

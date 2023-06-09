@@ -37,7 +37,8 @@ export default {
         {path: '/scroll', name: 'scroll', label: 'scroll'},
         {path: '/message', name: 'message', label: 'message'},
         {path: '/loading', name: 'loading', label: 'loading'},
-        {path: '/grid', name: 'grid', label: 'grid'}
+        {path: '/grid', name: 'grid', label: 'grid'},
+        {path: '/select', name: 'select', label: 'select'},
       ],
       tabsData: [
         {label: '实例', value: 0},

@@ -76,7 +76,6 @@ function getEventName(target) {
 			stop: true
 		};
 	}
-
 	return getEventName(target.parentNode);
 }
 

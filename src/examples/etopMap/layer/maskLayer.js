@@ -220,14 +220,11 @@ export default {
     viewer.scene.fxaa = true
     viewer.scene.postProcessStages.fxaa.enabled = true
     const promise = new mars3d.Cesium.GeoJsonDataSource.load(url)
-    console.log(promise)
     promise.then((datasource) => {
       console.time(12)
-      console.log(datasource)
       datasource.show = false;
       viewer.dataSources.add(datasource) // 加载这个geojson资源
       const entities = datasource.entities.values
-      console.log(entities)
       let colorstr = null
       for (let index = 0; index < entities.length; index++) {
         const entity = entities[index]
@@ -285,7 +282,6 @@ export default {
         etopMap.map.viewer.scene.globe.ellipsoid
       )
       obj.czmObject = pickedEntity
-      //console.log(obj);
       //let pickedEntities = drillPickEntities(viewer, movement.position);
       clickCallback(obj)
     }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
@@ -354,7 +350,6 @@ export default {
       }) 
     }else if(typeof(url)=='string'){
       axios.get(url).then((res) => {
-        console.log(res)
         features = res.data.features;
         addDataToGlobe(features)
       })

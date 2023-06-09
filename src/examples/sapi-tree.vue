@@ -1,18 +1,14 @@
 <template>
     <div class="tree-demo">
-        <div class="fullline">
-            <div class="fullline"> 复杂的树型 </div>
-            <sapi-tree :data="list" @expanded-click="expandedClick" :expandOnClickNode="true" :indent="20"
-                :selectAfter="getSelectNode" :lazyLoad="expandedAddChild" :render-content="renderContent"
-                :props="defaultProps" :actived-id="treeId" @on-click="handlerClick">
-            </sapi-tree>
-        </div>
+        <div class="fullline"> 复杂的树型 </div>
+        <sapi-tree :data="list" @expanded-click="expandedClick" :expandOnClickNode="true" :indent="20"
+            :selectAfter="getSelectNode" :lazyLoad="expandedAddChild" :render-content="renderContent"
+            :props="defaultProps" :actived-id="treeId" @on-click="handlerClick">
+        </sapi-tree>
 
-        <!-- <div class="fullline">
-            <div class="fullline">普遍的树型</div>
-            <sapi-tree :uniqueOpened="true" :data="datas" :props="menuProps" :node-id="menuId" @node-click="menuClick">
-            </sapi-tree>
-        </div> -->
+        <!-- <div class="fullline">普遍的树型</div>
+        <sapi-tree :uniqueOpened="true" :data="datas" :props="menuProps" :node-id="menuId" @node-click="menuClick">
+        </sapi-tree> -->
     </div>
 </template>  
 
@@ -127,7 +123,6 @@ export default {
         renderNodeClick(e, item) {
             var target = e.target;
             if (target.className.indexOf("click-i") > -1) {
-                console.log(123);
                 console.log(item);
                 //禁止冒泡
                 /*return false;*/

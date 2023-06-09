@@ -94,6 +94,12 @@ const routes = [
 				meta: { keepAlive: false },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-loading.vue')
 			},
+			{
+				path: '/select',
+				name: 'select',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-select.vue')
+			},
 		]
   },
 ]
