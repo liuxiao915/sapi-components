@@ -50,7 +50,7 @@ const routes = [
 				path: '/tree',
 				name: 'tree',
 				meta: { keepAlive: false },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree.vue')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree')
 			},
 			{
 				path: '/mars3d',
