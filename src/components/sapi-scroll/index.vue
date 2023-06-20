@@ -242,18 +242,19 @@ export default {
             // The Elements
             let $scrollArea = this.$refs.scrollArea;
             let $scrollWrapper = this.$refs.scrollWrapper;
-            console.log('$scrollWrapper:::', $scrollWrapper);
-            // Get new Elements Size
-            let elementSize = {
-                // Scroll Area Height and Width
-                scrollAreaHeight: $scrollArea.clientHeight,
-                scrollAreaWidth: $scrollArea.clientWidth,
-
-                // Scroll Wrapper Height and Width
-                scrollWrapperHeight: $scrollWrapper.clientHeight,
-                scrollWrapperWidth: $scrollWrapper.clientWidth
-            };
-            return elementSize;
+            if($scrollWrapper) {
+                // Get new Elements Size
+                let elementSize = {
+                    // Scroll Area Height and Width
+                    scrollAreaHeight: $scrollArea.clientHeight,
+                    scrollAreaWidth: $scrollArea.clientWidth,
+    
+                    // Scroll Wrapper Height and Width
+                    scrollWrapperHeight: $scrollWrapper.clientHeight,
+                    scrollWrapperWidth: $scrollWrapper.clientWidth
+                };
+                return elementSize;
+            }
         },
 
         calculateSize(cb) {

@@ -39,6 +39,7 @@ export default {
         {path: '/loading', name: 'loading', label: 'loading'},
         {path: '/grid', name: 'grid', label: 'grid'},
         {path: '/select', name: 'select', label: 'select'},
+        {path: '/dialog', name: 'dialog', label: 'dialog'},
       ],
       tabsData: [
         {label: '实例', value: 0},

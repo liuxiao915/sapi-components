@@ -5,7 +5,7 @@
     </header>
     <main>
       <section class="left">
-        <div class="menu-item" v-for="(item, index) in data" :key="index" @click="selectTabs(item, index)">{{ item.label }}</div>
+        <div :class="['menu-item', currentIndex === index ? 'active' : '']" v-for="(item, index) in data" :key="index" @click="selectTabs(item, index)">{{ item.label }}</div>
       </section>
       <section class="right">
         <slot name="right"></slot>
@@ -23,10 +23,13 @@ export default {
     }
   },
   setup(props, { emit }) {
+    const currentIndex = ref(null)
     const selectTabs = (item, index) => {
+      currentIndex.value = index
       emit('selectTabs', item, index)
     }
     return {
+      currentIndex,
       selectTabs
     }
   }
@@ -51,7 +54,7 @@ export default {
   main {
     display: flex;
     padding-top: 50px;
-    height: calc(100% - 50px);
+    height: 100%;
   }
   .left {
     width: 200px;
@@ -60,6 +63,8 @@ export default {
     overflow-y: auto;
     .menu-item {
       cursor: pointer;
+      height: 36px;
+      line-height: 36px;
     }
   }
   .right {

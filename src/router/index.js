@@ -50,7 +50,7 @@ const routes = [
 				path: '/tree',
 				name: 'tree',
 				meta: { keepAlive: false },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree/tree.vue')
 			},
 			{
 				path: '/mars3d',
@@ -99,6 +99,12 @@ const routes = [
 				name: 'select',
 				meta: { keepAlive: false },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-select.vue')
+			},
+			{
+				path: '/dialog',
+				name: 'dialog',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-dialog.vue')
 			},
 		]
   },

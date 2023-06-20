@@ -10,7 +10,7 @@
           <i class="up-arrow icon-caret-right"></i>
           <div  class="sapi-select-box-list" @mousedown.stop="emptyFn" :class="listClass">
               <sapi-scroll ref="scrollbar" :style="{maxHeight:maxHeight,height:height}">
-                  <component :is="currentView" :showTip="true" ref="treeRef" :expand-on-click-node="expandOnClickNode" :defaultExpandAll="defaultExpandAll" :actived-id="nodeId" :lazy-load="lazyLoad" :render-content="renderContent" :select-after="getSelectNode" :data="isKeyWrite && input ? searchList :datas" :props="props" @on-click="treeClick"></component>
+                  <sapi-tree :showTip="true" ref="treeRef" :expand-on-click-node="expandOnClickNode" :defaultExpandAll="defaultExpandAll" :actived-id="nodeId" :lazy-load="lazyLoad" :render-content="renderContent" :select-after="getSelectNode" :data="isKeyWrite && input ? searchList :datas" :props="props" @on-click="treeClick"></sapi-tree>
                   <ul v-if="isTree!==true" class="sapi-select-box-list-ul">
                       <template v-if="isKeyWrite && input">
                           <slot :row="item" :$index="index" v-for="(item,index) in searchList">
