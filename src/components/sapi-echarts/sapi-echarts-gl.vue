@@ -1,8 +1,8 @@
 <template>
-  <div style="position: relative">
-    <div :id="mapKeyId" class="map-echart" :style="{ width: width + 'px', height: height + 'px' }" />
-    <div v-show="flags" :class="['shenzhen-area', { 'shenshan-areas': !flags }]">
-      <map-shenshan-ecahrts-gl :option="ssOption" @shenshanClick="regionClick" />
+  <div class="sapi-echarts-gl" :style="{ width: width + 'px', height: height + 'px' }">
+    <div :id="mapKeyId" class="shenzhen-map" />
+    <div v-show="flags" class="shenshan-map">
+      <ShenShanMapsGl :option="ssOption" @shenshanClick="regionClick" />
       <div class="shenshan-title">深汕合作区</div>
     </div>
   </div>
@@ -13,6 +13,7 @@ import 'echarts-gl'
 import shenZhen from './newShenZhen.json'
 import shenShan from './shenshan.json'
 import { computed } from 'vue'
+import { utils } from '@/utils/index.js'
 
 export default {
   name: 'sapiEchartsGl',
@@ -34,11 +35,11 @@ export default {
     },
     width: {
       type: [Number, String],
-      default: 800
+      default: 351
     },
     height: {
       type: [Number, String],
-      default: 400
+      default: 210
     },
     option: {
       type: Object,
@@ -79,7 +80,7 @@ export default {
     }
   },
   setup(props) {
-    const mapKeyId = computed(() => `echarts-container-${props.mapKey}`)
+    const mapKeyId = computed(() => `echarts-container-${utils.guid(8)}`)
     return {
       mapKeyId
     }
@@ -120,7 +121,7 @@ export default {
     drawChart(opt) {
       this.map = this.initMapJsonData()
       const regionHeight = this.cityVal === '深圳市' ? 3 : 25
-      const distance = this.cityVal === '深圳市' ? 80 : 180
+      const distance = this.cityVal === '深圳市' ? 85 : 150
       this.viewControl.distance = distance
       if (!this.flags) {
         this.viewControl.distance = 150
@@ -152,27 +153,13 @@ export default {
             textStyle: {
               color: '#fff',
               backgroundColor: 'transparent',
-              fontSize: 14,
+              fontSize: 12,
               textShadowColor: '#000000',
               textShadowBlur: 2,
               textShadowOffsetY: 3,
               fontWeight: 600
             }
           },
-          regions: [
-            {
-              name: '南海诸岛',
-              itemStyle: {
-                // 隐藏地图
-                normal: {
-                  opacity: 0 // 为 0 时不绘制该图形
-                }
-              },
-              label: {
-                show: false // 隐藏文字
-              }
-            }
-          ],
           itemStyle: {
             color: 'rgba(0,143,255,.5)', // 地图板块的颜色
             borderColor: '#0b94ff',
@@ -267,26 +254,24 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.shenzhen-area {
-  position: absolute;
-  right: 25px;
-  bottom: 0;
-  border: 1px dashed #00a3e9;
-  border-radius: 5px;
-
-  .shenshan-title {
-    text-align: center;
-    color: #fff;
-    padding-bottom: 10px;
-    font-size: 15px;
-    font-weight: 600;
+.sapi-echarts-gl {
+  position: relative;
+  .shenzhen-map {
+    width: 100%;
+    height: 100%;
   }
-}
-.shenshan-areas {
-  position: absolute;
-  right: 25px;
-  bottom: -150px;
-  border: 1px dashed #00a3e9;
-  border-radius: 5px;
+  .shenshan-map {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    border: 1px dashed #00a3e9;
+    border-radius: 5px;
+    .shenshan-title {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
 }
 </style>

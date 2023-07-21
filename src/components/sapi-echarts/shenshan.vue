@@ -6,15 +6,15 @@ import * as echarts from 'echarts'
 import 'echarts-gl'
 import shenShan from './shenshan.json'
 export default {
-  name: 'mapShenshanEcahrtsGl',
+  name: 'ShenShanMapsGl',
   props: {
     width: {
       type: [Number, String],
-      default: 130
+      default: 80
     },
     height: {
       type: [Number, String],
-      default: 130
+      default: 60
     },
     option: {
       type: Object,
@@ -74,7 +74,7 @@ export default {
             textStyle: {
               color: '#fff',
               backgroundColor: 'transparent',
-              fontSize: 14
+              fontSize: 12
             }
           },
           itemStyle: {
@@ -102,4 +102,3 @@ export default {
   }
 }
 </script>
-<style lang="less"></style>

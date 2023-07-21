@@ -27,14 +27,15 @@ export default {
         autoRotate: false // 自动旋转
       },
       mapOption: {
-        "tooltip": {
+        tooltip: {
           "trigger": "item",
           "backgroundColor": "rgba(255, 255, 255, 0)",
+          confine: true,
           "axisPointer": {
             "type": "line", "lineStyle": { "color": "#54B5FF", "type": "dashed" }
           }
         },
-        "legend": {
+        legend: {
           "show": false,
           "bottom": "2%",
           "left": "1%", "itemWidth": 10,
@@ -44,11 +45,19 @@ export default {
             "fontWeight": 400, "display": "flex"
           }
         },
-        "series": [
+        series: [
           {
-            "id": "a1", "name": "天然气高压管道长度", "type": "bar3D", "coordinateSystem": "geo3D", "barSize": 1.5, "shading": "color", "minHeight": 5, "barGap": 0,
+            id: "a1", 
+            "name": "天然气高压管道长度", 
+            "type": "bar3D", 
+            "coordinateSystem": "geo3D", 
+            "barSize": 1.5, 
+            "shading": "color", 
+            "minHeight": 5, 
+            "barGap": 0,
             "itemStyle": { "color": "#00FFF9", "opacity": 0.5, "border": 1 },
-            "emphasis": { "label": { "show": false } }, "label": { "show": false },
+            "emphasis": { "label": { "show": false } }, 
+            "label": { "show": false },
             "data": [
               { "name": "福田区", "value": [114.06054, 22.53291, 60] },
               { "name": "罗湖区", "value": [114.16766000000001, 22.55836, 60] },
@@ -62,7 +71,11 @@ export default {
               { "name": "大鹏新区", "value": [114.514268, 22.578528, 60] }]
           },
           {
-            "id": "a2", "name": "天然气次高压管道长度", "type": "bar3D", "coordinateSystem": "geo3D", "barSize": 1.5, "shading": "color", "minHeight": 5, "barGap": 0,
+            "id": "a2", 
+            "name": "天然气次高压管道长度", 
+            "type": "bar3D", 
+            "coordinateSystem": "geo3D", 
+            "barSize": 1.5, "shading": "color", "minHeight": 5, "barGap": 0,
             "itemStyle": { "color": "#F9E900", "opacity": 0.5 },
             "emphasis": { "label": { "show": false } }, "label": { "show": false },
             "data": [
@@ -97,6 +110,7 @@ export default {
       ssOption: {
         tooltip: {
           "trigger": "item",
+          confine: true,
           "backgroundColor": "rgba(255, 255, 255, 0)",
           "axisPointer": {
             "type": "line",
@@ -141,9 +155,8 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>.wrapper {
-  display: grid;
-  grid-gap: 30px 80px;
-  grid-template-columns: repeat(auto-fill, 600px);
-  grid-auto-rows: 400px;
-}</style>
+<style lang="less" scoped>
+.wrapper {
+  width: 100%;
+}
+</style>

@@ -15,7 +15,7 @@ export default {
       const canvas = document.getElementById('full-star')
       // createStar(canvas)
       // 初始化点击页面出现彩色字体特效
-      frontShow.init()
+      // frontShow.init()
     })
   }
 }

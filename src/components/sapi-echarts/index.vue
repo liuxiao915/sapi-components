@@ -5,7 +5,7 @@
  @LastEditTime: 2023-04-01 14:03:11
 -->
 <template>
-  <div :id="id" class="sapi-echarts-container"></div>
+  <div :id="keyId" class="sapi-echarts-container"></div>
 </template>
 
 <script>
@@ -46,7 +46,7 @@ export default {
     }
   },
   setup(props) {
-    const id = ref('')
+    const keyId = computed(() => `echarts-container-${utils.guid(8)}`)
     const echart = ref(null)
     const { option, width, height, status } = toRefs(props)
     const showEchart = computed(() => {
@@ -61,7 +61,7 @@ export default {
       }
     })
     return {
-      id,
+      keyId,
       echart,
       showEchart,
       styleComputed
@@ -77,7 +77,6 @@ export default {
     }
   },
   created() {
-    this.id = this.domId
     this.mergeOption()
   },
   unmounted() {
@@ -100,17 +99,16 @@ export default {
       this.drawChart(option)
     },
     drawChart(option) {
-      if (!this.id) {
-        this.id = `${new Date().getTime() + Math.floor(Math.random() * 1000)}BaseBarEchart`
+      if (!this.keyId) {
+        this.keyId = `${new Date().getTime() + Math.floor(Math.random() * 1000)}BaseBarEchart`
       }
 
       this.$nextTick(() => {
-        const chartDom = document.getElementById(this.id)
+        const chartDom = document.getElementById(this.keyId)
         if (!chartDom) return
-        const myChart = echarts.init(chartDom, 'chalk')
-        this.echart = myChart
-        myChart.clear()
-        myChart.setOption(option || this.option)
+        this.echart = echarts.init(chartDom, 'chalk')
+        this.echart.clear()
+        this.echart.setOption(option || this.option)
         this.$nextTick(() => {
           this.resize()
         })
