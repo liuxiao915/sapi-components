@@ -6,7 +6,7 @@
 <script>
 import * as echarts from 'echarts'
 import 'echarts-gl'
-import shenZhen from './newShenZhen.json'
+import shenZhen from './ShenZhen.json'
 import { ref, computed, reactive } from 'vue'
 import { utils } from '@/utils/index.js'
 
