@@ -31,6 +31,7 @@ export default {
         {path: '/button', name: 'button', label: 'button'},
         {path: '/iconfont', name: 'iconfont', label: 'iconfont 图标'},
         {path: '/tree', name: 'tree', label: '树形'},
+        {path: '/cesium', name: 'cesium', label: 'cesium地图'},
         {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
         {path: '/echarts', name: 'echarts', label: 'echarts图表'},
         {path: '/table', name: 'table', label: 'table'},

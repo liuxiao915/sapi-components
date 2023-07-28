@@ -53,6 +53,12 @@ const routes = [
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree/tree.vue')
 			},
 			{
+				path: '/cesium',
+				name: 'cesium',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/spai-cesium/index.vue')
+			},
+			{
 				path: '/mars3d',
 				name: 'mars3d',
 				meta: { keepAlive: false },

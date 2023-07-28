@@ -9,11 +9,7 @@
     </div>
   </div>
 </template>
- <style>
-.color {
-  color: #2D85E1;
-}
-</style>
+
 <script>
 import * as echarts from 'echarts'
 import szMapData from './szMapData/440300.json'

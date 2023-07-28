@@ -1099,12 +1099,44 @@
     topojson-client "^3.1.0"
     urijs "^1.19.7"
 
+"@cesium/engine@^3.0.1":
+  version "3.0.1"
+  resolved "http://10.206.64.198:4873/@cesium/engine/-/engine-3.0.1.tgz#c2663cbbc672f314a9bb4bea3b2517af301083fa"
+  integrity sha512-EDZLbW4xiPnJ+8iv91xK5oN72Qi9FB8EPQVc2dLB+WvxB5P4aHQJhjalA/mBWF/7+gdU77sGq5W+dLC9DF3b1A==
+  dependencies:
+    "@tweenjs/tween.js" "^21.0.0"
+    "@zip.js/zip.js" "2.4.x"
+    autolinker "^4.0.0"
+    bitmap-sdf "^1.0.3"
+    dompurify "^3.0.2"
+    earcut "^2.2.4"
+    grapheme-splitter "^1.0.4"
+    jsep "^1.3.8"
+    kdbush "^4.0.1"
+    ktx-parse "^0.5.0"
+    lerc "^2.0.0"
+    mersenne-twister "^1.1.0"
+    meshoptimizer "^0.19.0"
+    pako "^2.0.4"
+    protobufjs "^7.1.0"
+    rbush "^3.0.1"
+    topojson-client "^3.1.0"
+    urijs "^1.19.7"
+
 "@cesium/widgets@2.1.1":
   version "2.1.1"
   resolved "http://10.206.64.198:4873/@cesium/widgets/-/widgets-2.1.1.tgz#581ae6d91d811f5d57796f91f35a8dd8c622f4f9"
   integrity sha512-s+vgNVmJgi9efwB30o8ly94BMDZ9Mgt/rFCuj4mOinyqK+qVfWu1sekprrMCRTTir3r93ADXs3H/y8ObWFIjkQ==
   dependencies:
     "@cesium/engine" "2.2.0"
+    nosleep.js "^0.12.0"
+
+"@cesium/widgets@^3.0.1":
+  version "3.0.1"
+  resolved "http://10.206.64.198:4873/@cesium/widgets/-/widgets-3.0.1.tgz#35ffc8e376f0b033e5a85a05e59c71b75f8baa87"
+  integrity sha512-VZokEo7oAR23XphiraXpGCp/XsccDIYq8QOMfPho3+kvtru49HOx6/ZDM3IyUXwVvshfrlE92P8c+67Nae4yDg==
+  dependencies:
+    "@cesium/engine" "^3.0.1"
     nosleep.js "^0.12.0"
 
 "@discoveryjs/json-ext@0.5.7":
@@ -2475,6 +2507,11 @@
   resolved "http://10.206.64.198:4873/@tweenjs/tween.js/-/tween.js-18.6.4.tgz#40a3d0a93647124872dec8e0fd1bd5926695b6ca"
   integrity sha512-lB9lMjuqjtuJrx7/kOkqQBtllspPIN+96OvTCeJ2j5FEzinoAXTdAMFnDAQT1KVPRlnYfBrqxtqP66vDM40xxQ==
 
+"@tweenjs/tween.js@^21.0.0":
+  version "21.0.0"
+  resolved "http://10.206.64.198:4873/@tweenjs/tween.js/-/tween.js-21.0.0.tgz#73f993c2d1de37b78b4c1246163e20bc6ae3b75e"
+  integrity sha512-qVfOiFh0U8ZSkLgA6tf7kj2MciqRbSCWaJZRwftVO7UbtVDNsZAXpWXqvCDtIefvjC83UJB+vHTDOGm5ibXjEA==
+
 "@types/body-parser@*":
   version "1.19.2"
   resolved "http://10.206.64.198:4873/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -3813,6 +3850,14 @@ case-sensitive-paths-webpack-plugin@^2.3.0:
   resolved "http://10.206.64.198:4873/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz#db64066c6422eed2e08cc14b986ca43796dbc6d4"
   integrity sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==
 
+cesium@^1.107.2:
+  version "1.107.2"
+  resolved "http://10.206.64.198:4873/cesium/-/cesium-1.107.2.tgz#109d8d2a8bbf977d01f4a9ec5e051d865f9cca70"
+  integrity sha512-qQDVyY3ZORbfn/8LM4v7vPOZZBMyVBwxJsC0SAbGEOH6hVR+wEDHjBCzphSJFppmomy01+lS+PsA5wcNpWtOFw==
+  dependencies:
+    "@cesium/engine" "^3.0.1"
+    "@cesium/widgets" "^3.0.1"
+
 chalk@^1.1.3:
   version "1.1.3"
   resolved "http://10.206.64.198:4873/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -4717,6 +4762,11 @@ dompurify@^2.2.2:
   version "2.4.5"
   resolved "http://10.206.64.198:4873/dompurify/-/dompurify-2.4.5.tgz#0e89a27601f0bad978f9a924e7a05d5d2cccdd87"
   integrity sha512-jggCCd+8Iqp4Tsz0nIvpcb22InKEBrGz5dw3EQJMs8HPJDsKbFIO3STYtAvCfDx26Muevn1MHVI0XxjgFfmiSA==
+
+dompurify@^3.0.2:
+  version "3.0.5"
+  resolved "http://10.206.64.198:4873/dompurify/-/dompurify-3.0.5.tgz#eb3d9cfa10037b6e73f32c586682c4b2ab01fbed"
+  integrity sha512-F9e6wPGtY+8KNMRAVfxeCOHU0/NPWMSENNq4pQctuXRqqdEPW7q3CrLbR5Nse044WwacyjHGOMlvNsBe1y6z9A==
 
 domready@1.0.8:
   version "1.0.8"
@@ -6397,6 +6447,11 @@ kdbush@^3.0.0:
   resolved "http://10.206.64.198:4873/kdbush/-/kdbush-3.0.0.tgz#f8484794d47004cc2d85ed3a79353dbe0abc2bf0"
   integrity sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==
 
+kdbush@^4.0.1:
+  version "4.0.2"
+  resolved "http://10.206.64.198:4873/kdbush/-/kdbush-4.0.2.tgz#2f7b7246328b4657dd122b6c7f025fbc2c868e39"
+  integrity sha512-WbCVYJ27Sz8zi9Q7Q0xHC+05iwkm3Znipc2XTlrnJbsHMYktW4hPhXUE8Ys1engBrvffoSCqbil1JQAa7clRpA==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "http://10.206.64.198:4873/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -6430,6 +6485,11 @@ ktx-parse@^0.4.5:
   version "0.4.5"
   resolved "http://10.206.64.198:4873/ktx-parse/-/ktx-parse-0.4.5.tgz#79905e22281a9d3e602b2ff522df1ee7d1813aa6"
   integrity sha512-MK3FOody4TXbFf8Yqv7EBbySw7aPvEcPX++Ipt6Sox+/YMFvR5xaTyhfNSk1AEmMy+RYIw81ctN4IMxCB8OAlg==
+
+ktx-parse@^0.5.0:
+  version "0.5.0"
+  resolved "http://10.206.64.198:4873/ktx-parse/-/ktx-parse-0.5.0.tgz#b4025bbc73ac5386ac37e869de455eab915261bc"
+  integrity sha512-5IZrv5s1byUeDTIee1jjJQBiD5LPDB0w9pJJ0oT9BCKKJf16Tuj123vm1Ps0GOHSHmeWPgKM0zuViCVuTRpqaA==
 
 launch-editor-middleware@^2.2.1:
   version "2.6.0"
@@ -6768,6 +6828,11 @@ meshoptimizer@^0.18.1:
   version "0.18.1"
   resolved "http://10.206.64.198:4873/meshoptimizer/-/meshoptimizer-0.18.1.tgz#cdb90907f30a7b5b1190facd3b7ee6b7087797d8"
   integrity sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==
+
+meshoptimizer@^0.19.0:
+  version "0.19.0"
+  resolved "http://10.206.64.198:4873/meshoptimizer/-/meshoptimizer-0.19.0.tgz#1669e6d788ad3ffd238a65184e478355642ca979"
+  integrity sha512-58qz5Qc/6Geu8Ib3bBWERE5R7pM5ErrJVo16fAtu6ryxVaE3VAtM/u2vurDxaq8AGZ3yWxuM/DnylTga5a4XCQ==
 
 methods@~1.1.2:
   version "1.1.2"

@@ -1,4 +1,5 @@
 import { utils } from '@/utils/index'
+import { areaList, geoCoordMap } from '@/utils/common'
 // 饼图
 export const pieOption = (unit = '', title = '', total = '-', seriesData = []) => {
   const list = seriesData.filter(item => item.value || item.value === 0)
@@ -639,6 +640,139 @@ export const aDBarOption = (unit = '', xAxisData = [], seriesNames = [], seriesL
           focus: 'series'
         },
         data: seriesList[3]
+      }
+    ]
+  }
+}
+
+const pointData = (data) => {
+  const res = []
+  const arr = data.map(item => item.value)
+  const max = Math.max(...arr)
+  for (let i = 0; i < areaList.length; i++) {
+    const geoCoord = geoCoordMap[areaList[i]]
+    if (geoCoord) {
+      res.push({
+        name: areaList[i],
+        value: [geoCoord[0], geoCoord[1], Math.floor((arr[i] / max) * 100)]
+      })
+    }
+  }
+  return res
+}
+const handleFormatter = (params, legendData, seriesData) => {
+  let data = ''
+  legendData.forEach((item, index) => {
+    let curAreaDatas = []
+    seriesData[index].forEach(val => {
+      if(val.name === params.name) {
+        curAreaDatas.push(val.value)
+      }
+    })
+    if(params.seriesName === item.name || item) {
+      data += ` <div class="flex">
+      <div class="flex-item-center">
+        <span class="tooltip-innder-bar ${'c' + item.color.split('#')[1]}"></span>
+        <span class="tooltip-inner-name">${item.name || item}：</span>
+        <span class="tooltip-inner-name">
+          ${utils.toThousands(curAreaDatas)}
+        </span>
+        </div>
+      </div>`
+    }
+  })
+  return `<div class="tooltip-outbox">
+    <div class="tooltip-outbox-name" @click="$emit('getShowHousing')">${params.name}</div>
+    <div class="tooltip-inner-padding">${data}</div>
+  </div>`
+}
+
+/**
+ * 深圳3d地图
+ * @param {*} legendData 
+ * @param {*} seriesNames 
+ * @param {*} seriesData 
+ * @returns object
+ */
+export const mapOption = (legendData, seriesNames, seriesData) => {
+  return {
+    tooltip: {
+      trigger: "item",
+      backgroundColor: "rgba(255, 255, 255, 255)",
+      confine: true,
+      axisPointer: {
+        type: "line", 
+        lineStyle: { "color": "#54B5FF", "type": "dashed" }
+      },
+      formatter: (params) => {
+        return handleFormatter(params, legendData, seriesData)
+      }
+    },
+    legend: {
+      show: true,
+      top: 0,
+      left: 0, 
+      itemWidth: 10,
+      itemHeight: 10, 
+      textStyle: {
+        color: "red", 
+        fontSize: "16",
+        fontWeight: 400, 
+        display: "flex"
+      },
+      data: legendData
+    },
+    series: [
+      {
+        id: "a1",
+        name: seriesNames[0],
+        type: "bar3D",
+        coordinateSystem: "geo3D",
+        "barSize": 1.5,
+        "shading": "color",
+        "minHeight": 5,
+        "barGap": 0,
+        "itemStyle": { "color": "#00fff9", "opacity": 0.5, "border": 1 },
+        "emphasis": { "label": { "show": false } },
+        "label": { "show": false },
+        "data": pointData(seriesData[0]).map((item) => {
+          return {
+            ...item,
+            value: [item.value[0] - 0.016, item.value[1], item.value[2]]
+          }
+        })
+      },
+      {
+        "id": "a2",
+        "name": seriesNames[1],
+        "type": "bar3D",
+        "coordinateSystem": "geo3D",
+        "barSize": 1.5, 
+        "shading": "color", 
+        "minHeight": 5, 
+        "barGap": 0,
+        "itemStyle": { "color": "#ffe000", "opacity": 0.5 },
+        "emphasis": { "label": { "show": false } }, "label": { "show": false },
+        "data": pointData(seriesData[1])
+      },
+      {
+        "id": "a3",
+        "name": seriesNames[2],
+        "type": "bar3D",
+        "barGap": 0,
+        "coordinateSystem": "geo3D",
+        "barSize": 1.5,
+        "shading": "color",
+        "minHeight": 5,
+        "itemStyle": { "color": "#33D7FF", "opacity": 0.5 },
+        "emphasis": { "label": { "show": false } },
+        "label": { "show": false },
+        "data": pointData(seriesData[2]).map((item) => {
+          return {
+            ...item,
+            value: [item.value[0] + 0.016, item.value[1], item.value[2]]
+          }
+        })
       }
     ]
   }
