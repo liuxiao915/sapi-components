@@ -74,6 +74,7 @@ import Pullup from '@better-scroll/pull-up'
 import ResizeObserver from 'resize-observer-polyfill';
 import tableHeader from './table-header'
 import tableBody from './table-body'
+import resizeObserver from '@/utils/resizeObserver.js'
 BScroll.use(Pullup)
 let tableIdSeed = 0;
 
@@ -226,10 +227,12 @@ export default {
         initTable () {
             this.tableHeaderWrap = this.$el.querySelector('.sapi-table_header-wrap')
             this.tableHeader = this.tableHeaderWrap.querySelector('.sapi-table_header-table')
-            this.tableHeaderObserver = new ResizeObserver(this.handleHeaderWrapperResize)
-            this.tableHeaderObserver.observe(this.tableHeader)
-            this.tableObserver = new ResizeObserver(this.handleTableWrapperResize)
-            this.tableObserver.observe(this.$el)
+            // this.tableHeaderObserver = new ResizeObserver(this.handleHeaderWrapperResize)
+            // this.tableHeaderObserver.observe(this.tableHeader)
+            resizeObserver(this.tableHeader, this.handleHeaderWrapperResize)
+            // this.tableObserver = new ResizeObserver(this.handleTableWrapperResize)
+            // this.tableObserver.observe(this.$el)
+            resizeObserver(this.$el, this.handleTableWrapperResize)
             this.initScroll()
             this.changeLoadTdTxt()
         },

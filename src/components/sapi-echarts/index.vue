@@ -5,13 +5,14 @@
  @LastEditTime: 2023-04-01 14:03:11
 -->
 <template>
-  <div :id="keyId" class="sapi-echarts-container"></div>
+  <div :id="keyId" v-chart-resize class="sapi-echarts-container"></div>
 </template>
 
 <script>
 // 按需引入基本模板
 import * as echarts from 'echarts'
 import { ref, computed, toRefs, reactive, onMounted } from 'vue'
+import {utils} from "@/utils"
 import { isEmpty, merge } from 'lodash'
 import { baseOption } from './options'
 

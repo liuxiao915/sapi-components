@@ -1,11 +1,10 @@
 <template>
   <div class="wrapper">
-    <!-- <spaiEcharts type="pie" :option="state.option" />
-    <spaiEcharts type="pie" :option="state.option" /> -->
-    <select v-model="active" size="mini" class="map-selector" placeholder="深圳市" @change="change">
+    <spaiEcharts type="pie" :option="state.option" />
+    <!-- <select v-model="active" size="mini" class="map-selector" placeholder="深圳市" @change="change">
       <option v-for="item in state.areaList" :key="item" :label="item" :value="item" />
     </select>
-    <ShenZhenMap id="map" :option="state.mapOption" :cityVal="active" />
+    <ShenZhenMap id="map" :option="state.mapOption" :cityVal="active" /> -->
   </div>
 </template>
 <script>
@@ -13,10 +12,10 @@ import { ref, reactive } from 'vue'
 import { pieRightOption, mapOption } from "@/components/sapi-echarts/options.js";
 export default {
   setup() {
-    // const seriesData = [
-    //   { name: '学校', value: 100 },
-    //   { name: '工厂', value: 100 },
-    // ]
+    const series = [
+      { name: '学校', value: 100 },
+      { name: '工厂', value: 100 },
+    ]
     const legendData = [
       { name: '交易套数', type: 0, color: '#00fff9'},
       { name: '交易面积', type: 1, color: "#ffe000"},
@@ -70,7 +69,7 @@ export default {
     const seriesNames = legendData.map(item => item.name)
     const state = reactive({
       areaList: ['深圳市', '福田区','罗湖区','南山区','宝安区','龙岗区','盐田区','龙华区','坪山区','光明区','大鹏新区','前海合作区','深汕合作区'],
-      option: pieRightOption('人', '人口调查', 200, seriesData),
+      option: pieRightOption('人', '人口调查', 200, series),
       mapOption: mapOption(legendData, seriesNames, seriesData)
     })
     const change = (e) => {
@@ -94,5 +93,6 @@ export default {
 <style lang="less" scoped>
 .wrapper {
   width: 100%;
+  height: 200px;
 }
 </style>

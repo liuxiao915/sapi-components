@@ -13,7 +13,7 @@
 
 <script>
 import * as mars3d from 'mars3d'
-
+import ResizeObserver from 'resize-observer-polyfill';
 export default {
     data() {
         return {
@@ -65,7 +65,7 @@ export default {
 
             const legendScaleBar = document.querySelector(`.mars3d-container .mars3d-distance-legend .legend-scale-bar`)
 
-            const observer = new MutationObserver((mutationsList) => {
+            const observer = new ResizeObserver((mutationsList) => {
                 const [record] = mutationsList;
                 if (record?.attributeName === 'style') this.updateLegendScaleBarLength()
             });
