@@ -4,7 +4,7 @@ import router from './router'
 import '@/hooks/polyfill.js' // 去除touch事件谷歌提示
 import components from "@/components/index";
 import { utils } from '@/utils/index'
-
+import directives from '@/directives/index'
 // 全局样式
 import '@/assets/styles/main.less'
 // markdown样式
@@ -23,5 +23,4 @@ app.config.globalProperties.$hiddenLoading = hiddenLoading
 app.config.errorHandler = (err, vm, info) => {
   console.log('异常:::', err, vm , info)
 }
-
-app.use(components).use(router).mount('#app')
+app.use(directives).use(components).use(router).mount('#app')

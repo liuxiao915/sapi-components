@@ -7,6 +7,49 @@ import axios from 'axios'
 import qs from 'qs'
 // import config from '../config.js'
 
+/**
+ * 函数节流（Throttle）
+ * 规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效
+ * @param {*} fun 
+ * @param {*} delay 
+ * @returns 
+ */
+export const throttle = (fun, delay) => {
+    let last, timer
+    return () => {
+    let args = arguments
+    let now = +new Date()
+    if (last && now < last + delay) {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        last = now
+        fun(args)
+      }, delay)
+    }else {
+      last = now
+      fun(args)
+    }
+  }
+}
+/**
+ * 函数防抖（Debounce）
+ * 在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时（规定事件内只触发一个，如果反复触发需重新计时）
+ * @param {*} fun 
+ * @param {*} delay 
+ * @returns 
+ */
+export const debounce = (fun, delay) => {
+    var timeout;
+    return (e) => {
+        clearTimeout(timeout);
+        var args = arguments
+        timeout = setTimeout(() =>{
+          fun(args);
+        }, delay)
+    };
+};
+
+
 var warn = function () {}
 if (process.env.NODE_ENV !== 'production' || process.env.BUILD_MOCK === 'true') {
     warn = function (msg, otherArgs) {

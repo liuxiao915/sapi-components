@@ -5,7 +5,7 @@
  @LastEditTime: 2023-04-01 14:03:11
 -->
 <template>
-  <div :id="keyId" v-chart-resize class="sapi-echarts-container"></div>
+  <div :id="keyId" class="sapi-echarts-container"></div>
 </template>
 
 <script>
@@ -100,10 +100,6 @@ export default {
       this.drawChart(option)
     },
     drawChart(option) {
-      if (!this.keyId) {
-        this.keyId = `${new Date().getTime() + Math.floor(Math.random() * 1000)}BaseBarEchart`
-      }
-
       this.$nextTick(() => {
         const chartDom = document.getElementById(this.keyId)
         if (!chartDom) return
