@@ -2,7 +2,6 @@ import ResizeObserver from 'resize-observer-polyfill';
 import { throttle } from '@/utils/index'
 export const resizeObserver = (el, fn) => {
   return new ResizeObserver(throttle(entries => {
-    console.log('entries::::', entries)
     if (entries && entries.length) {
       entries.forEach(entity => {
         // contentRect: 位置大小信息  target:dom信息
@@ -12,9 +11,9 @@ export const resizeObserver = (el, fn) => {
     }
   }, 500))
 }
-export const observe = (el, fn) => {
+export const observe = (resizeObserver, el) => {
   resizeObserver.observe(el);
 }
-export const unobserve = (el, fn) => {
-  resizeObserver.unobserve(el);
+export const unobserve = (resizeObserver, el) => {
+  resizeObserver.unobserve(resizeObserver, el);
 }

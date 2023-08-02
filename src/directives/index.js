@@ -1,6 +1,8 @@
 
+import copy from "./copy";
 import resize from "./resize";
 const directives = { // 指令对象
+  copy,
   resize
 }
  

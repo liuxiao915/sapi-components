@@ -3,12 +3,14 @@ import {resizeObserver, observe, unobserve} from '@/utils/resizeObserver.js';
 
 export default {
   name: 'resize',
-  mounted(el,binding) {
+  mounted(el, binding) {
+    el.$resizeObserver = resizeObserver(el, binding.value)
     console.log('v-resize::::', el,binding)
     resizeObserver(el, binding.value)
-    observe(el)
+    observe(el.$resizeObserver, el)
   },//卸载时清楚定时任务
   unmounted(el) {
-    unobserve(el)
+    unobserve(el.$resizeObserver, el)
+    delete el.$resizeObserver
   }
 };
