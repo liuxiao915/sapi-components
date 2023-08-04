@@ -48,7 +48,24 @@ export const debounce = (fun, delay) => {
         }, delay)
     };
 };
-
+/**
+ * 获取符合条件的父元素
+ * @param {*} element 根据子元素找父元素
+ * @param {*} attrs 属性
+ * @param {*} value 属性的值
+ * @returns 
+ */
+export const findParent = (element, attrs, value) => {
+    var parent = element.parentNode;
+    while (parent !== null) {
+      var hasAttrs = window.getComputedStyle(parent).getPropertyValue(attrs);
+      if (hasAttrs !== value) {
+        return parent;
+      }
+      parent = parent.parentNode;
+    }
+    return null;
+}
 
 var warn = function () {}
 if (process.env.NODE_ENV !== 'production' || process.env.BUILD_MOCK === 'true') {
