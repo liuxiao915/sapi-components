@@ -335,5 +335,6 @@ export default {
 }
 .icon-ellipsis {
     transform: rotate(90deg);
+    top: 20px;
 }
 </style>

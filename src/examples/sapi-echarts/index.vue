@@ -4,7 +4,8 @@
     <select v-model="active" size="mini" class="map-selector" placeholder="深圳市" @change="change">
       <option v-for="item in state.areaList" :key="item" :label="item" :value="item" />
     </select>
-    <ShenZhenMap id="map" :option="state.mapOption" :cityVal="active" />
+    <!-- <ShenZhenMap id="map" :option="state.mapOption" :cityVal="active" /> -->
+    <sapiEchartsGl />
   </div>
 </template>
 <script>

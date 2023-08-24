@@ -86,7 +86,7 @@ export default {
 				return;
 			}
 
-			e.stopPropagation();
+			e.stopPropagation(); // 禁止冒泡
 
 			let target = e.target;
 			let that = this;
