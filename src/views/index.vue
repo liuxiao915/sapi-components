@@ -11,7 +11,7 @@
   </sapi-layout>
 </template>
 <script>
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ref, reactive } from 'vue'
 
 export default {
@@ -22,7 +22,10 @@ export default {
     }
   },
   setup() {
+    const route = useRoute()
     const router = useRouter()
+    console.log('route::::', route)
+    console.log('router::::', router)
     const activeMenu = ref('')
     const activeTab = ref(0)
     const state = reactive({
@@ -41,6 +44,7 @@ export default {
         {path: '/grid', name: 'grid', label: 'grid'},
         {path: '/select', name: 'select', label: 'select'},
         {path: '/dialog', name: 'dialog', label: 'dialog'},
+        {path: '/video', name: 'video', label: 'video'},
       ],
       tabsData: [
         {label: '实例', value: 0},

@@ -112,6 +112,12 @@ const routes = [
 				meta: { keepAlive: false },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-dialog.vue')
 			},
+			{
+				path: '/video',
+				name: 'video',
+				meta: { keepAlive: false },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-video/index.vue')
+			},
 		]
   },
 ]
