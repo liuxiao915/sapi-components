@@ -48,6 +48,9 @@ export default defineComponent({
     const orientationChange = (mq) => {
       console.log('orientation:::::', 'orientation' in window)
       console.log('matchMedia:::::', 'matchMedia' in window)
+      // 屏幕方向对应的 window.orientation 值：
+      // Andriod： 横屏： 0 || 180    竖屏： 90 || -90  
+      // iOS：     横屏：90 || -90    竖屏： 0 || 180  
       if ('orientation' in window) {
         if (window.orientation == 180 || window.orientation == 0) { 
           console.log('竖屏');
