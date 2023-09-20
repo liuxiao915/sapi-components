@@ -21,7 +21,7 @@ import { createRouter,createWebHashHistory } from 'vue-router'
 // 该方法也可指定相同的chunkName，合并打包成一个js文件。
 // 传入空字符串 则每个component会单独生成一个js文件
 // const Index = r => require.ensure([], () => r(require('@/views/index')), 'ImportIndex')
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'index',
@@ -31,91 +31,91 @@ const routes = [
 			{
 				path: '/icon',
 				name: 'icon',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'icon' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-icon/index.vue')
 			},
 			{
 				path: '/iconfont',
 				name: 'iconfont',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'iconfont' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-iconfont.vue')
 			},
 			{
 				path: '/button',
 				name: 'button',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'button' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-button/index.vue')
 			},
 			{
 				path: '/tree',
 				name: 'tree',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'tree' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-tree/tree.vue')
 			},
 			{
 				path: '/cesium',
 				name: 'cesium',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'cesium' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/spai-cesium/index.vue')
 			},
 			{
 				path: '/mars3d',
 				name: 'mars3d',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'mars3d' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/spai-mars3d/index.vue')
 			},
 			{
 				path: '/echarts',
 				name: 'echarts',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'echarts' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-echarts/index.vue')
 			},
 			{
 				path: '/table',
 				name: 'table',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'table' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table-packages.vue')
 			},
 			{
 				path: '/scroll',
 				name: 'scroll',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'scroll' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/scroll.vue')
 			},
 			{
 				path: '/grid',
 				name: 'grid',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'grid' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-grid')
 			},
 			{
 				path: '/message',
 				name: 'message',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'message' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-message.vue')
 			},
 			{
 				path: '/loading',
 				name: 'loading',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'loading' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-loading.vue')
 			},
 			{
 				path: '/select',
 				name: 'select',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'select' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-select.vue')
 			},
 			{
 				path: '/dialog',
 				name: 'dialog',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'dialog' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-dialog.vue')
 			},
 			{
 				path: '/video',
 				name: 'video',
-				meta: { keepAlive: false },
+				meta: { keepAlive: false, label: 'video' },
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-video/index.vue')
 			},
 		]

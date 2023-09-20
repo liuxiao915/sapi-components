@@ -2,7 +2,7 @@
   <div>点击加载showLoading</div>
 </template>
 <script>
-import { showLoading, hiddenLoading } from '@/components/sapi-loading/index.js';
+import { showLoading, hiddenLoading } from '/packages/sapi-loading/index.js';
 export default {
   setup() {
     // 在需要使用时调用show方法

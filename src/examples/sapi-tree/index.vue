@@ -13,7 +13,7 @@
 </template>  
 
 <script>
-import selectTree from "@/components/sapi-tree";
+import selectTree from "/packages/sapi-tree";
 export default {
     components: {
         "sapi-tree": selectTree

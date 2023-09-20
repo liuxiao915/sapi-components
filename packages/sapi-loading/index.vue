@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import sapiIcon from '@/components/sapi-icon.vue'
+import sapiIcon from '/packages/sapi-icon.vue'
 export default {
   name: 'sapiIoading',
   props: {

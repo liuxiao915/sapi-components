@@ -17,8 +17,8 @@
 </template>
 <script>
 import { reactive, getCurrentInstance } from 'vue'
-import  sapiTable from '../../packages/table/table.vue'
-import  sapiTableColumn from '../../packages/table/table-column.js'
+import  sapiTable from '../../package/table/table.vue'
+import  sapiTableColumn from '../../package/table/table-column.js'
 export default {
   components: { sapiTable, sapiTableColumn },
   setup() {

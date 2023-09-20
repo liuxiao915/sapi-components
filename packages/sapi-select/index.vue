@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import sapiTree from "@/components/sapi-tree";
+import sapiTree from "/packages/sapi-tree";
 export default {
   name: 'sapi-select',
   components: {

@@ -10,7 +10,7 @@
 </template>
 <script>
 import { ref, reactive } from 'vue'
-import { pieRightOption, mapOption } from "@/components/sapi-echarts/options.js";
+import { pieRightOption, mapOption } from "/packages/sapi-echarts/options.js";
 export default {
   setup() {
     const series = [

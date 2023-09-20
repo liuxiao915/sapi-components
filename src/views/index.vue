@@ -11,8 +11,9 @@
   </sapi-layout>
 </template>
 <script>
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { ref, reactive } from 'vue'
+import { routes } from '@/router'
 
 export default {
   props: {
@@ -22,30 +23,18 @@ export default {
     }
   },
   setup() {
-    const route = useRoute()
     const router = useRouter()
-    console.log('route::::', route)
-    console.log('router::::', router)
     const activeMenu = ref('')
     const activeTab = ref(0)
+    const meun = routes[0].children.map(item => {
+      return {
+        path: item.path,
+        name: item.name,
+        label: item.meta.label
+      }
+    })
     const state = reactive({
-      menuData: [
-        {path: '/icon', name: 'icon', label: 'icon 图标'},
-        {path: '/button', name: 'button', label: 'button'},
-        {path: '/iconfont', name: 'iconfont', label: 'iconfont 图标'},
-        {path: '/tree', name: 'tree', label: '树形'},
-        {path: '/cesium', name: 'cesium', label: 'cesium地图'},
-        {path: '/mars3d', name: 'mars3d', label: 'gis地图'},
-        {path: '/echarts', name: 'echarts', label: 'echarts图表'},
-        {path: '/table', name: 'table', label: 'table'},
-        {path: '/scroll', name: 'scroll', label: 'scroll'},
-        {path: '/message', name: 'message', label: 'message'},
-        {path: '/loading', name: 'loading', label: 'loading'},
-        {path: '/grid', name: 'grid', label: 'grid'},
-        {path: '/select', name: 'select', label: 'select'},
-        {path: '/dialog', name: 'dialog', label: 'dialog'},
-        {path: '/video', name: 'video', label: 'video'},
-      ],
+      menuData: meun,
       tabsData: [
         {label: '实例', value: 0},
         {label: 'API', value: 1},

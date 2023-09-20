@@ -1,7 +1,7 @@
 
-import tiandituUtils from '@/components/etopMap/js/tiandituUtils.js'
-import terrainUtils from '@/components/etopMap/js/terrainUtils.js'
-import flyToUtils from '@/components/etopMap/js/flyToUtils.js'
+import tiandituUtils from '/packages/etopMap/js/tiandituUtils.js'
+import terrainUtils from '/packages/etopMap/js/terrainUtils.js'
+import flyToUtils from '/packages/etopMap/js/flyToUtils.js'
 //使用示例, 上述js已挂载到etopMap上, 使用时无需再引入
 
 //test 天地图影像

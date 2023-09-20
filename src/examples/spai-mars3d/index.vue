@@ -7,7 +7,7 @@
 </template>  
 
 <script>
-import sapiMars3d from "@/components/sapi-mars3d";
+import sapiMars3d from "/packages/sapi-mars3d";
 import { initOPenPopup, bindMapPopup, bindMapTooltip } from './popup.js'
 import { dataList, addMarkLayer } from './scatterData.js'
 import { flyToPoint } from './flyToPoint.js'

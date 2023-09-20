@@ -127,7 +127,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 /* 图片容器样式 */
 .SwiperBox {
   position: relative;

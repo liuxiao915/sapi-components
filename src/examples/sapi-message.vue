@@ -3,7 +3,7 @@
 </template>
 <script>
 import { onMounted, getCurrentInstance } from 'vue'
-import Message from '@/components/sapi-message/index.js'
+import Message from '/packages/sapi-message/index.js'
 export default {
   setup() {
     const { proxy } = getCurrentInstance()
