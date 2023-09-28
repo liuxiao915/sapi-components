@@ -977,3 +977,184 @@ export const mapOption = (legendData, seriesNames, seriesData) => {
     ]
   }
 }
+
+
+export const chartFn = (info) => {
+  const info = {
+    "name": "单位",
+    "data": [
+        "77.13",
+        "11.24",
+        "5.32",
+        "2.56",
+        "1.83",
+        "1.57",
+        "0.35"
+    ],
+    "yDataType": [
+        "城镇私营企业及其他城镇企业",
+        "其他",
+        "外商投资企业",
+        "民办非企业单位和社会团体",
+        "国有企业",
+        "国家机关和事业单位",
+        "城镇集体企业"
+    ]
+  }
+  return {
+    title: null,
+    legend: null,
+    grid: {
+      top: 0,
+      left: 0,
+      right: 70,
+      bottom: 0,
+      containLabel: true
+    },
+    tooltip: {
+      confine: true,
+      trigger: 'axis',
+      axisPointer: {
+        // 坐标轴指示器，坐标轴触发有效
+        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+      },
+      padding: 0,
+      borderWidth: 0,
+      formatter: function (params) {
+        const dom = `
+        <div>
+        <span class="tooltip-value val">
+          ${params[0].data}
+        </span> %</div>`
+        return `<div class="toltip-min-width">
+        <div class="tooltip-two"></div>
+        <div class="tooltip-three"></div>
+        <div class="tooltip-four"></div>
+        <div class="tooltip-five"></div>
+         <div class="flex-name chart-min-width">${params[0].name}</div>
+          ${dom}
+        </div>`
+      }
+    },
+    xAxis: {
+      type: 'value',
+      axisLabel: null,
+      axisTick: {
+        show: false
+      },
+      axisLine: {
+        show: false
+      },
+      splitLine: null
+    },
+    yAxis: [
+      {
+        type: 'category',
+        data: info.yDataType,
+        nameGap: 10,
+        inverse: true,
+        min: 0,
+        axisLabel: {
+          show: true,
+          interval: 0,
+          fontSize: 16,
+          lineHeight: 20,
+          fontFamily: 'PingFang SC',
+          color: '#FFFFFF',
+          formatter(val) {
+            if (val === '城镇私营企业及其他城镇企业') {
+              return '城镇私营企业及\n其他城镇企业'
+            } else if (val === '民办非企业单位和社会团体') {
+              return '民办非企业单位\n和社会团体'
+            } else {
+              return val
+            }
+          }
+        },
+        axisLine: false,
+        axisTick: {
+          show: false
+        },
+        nameTextStyle: {
+          overflow: 'breakAll'
+        }
+      }
+    ],
+    series: [
+      {
+        name: info.name || '',
+        type: 'bar',
+        data: info.data || [],
+        barWidth: 18,
+        itemStyle: {
+          color: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 1,
+            y2: 0,
+            colorStops: [
+              {
+                offset: 0,
+                color: 'rgba(0,255,146,0.03)'
+              },
+              {
+                offset: 0.99,
+                color: 'rgba(0,255,143,0.5)'
+              }
+            ],
+            globalCoord: false
+          }
+        },
+        showBackground: true,
+        backgroundStyle: {
+          color: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 1,
+            y2: 0,
+            colorStops: [
+              {
+                offset: 0,
+                color: 'rgba(2,255,252,0)'
+              },
+              {
+                offset: 0.985,
+                color: 'rgba(0,214,255,0.2)'
+              },
+              {
+                offset: 1,
+                color: '#00D0FF'
+              }
+            ],
+            globalCoord: false
+          }
+        },
+        label: {
+          show: true,
+          position: 'start',
+          textStyle: {
+            color: '#fff',
+            fontSize: 14
+          },
+          offset: [370, 4],
+          align: 'right',
+          formatter: (param) => `${param.value}%`
+        }
+      },
+      {
+        name: '',
+        type: 'pictorialBar', // 象形柱图
+        symbol: 'reat', // 正方形
+        symbolSize: [2, 17], // 图形大小
+        symbolOffset: [0, 0], // 位移
+        symbolPosition: 'end', // 图形的定位位置
+        itemStyle: {
+          color: 'rgba(1, 254, 147,1)'
+        },
+        data: [...info.data, 100] || []
+      }
+    ]
+  }
+}
