@@ -59,12 +59,6 @@ export const routes = [
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/spai-cesium/index.vue')
 			},
 			{
-				path: '/mars3d',
-				name: 'mars3d',
-				meta: { keepAlive: false, label: 'mars3d' },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/spai-mars3d/index.vue')
-			},
-			{
 				path: '/echarts',
 				name: 'echarts',
 				meta: { keepAlive: false, label: 'echarts' },

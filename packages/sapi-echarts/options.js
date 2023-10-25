@@ -979,7 +979,7 @@ export const mapOption = (legendData, seriesNames, seriesData) => {
 }
 
 
-export const chartFn = (info) => {
+export const chartFn = () => {
   const info = {
     "name": "单位",
     "data": [
