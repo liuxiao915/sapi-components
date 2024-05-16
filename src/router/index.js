@@ -83,6 +83,12 @@ export const routes = [
 				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-grid')
 			},
 			{
+				path: '/screen-shot',
+				name: 'screen-shot',
+				meta: { keepAlive: false, label: '截屏' },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-screen-shot')
+			},
+			{
 				path: '/message',
 				name: 'message',
 				meta: { keepAlive: false, label: 'message' },

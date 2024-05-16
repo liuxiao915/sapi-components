@@ -1,8 +1,8 @@
 <template>
   <div ref="sapiScreenShot" class="modal-card">
-    <el-button type="primary" @click="ScreenShortStart">开始截屏</el-button>
+    <sapi-button ghost theme="primary" variant="outline" @click="ScreenShortStart">js-web-screen-shot截屏</sapi-button>
     <!-- :data-html2canvas-ignore="true"属性可以在导出图片的时候隐藏该标签 -->
-    <div :data-html2canvas-ignore="true" @click="html2canvasStart">导出图片</div>
+    <sapi-button ghost theme="primary" variant="outline" :data-html2canvas-ignore="true" @click="html2canvasStart">html2canvas截屏</sapi-button>
   </div>
 </template>
 
