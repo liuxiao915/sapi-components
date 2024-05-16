@@ -8,15 +8,7 @@
   <div>
     <sapi-grid :width="200">
       <sapi-grid-item v-for="(item, index) in state.data" :key="index" :type="item.type">
-        <div>
-          <p>
-            <p>
-              <p>
-                {{ item.label }}
-              </p>
-            </p>
-          </p>
-        </div>
+        {{ item.label }}
       </sapi-grid-item>
     </sapi-grid>
   </div>

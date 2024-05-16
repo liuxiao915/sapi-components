@@ -46,18 +46,27 @@ export default defineComponent({
     }
 
     const orientationChange = (mq) => {
-      console.log('orientation:::::', 'orientation' in window)
-      console.log('matchMedia:::::', 'matchMedia' in window)
       // 屏幕方向对应的 window.orientation 值：
       // Andriod： 横屏： 0 || 180    竖屏： 90 || -90  
       // iOS：     横屏：90 || -90    竖屏： 0 || 180  
+      var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1;
       if ('orientation' in window) {
-        if (window.orientation == 180 || window.orientation == 0) { 
-          console.log('竖屏');
-        } 
-        if (window.orientation == 90 || window.orientation == -90 ){ 
-          console.log('横屏');
-        } 
+        if (isAndroid) {
+          if (window.orientation == 180 || window.orientation == 0) { 
+            console.log('竖屏');
+          } 
+          if (window.orientation == 90 || window.orientation == -90 ){ 
+            console.log('横屏');
+          }
+        } else {
+          if (window.orientation == 90 || window.orientation == -90) {
+            console.log('横屏');
+            }
+            else if (window.orientation == 0 || window.orientation == 180) {
+              console.log('竖屏');
+            }
+        }
       } else if ('matchMedia' in window) {
         if (mq.matches) {
           console.log("设备处于纵向方向");
@@ -102,6 +111,13 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
+// @media screen and (orientation:portrait) {
+//   //竖屏
+// }
+// @media screen and (orientation:landscape) {
+//   //横屏
+// }
+
 .sapi-video {
   width: 100%;
   height: 100%;
