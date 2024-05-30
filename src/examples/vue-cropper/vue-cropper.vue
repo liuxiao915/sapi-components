@@ -2076,10 +2076,6 @@ export default {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.cropper-crop-box {
-  /*border: 2px solid #39f;*/
-}
-
 .cropper-view-box {
   display: block;
   overflow: hidden;
