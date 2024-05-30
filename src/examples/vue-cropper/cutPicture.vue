@@ -97,6 +97,7 @@ export default {
   },
   methods: {
     openDialog() {
+      console.log('openDialog--测试');
       this.showCropper = true
     },
     // 刷新组件
