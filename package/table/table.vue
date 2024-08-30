@@ -219,7 +219,7 @@ export default {
     mounted () {
         this.initTable()
     },
-    beforeDestroy () {
+    beforeUnmount () {
         this.disconnect()
     },
     methods: {
@@ -255,7 +255,7 @@ export default {
             this.fixedTableWidth = totalWidth.fixedWidth
             this.bodyWidth = totalWidth.bodyWidth
             this.$nextTick(() => {
-                if (!!this.fixedTableWidth) {
+                if (this.fixedTableWidth) {
                     this.fixedTableBody = this.$el.querySelector('.fixed-sapi-table_body-wrap');
                 }
             })

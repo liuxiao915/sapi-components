@@ -10,7 +10,6 @@
                 <slot name="body"></slot>
             </table>
         </div>
-            
         <div class="fixed-sapi-table_wrapper" v-if="fixedTableWidth" :style="{width: fixedTableWidth + 'px', height: tableHeight}">
             <div class="fixed-sapi-table_header-wrap">
                 <table class="sapi-table_header-table sapi-table_fixed-header-table">
@@ -52,7 +51,7 @@ export default {
     watch: {
         height(val) {
             if (val) {
-                this.setHeight(val);
+                this.setHeight();
             }
         },
         data() {
@@ -63,10 +62,6 @@ export default {
         this.tableHeaderWrap = this.$el.querySelector('.sapi-table_header-wrap');
         const tableHeaderWrapRect = this.tableHeaderWrap.getBoundingClientRect();
         this.tableHeadHeight = tableHeaderWrapRect.bottom - tableHeaderWrapRect.top + 'px';
-        this.tableHeader = this.tableHeaderWrap.querySelector('.sapi-table_header-table')
-        const tableHeaderRect = this.tableHeader.getBoundingClientRect();
-        this.tableHeaderWidth = tableHeaderRect.right - tableHeaderRect.left;
-        this.isLockX = this.tableHeaderWidth <= document.documentElement.clientWidth;
         this.setHeight();
         if (this.fixedTableWidth) {
             this.fixedTableBody = this.$el.querySelector('.fixed-sapi-table_body-wrap');
@@ -74,9 +69,8 @@ export default {
         this.tableBody = this.$el.querySelector('.sapi-table_body-wrap');
         this.tableBody.addEventListener('scroll', this.handleTableScroll)
     },
-    destroyed() {
+    unmounted() {
         this.tableHeaderWrap = null;
-        this.tableHeader = null;
         if (this.fixedTableWidth) {
             this.fixedTableBody = null;
         }

@@ -1,5 +1,8 @@
 <template>
-  <div ref="wrapper">
+  <!-- BetterScroll 实现横向滚动，对 CSS 是比较苛刻的。首先你要保证 wrapper 不换行，并且 content 的 display 是 inline-block。 -->
+  <!-- .scroll-wrapper  white-space nowrap
+  .scroll-content  display inline-block -->
+  <div ref="wrapper" class="scroll-wrapper">
     <slot></slot>
   </div>
 </template>
@@ -92,11 +95,10 @@ export default {
         return
       }
       // better-scroll的初始化
-      this.scroll = new BScroll(this.$refs.wrapper, {
+      this.scroll = new BScroll('.scroll-wrapper', {
         // probeType: this.probeType,
         // click: this.click,
         // scrollX: this.scrollX,
-
         bounce: {
           bottom: false,
           left: false,
@@ -181,7 +183,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.wrapper {
+.scroll-wrapper {
   height: 100%;
   .content {
     height: 100%;

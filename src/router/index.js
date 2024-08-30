@@ -68,7 +68,13 @@ export const routes = [
 				path: '/table',
 				name: 'table',
 				meta: { keepAlive: false, label: 'table' },
-				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table-packages.vue')
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table.vue')
+			},
+			{
+				path: '/table-package',
+				name: 'tablePackage',
+				meta: { keepAlive: false, label: 'tablePackage' },
+				component: () => import(/* webpackChunkName: "icon" */'@/examples/sapi-table-package.vue')
 			},
 			{
 				path: '/scroll',

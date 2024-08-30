@@ -1,6 +1,6 @@
 <template>
   <div class="sapi-table">
-    <sapi-table rowKey="1111" :data="state.tableData" height="300px" @cell-Click="cellClick" @row-Click="rowClick" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}">
+    <sapi-table rowKey="1111" :data="state.tableData" height="300px" @cell-Click="cellClick" @row-Click="rowClick" @sort-change="sortChange" header-row-class-name="project-table-header" :header-row-style="{background: '#2F88F6', color: '#ffffff'}">
       <sapi-table-column header-align="center" align="center" width="110px" label="区域" prop="name" fixed></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="开发成本" prop="exploitCost">
         <template #header>插槽表头</template>
@@ -8,7 +8,7 @@
           <span>{{ scope.row.contractAmount }}插槽</span>
         </template>
       </sapi-table-column>
-      <sapi-table-column header-align="center" align="center" width="60px" label="管理费用" prop="managementCost"></sapi-table-column>
+      <sapi-table-column header-align="center" :sortable="true"  align="center" width="90px" label="管理费用" prop="managementCost"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="营销费用" prop="marketingCost"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="税金" prop="taxes"></sapi-table-column>
       <sapi-table-column header-align="center" align="center" width="60px" label="签约金额" prop="contractAmount"></sapi-table-column>
@@ -54,11 +54,15 @@ export default {
     const rowClick = (data) => {
       console.log('rowClick:::', data)
     }
+    const sortChange = (data) => {
+      console.log('sortChange:::', data)
+    }
     return {
       state,
       formatter,
       cellClick,
-      rowClick
+      rowClick,
+      sortChange
     }
   }
 }

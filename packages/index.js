@@ -25,6 +25,5 @@ export default {
       // 接收到的实例进行全局组件的挂载
       Vue.component(config.default.name, config.default || config)
     })
-    
   }
 }

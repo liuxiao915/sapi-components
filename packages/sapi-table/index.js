@@ -1,5 +1,4 @@
 import { h } from 'vue'
-import sapiTableColumn from './sapi-table-column.vue'
 import hTable from './table.vue'
 import tableColumn from './table-column.vue'
 import tableHeadColumn from './table-head-column.vue'
@@ -23,7 +22,6 @@ export default {
     components: {
         hTable,
         tableColumn,
-        sapiTableColumn,
         tableHeadColumn
     },
     props: {
@@ -112,12 +110,12 @@ export default {
                 data: this.data,
                 onClick(e) {
                     if (vm.$attrs['onSortChange']) {
-                        vm.$emit("sort-change", column, sortable)
+                        vm.$emit("sort-change", property, e)
                     }
                 }
             },{
                 default: (props) => {
-                    if(columns[index].children && columns[index].children.hasOwnProperty('header')) {
+                    if(columns[index].children && Object.prototype.hasOwnProperty.call(columns[index].children, 'header')) {
                         return columns[index].children.header(props)
                     }
                 }
@@ -147,7 +145,7 @@ export default {
                 }
                 return h(tableColumn, tabelColumnProps, {
                     default: (props) => {
-                        if (columns[index].children && columns[index].children.hasOwnProperty('default')) {
+                        if (columns[index].children && Object.prototype.hasOwnProperty.call(columns[index].children, 'default')) {
                             return columns[index].children.default(props)
                         }
                     }
@@ -237,7 +235,6 @@ export default {
             },
             body: () => h('tbody', {} , getTreeColumnChildNodes(false)),
             fixedbody: () => h('tbody', {} , getTreeColumnChildNodes(true))
-            
         })
     }
 }

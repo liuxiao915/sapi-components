@@ -1,4 +1,6 @@
-### mars3d类对象中获取原生Cesium对象
+# mars3d
+
+## mars3d类对象中获取原生Cesium对象
 
 | mars3d类                                                     | 内部Cesium对象                                               | 说明                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------- |
@@ -9,16 +11,14 @@
 | [mars3d.graphic.PolygonEntity](http://mars3d.cn/api/PolygonEntity.html#entity) | [graphic.czmObject ](http://mars3d.cn/api/cesium/Entity.html)或 [graphic.entity](http://mars3d.cn/api/cesium/Entity.html) | Entity矢量数据对象，其他类型使用相似           |
 | [mars3d.graphic.PolygonPrimitive](http://mars3d.cn/api/PolygonPrimitive.html#primitive) | [graphic.czmObject ](http://mars3d.cn/api/cesium/Primitive.html)或 [graphic.primitive](http://mars3d.cn/api/cesium/Primitive.html) | Primitive矢量数据对象，其他类型使用相似        |
 
-
-
-### mars3d.Map类 参数说明
+## mars3d.Map类 参数说明
 
 | 参数名     | 类型                    | 参数解释                                  |
 | ---------- | ----------------------- | ----------------------------------------- |
 | id         | String 或 Cesium.Viewer | 地图容器的div的id或已经构造好的viewer对象 |
 | mapOptions | Object                  | 创建地球的参数                            |
 
-### mapOptions 参数包括：
+## mapOptions 参数包括：
 
 | 参数名   | 类型   | 参数API                                                      | 说明     |
 | -------- | ------ | ------------------------------------------------------------ | -------- |
@@ -28,7 +28,7 @@
 | basemaps | Array  | [参数清单](http://mars3d.cn/api/Map.html#.basemapOptions) | 底图图层 |
 | layers   | Array  | [参数清单](http://mars3d.cn/api/Map.html#.layerOptionsmap) | 图层     |
 
-### 控件清单
+## 控件清单
 
 | 类名                            | 说明                               |
 | ------------------------------- | ---------------------------------- |
@@ -41,7 +41,6 @@
 | mars3d.control.OverviewMap()    | 鹰眼地图 控件                      |
 
 注：本教程中所列清单可能不全，具体已功能示例和API为准。
-
 
 ```js
 // 创建三维地球场景
